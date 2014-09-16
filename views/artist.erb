@@ -1,0 +1,4 @@
+<h1><%= @artist.name %></h1>
+<% @artist.albums.each do |a| %>
+  <a href="/media/<%= @artist.name %>/<%= a.title %>"><%= a.title %></a>
+<% end %>
