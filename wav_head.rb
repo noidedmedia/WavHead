@@ -19,11 +19,16 @@ OptionParser.new do |o|
   o.on("-l", "--list", "List all songs") do |l|
     opts[:list] = true
   end
+  o.on("-d", "--delete", "Delete the database") do |d|
+    opts[:delete] = true
+  end
+
 
 end.parse!
 
 WavHead::Info.instance.setup(opts[:index]) if opts[:index]
 puts WavHead::Info.instance.pretty_print if opts[:list]
+WavHead::Info.instance.delete! if opts[:delete]
 if opts[:server]
   puts "Starting a server..." 
   WavHead::Server.set :p, WavHead::Player.new

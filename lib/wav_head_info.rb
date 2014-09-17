@@ -5,17 +5,20 @@ require_relative './db'
 module WavHead
   class Info
     include Singleton
-    def setup(dir)
-      @dir = dir.is_a?(String) ?  dir : "#{Dir.home}/Music" # by default, use the user's music folder
-      @dir = @dir +  "/" unless @dir[-1] == "/"
-      self.parse_all
+    def delete!
+      File.delete("./.db.sqlite")
+    end
+    def setup(d)
+      dir = d.is_a?(String) ?  d : "#{Dir.home}/Music" # by default, use the user's music folder
+      dir = dir +  "/" unless dir[-1] == "/"
+      self.parse_all(dir)
     end
 
-    def parse_all
-      @files = Dir.glob(@dir + "**/*")
-      @files.each do |f|
+    def parse_all(dir)
+      files = Dir.glob(dir + "**/*")
+      files.each do |f|
         # Go through all files
-        parse f
+        parse f unless File.directory?(f)
       end
     end
     def parse(f)
