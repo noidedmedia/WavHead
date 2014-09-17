@@ -1,42 +1,33 @@
-require 'singleton'
-require 'pqueue'
+require 'optparse'
+require 'sinatra/base'
+require_relative './lib/db'
+require_relative './lib/wav_head_player'
+require_relative './lib/wav_head_info'
+require_relative './lib/wav_head_server'
+opts = {}
+OptionParser.new do |o|
+  o.banner = "Usage: wav_head.rb [options]"
+  o.on("-s", "--server", "Run a server") do |v|
+    opts[:server] = true
+  end
+  o.on("-p", "--port PORT", Integer, "Run on a specific port") do |p|
+    opts[:port] = p
+  end
+  o.on("-i", "--index", "Index a directory") do |i|
+    opts[:index] = i
+  end
+  o.on("-l", "--list", "List all songs") do |l|
+    opts[:list] = true
+  end
 
-class WavHead
-  def initialize()
-    @song_votes = {}
-    @queue = PQueue.new do |x, y|
-      @song_votes[x] <=> @song_votes[y]
-    end
-  end
-  def vote(song)
-    if num_votes = @song_votes[song]
-      @song_votes[song] = num_votes + 1
-    else
-      @song_votes[song] = 1
-    end
-    @queue << song unless @queue.include? song
-    @queue = PQueue.new(@queue){|x,y| @song_votes[x] <=> @song_votes[y]}
-    return true
-  end
-  def count
-    @queue.size
-  end
-  def get
-    @queue.pop
-  end
-  def next
-    @queue.top if @queue
-  end
-  def start
-    Thread.new do
-      play
-    end
-  end
-  def play
-    loop do
-      if @queue && @queue.size > 0
-        `mplayer "#{@queue.pop.path}"`
-      end
-    end
-  end
+end.parse!
+
+WavHead::Info.instance.setup(opts[:index]) if opts[:index]
+puts WavHead::Info.instance.pretty_print if opts[:list]
+if opts[:server]
+  puts "Starting a server..." 
+  WavHead::Server.set :p, WavHead::Player.new
+  WavHead::Server.set :port, opts[:port] if opts[:port]
+  WavHead::Server.set :bind, "0.0.0.0"
+  WavHead::Server.run!
 end

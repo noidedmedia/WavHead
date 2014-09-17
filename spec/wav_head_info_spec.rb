@@ -1,8 +1,6 @@
 require 'rspec'
-require_relative '../db'
-require_relative '../wav_head_info.rb'
-require_relative '../wav_head.rb'
-RSpec.describe WavHead do
+require_relative '../wav_head_player.rb'
+RSpec.describe WavHead::Player do
   let(:song1){ "song1" }
   let(:song2){ "song2" }
   it "Adds items to the queue" do
