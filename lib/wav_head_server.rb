@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './db'
+require_relative './db'
 require_relative './wav_head_info.rb'
 module WavHead
   class Server < Sinatra::Base

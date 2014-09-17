@@ -6,12 +6,14 @@ DataMapper.setup(:default, "sqlite://#{Dir.pwd}/.db.sqlite")
 class Song
   include DataMapper::Resource
   property :id, Serial
-  property :title, String
-  property :path, String, length: 300, required: true
+  property :title, String, length: 300
+  property :path, String, length: 400, required: true
   property :length, Integer, required: true
   belongs_to :album
   has 1, :artist, {through: :album}
-
+  before :save do |song|
+    song.title.gsub("/","%2F")
+  end
 end
 
 class Album

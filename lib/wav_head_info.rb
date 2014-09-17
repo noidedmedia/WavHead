@@ -4,10 +4,9 @@ require 'taglib'
 require_relative './db'
 module WavHead
   class Info
-
     include Singleton
     def setup(dir)
-      @dir = dir ? dir : "#{Dir.home}/Music" # by default, use the user's music folder
+      @dir = dir.is_a?(String) ?  dir : "#{Dir.home}/Music" # by default, use the user's music folder
       @dir = @dir +  "/" unless @dir[-1] == "/"
       self.parse_all
     end
@@ -21,11 +20,8 @@ module WavHead
     end
     def parse(f)
       info = get_info(f)
-
       artist = Artist.first_or_create(name: info[:artist])
-      puts "Artist: #{artist.name}"
       album = Album.first_or_create(title: info[:album], artist: artist)
-      puts "Album: #{album.title}"
       song = Song.new
       unless(Song.first(path: f) || Song.first(title: info[:title], length: info[:length], album: info[:album]))
         # If there's another song with the same name and same length,
@@ -35,8 +31,6 @@ module WavHead
                            path: f,
                            length: info[:length]}
         if song.save
-          puts "Made a song: #{song.inspect}"
-          puts ""
         else
           puts "Song could not be saved! #{song.inspect}"
           puts "Got errors: #{song.errors.inspect}"
@@ -58,5 +52,22 @@ module WavHead
       end
       return i
     end
+    def pretty_print
+      str = ""
+      Artist.all.each do |a|
+        str << "#{a.name}\n"
+        a.albums.each do |a|
+          str << "\t#{a.title}\n"
+          a.songs.each do |s|
+            time_str = Time.at(s.length).utc.strftime("%H:%M:%S")
+            str << "\t\t #{s.title} (#{time_str})\n"
+          end
+          str << "\n"
+        end
+        str << "\n\s"
+      end
+      return str
+    end
   end
 end
+
