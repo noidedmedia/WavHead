@@ -1,0 +1,8 @@
+<h1><%= @album.title %></h1>
+<div class="artlist">
+  <% @songs.each do |s| %>
+    <div class="artlistitem">
+      <a href="/browse/<%= @artist.name %>/<%= @album.title %>/<%= s.title %>"><%= s.title %></a>
+    </div>
+  <% end %>
+</div>

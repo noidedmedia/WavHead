@@ -3,11 +3,6 @@ require_relative './db'
 require_relative './wav_head_info.rb'
 module WavHead
   class Server < Sinatra::Base
-    def setup(options = {})
-      @head = WavHead::Server.new
-      set :port, options[:port] if options[:port]
-      set :bind, '0.0.0.0'
-    end
     get '/' do
       @artists = Artist.all
       erb :home

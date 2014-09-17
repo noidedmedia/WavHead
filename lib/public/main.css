@@ -1,0 +1,20 @@
+.artlistitem{
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 4px;
+  
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  flex-grow: 1;
+}
+.artlistitem a{
+  text-decoration: none;
+  color: black;
+}
+.artlist{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

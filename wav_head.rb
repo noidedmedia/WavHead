@@ -32,6 +32,7 @@ WavHead::Info.instance.delete! if opts[:delete]
 if opts[:server]
   puts "Starting a server..." 
   WavHead::Server.set :p, WavHead::Player.new
+  WavHead::Server.settings.p.start!
   WavHead::Server.set :port, opts[:port] if opts[:port]
   WavHead::Server.set :bind, "0.0.0.0"
   WavHead::Server.run!

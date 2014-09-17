@@ -34,7 +34,7 @@ module WavHead
     def next
       @queue.top if @queue
     end
-    def start
+    def start!
       Thread.new do
         play
       end
