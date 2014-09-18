@@ -26,9 +26,9 @@ OptionParser.new do |o|
 
 end.parse!
 
-WavHead::Info.instance.setup(opts[:index]) if opts[:index]
-puts WavHead::Info.instance.pretty_print if opts[:list]
-WavHead::Info.instance.delete! if opts[:delete]
+WavHead::Info.setup(opts[:index]) if opts[:index]
+puts WavHead::Info.pretty_print if opts[:list]
+WavHead::Info.delete! if opts[:delete]
 if opts[:server]
   puts "Starting a server..." 
   WavHead::Server.set :p, WavHead::Player.new

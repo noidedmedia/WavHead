@@ -1,27 +1,24 @@
-
-require 'singleton'
 require 'taglib'
 require_relative './db'
 module WavHead
-  class Info
-    include Singleton
-    def delete!
+  module Info
+    def self.delete!
       File.delete("./.db.sqlite")
     end
-    def setup(d)
+    def self.setup(d)
       dir = d.is_a?(String) ?  d : "#{Dir.home}/Music" # by default, use the user's music folder
       dir = dir +  "/" unless dir[-1] == "/"
       self.parse_all(dir)
     end
 
-    def parse_all(dir)
+    def self.parse_all(dir)
       files = Dir.glob(dir + "**/*")
       files.each do |f|
         # Go through all files
         parse f unless File.directory?(f)
       end
     end
-    def parse(f)
+    def self.parse(f)
       info = get_info(f)
       artist = Artist.first_or_create(name: info[:artist])
       album = Album.first_or_create(title: info[:album], artist: artist)
@@ -42,7 +39,7 @@ module WavHead
       end
     end
 
-    def get_info(f)
+    def self.get_info(f)
       i = {}
       TagLib::FileRef.open(f) do |f|
         unless f.null?
@@ -57,7 +54,7 @@ module WavHead
       end
       return i
     end
-    def pretty_print
+    def self.pretty_print
       str = ""
       Artist.all.each do |a|
         str << "#{a.name}\n"
