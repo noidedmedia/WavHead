@@ -1,27 +1,33 @@
+/* Styles effecting all pages on the site. */
 html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-
-.artlistitem{
-  display: inline-block;
-  border: 2px solid black;
-  border-radius: 4px;
-  
-  width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  flex-grow: 1;
+h1{
+  font-weight: 200;
 }
 
-.artlistitem a{
-  text-decoration: none;
-  color: black;
-}
-
+/* The div that contains all artists/albums/songs on each page. */
 .artlist{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+/* Styling for the container of each respective artist/album/song. */
+.artlistitem{
+  display: inline-block;
+  border: 1px solid #333333;
+
+  width: 200px;
+  padding: 10px 5px;
+  margin: 2px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
+.artlistitem a{
+  text-decoration: none;
+  color: black;
 }
