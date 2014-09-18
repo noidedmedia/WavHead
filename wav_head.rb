@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'optparse'
 require 'sinatra/base'
 require_relative './lib/db'
