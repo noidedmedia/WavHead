@@ -6,6 +6,7 @@ DataMapper.setup(:default, "sqlite://#{Dir.pwd}/.db.sqlite")
 class Song
   include DataMapper::Resource
   property :id, Serial
+  property :track, Integer
   property :title, String, length: 300
   property :path, String, length: 400, required: true
   property :length, Integer, required: true

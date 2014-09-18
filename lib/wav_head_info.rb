@@ -32,7 +32,8 @@ module WavHead
         song.attributes = {title: info[:title],
                            album: album,
                            path: f,
-                           length: info[:length]}
+                           length: info[:length],
+                           track: info[:track]}
         if song.save
         else
           puts "Song could not be saved! #{song.inspect}"
@@ -48,6 +49,7 @@ module WavHead
           tag = f.tag
           prop = f.audio_properties
           i[:artist] = tag.artist
+          i[:track] = tag.track
           i[:album] = tag.album
           i[:title] = tag.title
           i[:length] = prop.length
@@ -61,7 +63,7 @@ module WavHead
         str << "#{a.name}\n"
         a.albums.each do |a|
           str << "\t#{a.title}\n"
-          a.songs.each do |s|
+          a.songs.sort{|x, y| x.track <=> y.track }.each do |s|
             time_str = Time.at(s.length).utc.strftime("%H:%M:%S")
             str << "\t\t #{s.title} (#{time_str})\n"
           end

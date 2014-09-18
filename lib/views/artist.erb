@@ -1,4 +1,8 @@
 <h1><%= @artist.name %></h1>
-<% @artist.albums.each do |a| %>
+<div class="artlist">
+  <% @artist.albums.each do |a| %>
+    <div class="artlistitem">
   <a href="/browse/<%= @artist.name %>/<%= a.title %>"><%= a.title %></a>
+</div>
 <% end %>
+</div>
