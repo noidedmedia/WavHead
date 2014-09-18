@@ -1,3 +1,8 @@
+html, body{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
 .artlistitem{
   display: inline-block;
   border: 2px solid black;
@@ -9,10 +14,12 @@
   text-align: center;
   flex-grow: 1;
 }
+
 .artlistitem a{
   text-decoration: none;
   color: black;
 }
+
 .artlist{
   display: flex;
   flex-direction: row;
