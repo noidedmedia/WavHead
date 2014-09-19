@@ -55,12 +55,12 @@ module WavHead
     # Start with one vote by default
     def initialize(song)
       self.song = song
-      self.vote = 1
+      self.votes = 1
     end
     attr_accessor :song
     attr_accessor :votes
     def <=>(other)
-      self.vote <=> other.vote
+      self.votes <=> other.votes
     end
   end
 end
