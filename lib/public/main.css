@@ -47,6 +47,12 @@ html, body{
   color: black;
 }
 
+/* Prevent overflow of the cover art */
+.artlistitem a img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
 /* Styling for the footer that will hold the music scrubber, song information, etc. */
 #footer{
   z-index: 100;
