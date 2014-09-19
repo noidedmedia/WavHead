@@ -16,7 +16,7 @@ module WavHead
     def vote(song)
       if vote = @song_votes[song]
         # Incriment the vote count
-        vote.votes = vote.votes + 1
+        vote.vote!
       else
         @song_votes[song] = SongVote.new(song)
       end
@@ -41,7 +41,7 @@ module WavHead
       loop do
         if @queue && @queue.size > 0
           @current = @queue.pop
-          `#{@command} "#{current.path}"`
+          `#{@command} "#{@current.path}"`
         end
       end
     end
@@ -55,12 +55,15 @@ module WavHead
     # Start with one vote by default
     def initialize(song)
       self.song = song
-      self.vote = 1
+      @votes = 1
     end
     attr_accessor :song
-    attr_accessor :votes
+    attr_reader :votes
     def <=>(other)
-      self.vote <=> other.vote
+      self.votes <=> other.votes
+    end
+    def vote!
+      @votes = @votes + 1
     end
   end
 end

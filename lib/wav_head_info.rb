@@ -1,5 +1,6 @@
 require 'taglib'
 require_relative './db'
+require_relative './wav_head_art_parser'
 module WavHead
   module Info
     def self.delete!
@@ -18,6 +19,9 @@ module WavHead
         # Go through all files
         parse f unless File.directory?(f)
       end
+      ## 
+      # Album art is parsed by another module
+      WavHead::ArtParser.parse!
     end
     def self.parse(f)
       info = get_info(f)
@@ -33,9 +37,9 @@ module WavHead
                            length: info[:length],
                            track: info[:track]}
         if song.save
+          puts "Song at path #{f} was saved. Woohoo!"
         else
-          puts "Song could not be saved! #{song.inspect}"
-          puts "Got errors: #{song.errors.inspect}"
+          puts "Song at path #{f} was not saved, skipping..."
         end
       end
     end
