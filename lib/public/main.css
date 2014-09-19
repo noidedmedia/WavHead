@@ -13,13 +13,17 @@ html, body{
 /* Styling for the container of each respective artist/album/song. */
 .artlistitem{
   display: inline-block;
-  border: 1px solid #333333;
+  border-top: 1px solid #333333;
 
-  width: 200px;
+  width: 100%;
   padding: 10px 5px;
-  margin: 2px;
+  margin: 0px;
   text-align: center;
   flex-grow: 1;
+}
+
+.artlistitem:last-child{
+  border-bottom: 1px solid #333333;
 }
 
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
@@ -29,12 +33,22 @@ html, body{
 }
 
 #footer{
+  z-index: 100;
   position: fixed;
   left: 0px;
   bottom: 0px;
   height: 60px;
   width: 100%;
   border-top: 1px solid #AAAAB2;
+  background-color: white;
+
+  box-shadow: 0px 0px 20px 3px rgba(170,170,178,0.25);
+}
+
+#footerbuffer{
+  position: relative;
+  bottom: 0px;
+  height: 60px;
 }
 
 #breadcrumbs{
@@ -45,4 +59,9 @@ html, body{
 
 #breadcrumbs a{
   color: black;
+  text-decoration: none;
+}
+
+#breadcrumbs a:hover{
+  text-decoration: underline;
 }
