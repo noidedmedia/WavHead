@@ -1,11 +1,11 @@
 <div id="breadcrumbs">
-  <a href="/">WavHead</a> &lt; <%= @artist.name %>
+  <a href="/">WavHead</a> > <span class="boldbreadcrumb"><%= @artist.name %></span>
 </div>
 
 <div class="artlist">
   <% @artist.albums.each do |a| %>
     <a href="/browse/<%= @artist.name %>/<%= a.title %>">
-      <div class="artlistitem">
+      <div class="albumlistitem">
         <% if a.art_path %>
           <img src="/cover/<%= @artist.name %>/<%= a.title %>">
           <br>

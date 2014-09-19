@@ -1,10 +1,10 @@
 <div id="breadcrumbs">
-	<a href="/">WavHead</a> > <%= @artist.name %> > <%= @album.title %>
+  <a href="/">WavHead</a> > <a href="/browse/<%= @artist.name %>"><%= @artist.name %></a> > <span class="boldbreadcrumb"><%= @album.title %></span>
 </div>
 
 <div class="artlist">
   <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
-    <div class="artlistitem">
+    <div class="songlistitem">
       <a href="/browse/<%= @artist.name %>/<%= @album.title %>/<%= s.title %>"><%= s.title %></a>
     </div>
   <% end %>
