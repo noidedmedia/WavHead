@@ -1,4 +1,4 @@
-<h1><%= @album.title %></h1>
+<h1>WavHead > <%= @artist.name %> > <%= @album.title %></h1>
 <div class="artlist">
   <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
     <div class="artlistitem">
