@@ -1,4 +1,7 @@
-<h1><%= @artist.name %></h1>
+<div id="breadcrumbs">
+	<a href="/">WavHead</a> > <%= @artist.name %>
+</div>
+
 <div class="artlist">
   <% @artist.albums.each do |a| %>
     <div class="artlistitem">
