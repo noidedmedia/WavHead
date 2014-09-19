@@ -3,12 +3,12 @@ html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   font-weight: 200;
-  background-color: #000000;
+  background-color: #FFFFFF;
   height: 100%;
 }
 
 #masthead{
-  background-color: #000000;
+  background-color: #FFFFFF;
   position: relative;
   margin: 0px 10px 0px 0px;
   display: flex;
@@ -29,6 +29,7 @@ html, body{
   padding: 10px 5px;
   margin: 0px;
   text-align: center;
+  align-items: flex-start;
 }
 
 /* This forces a bottom border for the final listed item. */
@@ -55,7 +56,7 @@ html, body{
   height: 50px;
   width: 100%;
   border-top: 1px solid #AAAAB2;
-  background-color: #000000;
+  background-color: #FFFFFF;
 
   box-shadow: 0px 0px 20px 3px rgba(170,170,178,0.25);
 }
@@ -89,7 +90,7 @@ html, body{
 #header{
   border-bottom: 1px solid #AAAAB2;
   background-color: #F5F5F5;
-  color: white;
+  color: #000000;
   font-size: 24px;
   font-weight: 500;
   padding: 10px;
@@ -97,7 +98,7 @@ html, body{
 
 #header a{
   text-decoration: none;
-  color: white;
+  color: #000000;
 }
 
 .githublink{
