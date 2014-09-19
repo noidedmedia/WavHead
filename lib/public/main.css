@@ -1,6 +1,8 @@
 /* Styles effecting all pages on the site. */
 html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-weight: 200;
 }
 
 /* The div that contains all artists/albums/songs on each page. */
@@ -13,7 +15,7 @@ html, body{
 /* Styling for the container of each respective artist/album/song. */
 .artlistitem{
   display: inline-block;
-  border-top: 1px solid #333333;
+  border-top: 1px solid #AAAAB2;
 
   width: 100%;
   padding: 10px 5px;
@@ -24,7 +26,11 @@ html, body{
 
 /* This forces a bottom border for the final listed item. */
 .artlistitem:last-child{
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #AAAAB2;
+}
+
+.artlistitem:first-child{
+  border-top: none;
 }
 
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
@@ -39,7 +45,7 @@ html, body{
   position: fixed;
   left: 0px;
   bottom: 0px;
-  height: 60px;
+  height: 50px;
   width: 100%;
   border-top: 1px solid #AAAAB2;
   background-color: white;
@@ -51,14 +57,15 @@ html, body{
 #footerbuffer{
   position: relative;
   bottom: 0px;
-  height: 60px;
+  height: 50px;
 }
 
 /* Styling for the the breadcrumbs, aka directories (e.g. WavHead > Daft Punk > Random Access Memories > Get Lucky) */
 #breadcrumbs{
-  font-size: 24px;
-  font-weight: 200;
-  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 0px 10px 0px;
+  border-bottom: 1px solid #AAAAB2;
 }
 
 #breadcrumbs a{
@@ -68,4 +75,33 @@ html, body{
 
 #breadcrumbs a:hover{
   text-decoration: underline;
+}
+
+#header{
+  border-bottom: 1px solid #AAAAB2;
+  background-color: #F5F5F5;
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+#header a{
+  text-decoration: none;
+  color: black;
+}
+
+.githublink{
+  color: black;
+  font-size: 16px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+#header a:hover, .githublink a:hover{
+  text-decoration: underline;
+}
+
+#content{
+  margin: 0px 10px;
 }
