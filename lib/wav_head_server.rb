@@ -3,6 +3,8 @@ require_relative './db'
 require_relative './wav_head_info.rb'
 module WavHead
   class Server < Sinatra::Base
+    disable :logging
+    set :enviroment, :production # We're in production mode by default
     get '/' do
       @artists = Artist.all
       erb :home

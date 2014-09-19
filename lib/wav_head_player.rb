@@ -41,7 +41,13 @@ module WavHead
       loop do
         if @queue && @queue.size > 0
           @current = @queue.pop
-          `#{@command} "#{current.path}"`
+          puts 80.times.map{|x| "#"}.join("")
+          puts "Playing song #{@current.title}"
+          puts "(#{@current.path})"
+          puts "(#{@command} \"#{@current.path}\""
+          puts 80.times.map{|x| "#"}.join("")
+
+          `#{@command} "#{@current.path}"`
         end
       end
     end
