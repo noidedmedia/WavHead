@@ -22,40 +22,57 @@ module WavHead
           TagLib::MPEG::File.open(s.path) do |f|
             # We try to grab a cover
             tag = f.id3v2_tag
-            cover = tag.frame_list('APIC').first
-            unless cover.nil?
-              picture = cover.picture
-              mime = cover.mime_type
-              if picture && mime
-                puts "Adding cover art to album #{a.title}..."
-                save_for!(picture, mime, a)
-              end
-            end
+            parse_id3(tag, a) # Parse unless it has the art already
           end
         end
       end
     end
-    # Save some data as the album cover
-    def self.save_for!(data, mime, album)
-      ext = get_ext(mime)
-      # Path to save the file to
-      path = "#{ART_PATH}/#{album.id}.#{ext}"
-      puts "Saving cover for #{album.title} in #{path}"
-      File.open(path, "w"){|f| f.write(data)}
-      album.art_path = path
-      album.save
+    def self.parse_flac!
+      Song.all(:path.like => "%.flac").each do |s|
+        a = s.album
+        unless a.art_path # if the art path isn't saved
+          puts "Attempting to add cover art for #{a.title}"
+          TagLib::FLAC::File.open(s.path) do |f|
+            tag = f.id3v2_tag
+            parse_id3(tag, a) unless a.art_path # Parse unless it has the art already
+          end
+        end
+      end
     end
-    # Convert a MIME-type into a file ext 
-    def self.get_ext(m)
-      case m
-      when "image/jpg", "image/jpeg"
-        return "jpg"
-      when "image/gif"
-        return "gif"
-      when "image/png"
-        return "png"
+    # Parse an ID3 tag 
+    def self.parse_id3(tag, a)
+      cover = tag.frame_list('APIC').first
+      unless cover.nil? # If there's a cover in the song...
+        picture = cover.picture
+        mime = cover.mime_type
+        if picture && mime
+          puts "Adding cover art to album #{a.title}..."
+          save_for!(picture, mime, a)
+        end
+      end
+    end
+
+      # Save some data as the album cover
+      def self.save_for!(data, mime, album)
+        ext = get_ext(mime)
+        # Path to save the file to
+        path = "#{ART_PATH}/#{album.id}.#{ext}"
+        puts "Saving cover for #{album.title} in #{path}"
+        File.open(path, "w"){|f| f.write(data)}
+        album.art_path = path
+        album.save
+      end
+      # Convert a MIME-type into a file ext 
+      def self.get_ext(m)
+        case m
+        when "image/jpg", "image/jpeg"
+          return "jpg"
+        when "image/gif"
+          return "gif"
+        when "image/png"
+          return "png"
+        end
       end
     end
   end
-end
 
