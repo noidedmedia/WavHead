@@ -42,3 +42,7 @@ html, body{
   font-weight: 200;
   padding-bottom: 10px;
 }
+
+#breadcrumbs a{
+  color: black;
+}

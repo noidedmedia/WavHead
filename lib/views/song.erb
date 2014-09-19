@@ -1,4 +1,6 @@
-<div id="breadcrumbs">WavHead > <%= @artist.name %> > <%= @album.title %> > <%= @song.title %></div>
+<div id="breadcrumbs">
+	<a href="/">WavHead</a> > <%= @artist.name %> > <%= @album.title %> > <%= @song.title %>
+</div>
 
 <form action="<%= @song.title %>/vote" method="post">
   <input type="submit" name="vote" value="Upvote">
