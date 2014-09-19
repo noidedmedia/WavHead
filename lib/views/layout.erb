@@ -6,11 +6,30 @@
   </head>
 
   <body>
-    <%= yield %>
-  
-    <div id="footer">
-      
+
+    <div id="header">
+      <a href="/">WavHead</a>
+      <a href="https://github.com/SHTheSuper/WavHead" class="githublink">(View on GitHub)</a>
     </div>
+
+    <div id="masthead">
+
+      <div id="sidebarcontainer">
+
+        <div id="sidebar">
+          Queue
+        </div>
+
+      </div>
+
+      <div id="content">
+        <%= yield %>
+      </div>
+
+    </div>
+
+    <div id="footerbuffer"></div>
+    <div id="footer"></div>
   </body>
 
 </html>
