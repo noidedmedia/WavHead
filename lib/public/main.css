@@ -3,25 +3,33 @@ html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   font-weight: 200;
+  background-color: #FFFFFF;
+  height: 100%;
+}
+
+#masthead{
+  background-color: #FFFFFF;
+  position: relative;
+  margin: 0px 10px 0px 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 100%;
 }
 
 /* The div that contains all artists/albums/songs on each page. */
 .artlist{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 /* Styling for the container of each respective artist/album/song. */
 .artlistitem{
-  display: inline-block;
   border-top: 1px solid #AAAAB2;
 
   width: 100%;
   padding: 10px 5px;
   margin: 0px;
   text-align: center;
-  flex-grow: 1;
+  align-items: flex-start;
 }
 
 /* This forces a bottom border for the final listed item. */
@@ -48,7 +56,7 @@ html, body{
   height: 50px;
   width: 100%;
   border-top: 1px solid #AAAAB2;
-  background-color: white;
+  background-color: #FFFFFF;
 
   box-shadow: 0px 0px 20px 3px rgba(170,170,178,0.25);
 }
@@ -66,6 +74,8 @@ html, body{
   font-weight: 400;
   padding: 10px 0px 10px 0px;
   border-bottom: 1px solid #AAAAB2;
+  width: 100%;
+  height: auto;
 }
 
 #breadcrumbs a{
@@ -80,7 +90,7 @@ html, body{
 #header{
   border-bottom: 1px solid #AAAAB2;
   background-color: #F5F5F5;
-  color: black;
+  color: #000000;
   font-size: 24px;
   font-weight: 500;
   padding: 10px;
@@ -88,11 +98,11 @@ html, body{
 
 #header a{
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
 .githublink{
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: 200;
   text-decoration: none;
@@ -103,5 +113,31 @@ html, body{
 }
 
 #content{
+  background-color: #FFFFFF;
+  position: relative;
+  min-width: 200px;
+  min-height: 100%;
   margin: 0px 10px;
+  flex-grow: 3;
+  flex-flow: row wrap;
+  order: 2;
+}
+
+#sidebarcontainer{
+  background-color: #FFFFFF;
+  position: static;
+  min-height: 100%;
+  border-right: 1px solid #AAAAB2;
+  padding: 10px;
+  width: auto;
+  min-width: 200px;
+  flex-grow: 1;
+  order: 1;
+}
+
+#sidebar{
+  min-height: 100%;
+  font-size: 16px;
+  width: auto;
+  color: #000000;
 }
