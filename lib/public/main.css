@@ -9,7 +9,6 @@ html, body{
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 /* Styling for the container of each respective artist/album/song. */
 .artlistitem{
   display: inline-block;
@@ -21,7 +20,11 @@ html, body{
   text-align: center;
   flex-grow: 1;
 }
-
+/* Prevent overflow of the cover art */
+.artlistitem a img{
+  max-width: 80%;
+  max-height: 80%;
+}
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
 .artlistitem a{
   text-decoration: none;

@@ -8,7 +8,7 @@ class Song
   property :id, Serial
   property :track, Integer
   property :title, String, length: 300
-  property :path, String, length: 400, required: true
+  property :path, String, length: 600, required: true
   property :length, Integer, required: true
   belongs_to :album
   has 1, :artist, {through: :album}
@@ -21,6 +21,7 @@ class Album
   include DataMapper::Resource
   property :id, Serial
   property :title, String
+  property :art_path, String, length: 600
   belongs_to :artist, required: true
   has n, :songs
 

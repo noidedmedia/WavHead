@@ -1,11 +1,17 @@
 <div id="breadcrumbs">
-	<a href="/">WavHead</a> > <%= @artist.name %>
+  <a href="/">WavHead</a> &lt; <%= @artist.name %>
 </div>
 
 <div class="artlist">
   <% @artist.albums.each do |a| %>
-    <div class="artlistitem">
-  <a href="/browse/<%= @artist.name %>/<%= a.title %>"><%= a.title %></a>
-</div>
-<% end %>
+    <a href="/browse/<%= @artist.name %>/<%= a.title %>">
+      <div class="artlistitem">
+        <% if a.art_path %>
+          <img src="/cover/<%= @artist.name %>/<%= a.title %>">
+          <br>
+        <% end %>
+        <%= a.title %>
+      </a>
+    </div>
+  <% end %>
 </div>

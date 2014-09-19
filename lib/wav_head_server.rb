@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'base64'
 require_relative './db'
 require_relative './wav_head_info.rb'
 module WavHead
@@ -30,7 +31,11 @@ module WavHead
       settings.p.vote(@song)
       redirect to("/")
     end
-
+    get "/cover/:artist/:album" do
+      @artist = Artist.first(name: params[:artist])
+      @album = Album.first(title: params[:album], artist: @artist)
+      send_file @album.art_path
+    end
     get "/upnext" do
       @next = settings.p.next
       erb :upnext
