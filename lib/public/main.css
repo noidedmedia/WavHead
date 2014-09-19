@@ -5,6 +5,7 @@ html, body{
   font-weight: 200;
   background-color: #eceff1;
   height: 100%;
+}
 
 #masthead{
   background-color: #eceff1;
@@ -17,26 +18,22 @@ html, body{
 
 /* The div that contains all artists/albums/songs on each page. */
 .artlist{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 /* Styling for the container of each respective artist/album/song. */
 .artlistitem{
-  display: inline-block;
-  border-top: 1px solid #AAAAB2;
+  border-top: 1px solid #455a64;
 
   width: 100%;
   padding: 10px 5px;
   margin: 0px;
   text-align: center;
-  flex-grow: 1;
 }
 
 /* This forces a bottom border for the final listed item. */
 .artlistitem:last-child{
-  border-bottom: 1px solid #AAAAB2;
+  border-bottom: 1px solid #455a64;
 }
 
 .artlistitem:first-child{
@@ -57,8 +54,8 @@ html, body{
   bottom: 0px;
   height: 50px;
   width: 100%;
-  border-top: 1px solid #AAAAB2;
-  background-color: white;
+  border-top: 1px solid #455a64;
+  background-color: #eceff1;
 
   box-shadow: 0px 0px 20px 3px rgba(170,170,178,0.25);
 }
@@ -75,7 +72,9 @@ html, body{
   font-size: 16px;
   font-weight: 400;
   padding: 10px 0px 10px 0px;
-  border-bottom: 1px solid #AAAAB2;
+  border-bottom: 1px solid #455a64;
+  width: 100%;
+  height: auto;
 }
 
 #breadcrumbs a{
@@ -88,9 +87,9 @@ html, body{
 }
 
 #header{
-  border-bottom: 1px solid #AAAAB2;
-  background-color: #F5F5F5;
-  color: black;
+  border-bottom: 1px solid #455a64;
+  background-color: #607d8b;
+  color: white;
   font-size: 24px;
   font-weight: 500;
   padding: 10px;
@@ -98,11 +97,11 @@ html, body{
 
 #header a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .githublink{
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: 200;
   text-decoration: none;
@@ -113,5 +112,32 @@ html, body{
 }
 
 #content{
+  background-color: #eceff1;
+  position: relative;
+  min-width: 200px;
+  min-height: 100%;
   margin: 0px 10px;
+  display: inline-flex;
+  flex-grow: 3;
+  flex-flow: row wrap;
+  order: 2;
+}
+
+#sidebarcontainer{
+  background-color: #78909c;
+  position: static;
+  min-height: 100%;
+  border-right: 1px solid #455a64;
+  padding: 10px;
+  width: auto;
+  min-width: 200px;
+  flex-grow: 1;
+  order: 1;
+}
+
+#sidebar{
+  min-height: 100%;
+  font-size: 16px;
+  width: auto;
+  color: #FFFFFF;
 }
