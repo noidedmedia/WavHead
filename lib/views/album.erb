@@ -1,5 +1,5 @@
 <div id="breadcrumbs">
-	<a href="/">WavHead</a> > <%= @artist.name %> > <%= @album.title %>
+	<a href="/">WavHead</a> > <a href="/browse/<%= @artist.name %>"><%= @artist.name %></a> > <span class="boldbreadcrumb"><%= @album.title %></span>
 </div>
 
 <div class="artlist">

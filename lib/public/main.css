@@ -182,3 +182,7 @@ html, body{
 .upvotebutton:active{
   background-color: #f5f5f5;
 }
+
+.boldbreadcrumb{
+  font-weight: 500;
+}
