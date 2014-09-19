@@ -118,7 +118,6 @@ html, body{
   min-width: 200px;
   min-height: 100%;
   margin: 0px 10px;
-  display: inline-flex;
   flex-grow: 3;
   flex-flow: row wrap;
   order: 2;
