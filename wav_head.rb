@@ -14,7 +14,7 @@ OptionParser.new do |o|
   o.on("-p", "--port PORT", Integer, "Run on a specific port") do |p|
     opts[:port] = p
   end
-  o.on("-i", "--index", "Index a directory") do |i|
+  o.on("-i", "--index DIR", "Index a directory") do |i|
     opts[:index] = i
   end
   o.on("-l", "--list", "List all songs") do |l|

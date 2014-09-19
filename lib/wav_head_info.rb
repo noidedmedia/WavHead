@@ -6,8 +6,9 @@ module WavHead
       File.delete("./.db.sqlite")
     end
     def self.setup(d)
-      dir = d.is_a?(String) ?  d : "#{Dir.home}/Music" # by default, use the user's music folder
+      dir = d.is_a?(String) ? d : "#{Dir.home}/Music" # by default, use the user's music folder
       dir = dir +  "/" unless dir[-1] == "/"
+      puts "Indexing #{dir}"
       self.parse_all(dir)
     end
 
