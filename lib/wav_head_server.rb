@@ -4,18 +4,23 @@ require_relative './db'
 require_relative './wav_head_info.rb'
 module WavHead
   class Server < Sinatra::Base
+    before do
+      @queue = settings.p.top(10)
+    end
+
     get '/' do
-      @artists = Artist.all
+      @artists = Artist.all(order: [:name.asc])
       erb :home
     end
     get "/browse/:artist" do
       @artist = Artist.first(name: params[:artist])
+      @albums = Album.all(artist: @artist, order: [:title.asc])
       erb :artist
     end
     get "/browse/:artist/:album" do
       @artist = Artist.first(name: params[:artist])
       @album = Album.first(title: params[:album], artist: @artist)
-      @songs = Song.all(album: @album)
+      @songs = Song.all(album: @album, order: [:track.asc])
       erb :album
     end
     get "/browse/:artist/:album/:song" do
