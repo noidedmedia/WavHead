@@ -1,5 +1,6 @@
 require 'singleton'
 require 'pqueue'
+require 'json'
 module WavHead
   class Player
     attr_reader :current
@@ -41,8 +42,12 @@ module WavHead
     def play
       loop do
         if @queue && @queue.size > 0
-          @current = CurrentSong.new(@queue.pop)
-          `#{@command} "#{@current.song.path}"`
+          song = @queue.pop
+          @current = CurrentSong.new(song)
+          puts "Running a song!"
+          puts "#{@command} #{song.path}"
+          puts "#########################################"
+          `#{@command} "#{song.path}"`
         end
       end
     end
@@ -78,8 +83,19 @@ module WavHead
       @start_time = Time.new
       @end_time = @start_time + @song.length
     end
-    attr_reader :song
-    attr_reader :start_time
-    attr_reader :end_time
+    def to_json
+      hash = {}
+      hash[:title] = @song.title
+      hash[:album] = @song.album.title
+      hash[:artist] = @song.artist.name
+      hash[:start_time] = @start_time
+      hash[:end_time] = @end_time
+      hash[:duration] = @song.length
+      hash.to_json
+    end
+
   end
+  attr_reader :song
+  attr_reader :start_time
+  attr_reader :end_time
 end

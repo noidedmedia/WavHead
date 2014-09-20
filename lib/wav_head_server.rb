@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'base64'
+require 'json'
 require_relative './db'
 require_relative './wav_head_info.rb'
 module WavHead
@@ -7,7 +7,10 @@ module WavHead
     before do
       @queue = settings.p.top(10)
     end
-
+    get '/current.json' do
+      content_type :json
+      settings.p.current.to_json
+    end
     get '/' do
       @artists = Artist.all(order: [:name.asc])
       erb :home
