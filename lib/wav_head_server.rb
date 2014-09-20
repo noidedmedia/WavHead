@@ -6,6 +6,7 @@ module WavHead
   class Server < Sinatra::Base
     before do
       @queue = settings.p.top(10)
+      @current = settings.p.current
     end
     get '/current.json' do
       content_type :json

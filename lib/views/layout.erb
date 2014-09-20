@@ -29,7 +29,13 @@
     </div>
 
     <div id="footerbuffer"></div>
-    <div id="footer"></div>
+    <div id="footer">
+
+    <% if @current %>
+      <%= @current.song.album.title %>
+    <% end %>
+    
+    </div>
   </body>
 
 </html>
