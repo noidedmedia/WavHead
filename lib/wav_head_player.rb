@@ -93,9 +93,8 @@ module WavHead
       hash[:duration] = @song.length
       hash.to_json
     end
-
+    attr_reader :song
+    attr_reader :start_time
+    attr_reader :end_time
   end
-  attr_reader :song
-  attr_reader :start_time
-  attr_reader :end_time
 end
