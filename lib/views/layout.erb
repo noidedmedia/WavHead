@@ -32,9 +32,18 @@
     <div id="footer">
 
     <% if @current %>
-      <%= @current.song.title %>
-      <br>
-      <%= @current.song.artist.title %> — <%= @current.song.album.title %>
+      <div class="songprogress">
+        <%= @current.song.length %> seconds
+      </div>
+
+      <div class="songtitle">
+        <%= @current.song.title %>
+      </div>
+
+      <div class="artistalbumtitle">
+        <%= @current.song.artist.title %> — <%= @current.song.album.title %>
+      </div>
+
     <% else %>
       Nothing is playing right now.
     <% end %>

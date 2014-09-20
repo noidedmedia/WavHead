@@ -121,9 +121,30 @@ html, body{
 
 /* A buffer that will prevent the footer from displaying over content. */
 #footerbuffer{
-  position: relative;
+  position: absolute;
   bottom: 0px;
   height: 70px;
+}
+
+.songprogress{
+  line-height: 1.2em;
+  color: black;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.songtitle{
+  line-height: 1.5em;
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.artistalbumtitle{
+  line-height: 1.2em;
+  color: black;
+  font-weight: 200;
+  font-size: 16px;
 }
 
 
