@@ -75,7 +75,7 @@ module WavHead
     def initialize(song)
       @song = song
       @start_time = Time.new
-      @end_time = @start_time + @song.duration
+      @end_time = @start_time + @song.length
     end
     attr_reader :song
     attr_reader :start_time
