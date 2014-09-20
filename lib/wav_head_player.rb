@@ -45,6 +45,9 @@ module WavHead
         end
       end
     end
+    def top(num)
+      @queue.to_a.take(num)
+    end
   end
 
   ###################################################
