@@ -45,9 +45,5 @@ module WavHead
       @album = Album.first(title: params[:album], artist: @artist)
       send_file @album.art_path
     end
-    get "/upnext" do
-      @next = settings.p.next
-      erb :upnext
-    end
   end
 end
