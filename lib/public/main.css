@@ -31,15 +31,6 @@ html, body{
   align-items: flex-start;
 }
 
-.albumlistitem{
-  border-bottom: 1px solid #AAAAB2;
-  width: 100%;
-  padding: 10px 5px;
-  margin: 0px;
-  text-align: center;
-  align-items: flex-start;
-}
-
 /* This forces a bottom border for the final listed item. */
 .artistlistitem:last-child, .songlistitem:last-child{
   border-bottom: 1px solid #AAAAB2;
@@ -55,10 +46,21 @@ html, body{
   color: black;
 }
 
+.albumlistitem{
+  display: inline-flex;
+  flex-grow: 1;
+  width: 250px;
+  padding: 10px 5px;
+  margin: 5px;
+  text-align: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+
 /* Prevent overflow of the cover art */
-.artistlistitem a img, .albumlistitem a img, .songlistitem a img{
-  max-width: 200px;
-  max-height: 200px;
+.albumlistitem a img{
+  max-width: 250px;
+  max-height: 250px;
 }
 
 /* Styling for the footer that will hold the music scrubber, song information, etc. */

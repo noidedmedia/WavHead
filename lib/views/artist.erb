@@ -8,8 +8,12 @@
       <div class="albumlistitem">
         <% if a.art_path %>
           <img src="/cover/<%= @artist.name %>/<%= a.title %>">
-          <br>
+
+        <% else %>
+          <img src="nocover.png"
+
         <% end %>
+        <br>
         <%= a.title %>
       </a>
     </div>
