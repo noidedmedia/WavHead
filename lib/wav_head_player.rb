@@ -2,6 +2,7 @@ require 'singleton'
 require 'pqueue'
 module WavHead
   class Player
+    attr_reader :current
     def initialize()
       @song_votes = {}
       if /darwin/ =~ RUBY_PLATFORM
