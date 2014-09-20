@@ -40,8 +40,8 @@ module WavHead
     def play
       loop do
         if @queue && @queue.size > 0
-          @current = @queue.pop
-          `#{@command} "#{@current.path}"`
+          @current = CurrentSong.new(@queue.pop)
+          `#{@command} "#{@current.song.path}"`
         end
       end
     end
@@ -68,5 +68,17 @@ module WavHead
     def vote!
       @votes = @votes + 1
     end
+  end
+
+  # Very simple container for info about the currently played song
+  class CurrentSong
+    def initialize(song)
+      @song = song
+      @start_time = Time.new
+      @end_time = @start_time + @song.duration
+    end
+    attr_reader :song
+    attr_reader :start_time
+    attr_reader :end_time
   end
 end
