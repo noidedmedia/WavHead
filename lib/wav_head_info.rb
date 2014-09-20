@@ -25,11 +25,11 @@ module WavHead
     end
     def self.parse(f)
       info = get_info(f)
-      artist = Artist.first_or_create(name: info[:artist])
+      artist = Artist.first_or_create(title: info[:artist])
       album = Album.first_or_create(title: info[:album], artist: artist)
       song = Song.new
       unless(Song.first(path: f) || Song.first(title: info[:title], length: info[:length], album: info[:album]))
-        # If there's another song with the same name and same length,
+        # If there's another song with the same title and same length,
         # this block is skipped. Otherwise, we make a new record for the song.
         song.attributes = {title: info[:title],
                            album: album,
@@ -62,7 +62,7 @@ module WavHead
     def self.pretty_print
       str = ""
       Artist.all.each do |a|
-        str << "#{a.name}\n"
+        str << "#{a.title}\n"
         a.albums.each do |a|
           str << "\t#{a.title}\n"
           a.songs.sort{|x, y| x.track <=> y.track }.each do |s|

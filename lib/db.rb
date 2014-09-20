@@ -30,7 +30,7 @@ end
 class Artist
   include DataMapper::Resource
   property :id, Serial
-  property :name, String, required: true
+  property :title, String, required: true
   has n, :albums
   has n, :songs, through: :albums
 end

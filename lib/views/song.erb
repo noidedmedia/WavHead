@@ -1,7 +1,7 @@
 <div id="breadcrumbs">
-	<a href="/">WavHead</a> > <a href="/browse/<%= @artist.name %>"><%= @artist.name %></a> > <a href="/browse/<%= @artist.name %>/<%= @album.title %>"><%= @album.title %></a> > <span class="boldbreadcrumb"><%= @song.title %></span>
+	<a href="/">WavHead</a> > <a href="/browse/<%= @artist.title %>"><%= @artist.title %></a> > <a href="/browse/<%= @artist.title %>/<%= @album.title %>"><%= @album.title %></a> > <span class="boldbreadcrumb"><%= @song.title %></span>
 </div>
 
 <form action="<%= @song.title %>/vote" method="post">
-  <input type="submit" name="vote" value="Upvote" class="upvotebutton">
+  <input type="submit" title="vote" value="Upvote" class="upvotebutton">
 </form>

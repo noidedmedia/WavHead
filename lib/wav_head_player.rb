@@ -87,7 +87,7 @@ module WavHead
       hash = {}
       hash[:title] = @song.title
       hash[:album] = @song.album.title
-      hash[:artist] = @song.artist.name
+      hash[:artist] = @song.artist.title
       hash[:start_time] = @start_time
       hash[:end_time] = @end_time
       hash[:duration] = @song.length
