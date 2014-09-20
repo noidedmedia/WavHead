@@ -19,6 +19,8 @@ html, body{
 /* The div that contains all artists/albums/songs on each page. */
 .artlist{
   width: 100%;
+  padding: auto;
+  text-align: center;
 }
 
 /* Styling for the container of each respective artist/album/song. */
@@ -59,8 +61,21 @@ html, body{
 
 /* Prevent overflow of the cover art */
 .albumlistitem a img{
-  max-width: 250px;
-  max-height: 250px;
+  width: 100%;
+  min-width: 100px;
+  max-width: 300px;
+  height: auto;
+  max-height: 300px;
+}
+
+@media all and (min-width: 400px){
+  .albumlistitem{
+    width: 33%;
+    min-width: 100px;
+    max-width: 300px;
+    height: auto;
+    max-height: 300px;
+  }
 }
 
 /* Styling for the footer that will hold the music scrubber, song information, etc. */
@@ -149,6 +164,12 @@ html, body{
   min-width: 200px;
   flex-grow: 1;
   order: 1;
+}
+
+@media all and (max-width: 400px){
+  #sidebarcontainer{
+    display: none;
+  }
 }
 
 #sidebar{
