@@ -29,25 +29,32 @@
     </div>
 
     <div id="footerbuffer"></div>
+    
     <div id="footer">
+      <div id="footercontainer">
 
-    <% if @current %>
-      <div class="songprogress">
-        <%= @current.song.length %> seconds
+      <% if @current %>
+        <div class="songprogress">
+          <%= @current.song.length %> seconds
+        </div>
+
+        <div class="songtitle">
+          <%= @current.song.title %>
+        </div>
+
+        <div class="artistalbumtitle">
+          <%= @current.song.artist.title %> — <%= @current.song.album.title %>
+        </div>
+
+      <% else %>
+        
+        <div class="nothingplaying">
+          Nothing is playing right now.
+        </div>
+
+      <% end %>
+
       </div>
-
-      <div class="songtitle">
-        <%= @current.song.title %>
-      </div>
-
-      <div class="artistalbumtitle">
-        <%= @current.song.artist.title %> — <%= @current.song.album.title %>
-      </div>
-
-    <% else %>
-      Nothing is playing right now.
-    <% end %>
-
     </div>
   </body>
 
