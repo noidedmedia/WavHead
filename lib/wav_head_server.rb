@@ -38,7 +38,7 @@ module WavHead
       @album = Album.first(title: params[:album], artist: @artist)
       @song = Song.first(title: params[:song], album: @album)
       settings.p.vote(@song)
-      redirect to("/browse/#{@artist.title}/#{@album.title}")
+      redirect back
     end
     get "/cover/:artist/:album" do
       @artist = Artist.first(title: params[:artist])
