@@ -121,6 +121,7 @@ html, body{
 @media all and (max-width: 600px){
   #footer{
     height: 60px;
+    padding: 4px 0px;
   }
 }
 
@@ -148,6 +149,18 @@ html, body{
   width: 600px;
 }
 
+@media all and (max-width: 600px){
+  .songprogress{
+    width: 400px;
+  }
+}
+
+@media all and (max-width: 425px){
+  .songprogress{
+    width: 300px;
+  }
+}
+
 .progressbar{
   height: 6px;
   border: 1px solid #AAAAB2;
@@ -159,12 +172,6 @@ html, body{
   background-color: black;
   width: 0%;
   max-width: 100%;
-}
-
-@media all and (max-width: 600px){
-  .progressbar, .progressbarfill{
-    display: none;
-  }
 }
 
 .songtitle{
