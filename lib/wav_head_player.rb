@@ -91,6 +91,8 @@ module WavHead
       hash[:start_time] = @start_time
       hash[:end_time] = @end_time
       hash[:duration] = @song.length
+      hash[:timeleft] = @end_time - Time.new
+      hash[:percentfinished] =  (hash[:duration] - hash[:timeleft]) / hash[:duration]
       hash.to_json
     end
     attr_reader :song
