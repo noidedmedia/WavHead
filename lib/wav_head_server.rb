@@ -8,6 +8,9 @@ module WavHead
       @queue = settings.p.top(10)
       @current = settings.p.current
     end
+    get '/queue' do
+      erb :queue
+    end
     get '/current.json' do
       content_type :json
       settings.p.current.to_json
