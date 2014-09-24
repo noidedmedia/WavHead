@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= @title ? @title : "WavHead" %></title>
-    <link rel="stylesheet" type="text/css" href="/main.css">
-  </head>
+<head>
+<title><%= @title ? @title : "WavHead" %></title>
+<link rel="stylesheet" type="text/css" href="/main.css">
 
-  <body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/main.js"></script>
+</head>
+<body>
 
-    <div id="header">
-      <a href="/">WavHead</a>
-      <a href="https://github.com/SHTheSuper/WavHead" class="githublink">(View on GitHub)</a>
-    </div>
+<div id="header">
+  <a href="/">WavHead</a>
+  <a href="https://github.com/SHTheSuper/WavHead" class="githublink">(View on GitHub)</a>
+</div>
 
-    <div id="masthead">
+<div id="masthead">
 
-      <div id="sidebarcontainer">
+  <div id="sidebarcontainer">
 
-        <div id="sidebar">
-          Queue
-        </div>
-
-      </div>
-
-      <div id="content">
-        <%= yield %>
-      </div>
+    <div id="sidebar">
 
     </div>
 
-    <div id="footerbuffer"></div>
-    <div id="footer"></div>
-  </body>
+  </div>
 
+  <div id="content">
+    <%= yield %>
+  </div>
+
+</div>
+
+<div id="footerbuffer"></div>
+
+<div id="footer">
+  <div id="footercontainer">
+    <div id="somethingplaying">
+      <div class="songprogress">
+        <div class="songprogresselapsed"></div>
+        <div class="songprogresstotal"></div>
+      </div>
+      
+      <div class="progressbar">
+        <div class="progressbarfill"></div>
+      </div>
+      <div class="songtitle"></div>  
+      <div class="artistalbumtitle"></div>
+    </div>
+    
+    <div class="nothingplaying">
+      Nothing is playing right now.
+    </div>
+  </div>
+</div>
+
+</body>
 </html>

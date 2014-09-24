@@ -1,11 +1,13 @@
 require 'singleton'
 require 'pqueue'
+require 'json'
 module WavHead
   class Player
+    attr_reader :current
     def initialize()
       @song_votes = {}
       if /darwin/ =~ RUBY_PLATFORM
-        # Use afplay on the mac
+        # Use afplay on OS X
         @command = "afplay"
       else
         # mplayer otherwise
@@ -40,8 +42,12 @@ module WavHead
     def play
       loop do
         if @queue && @queue.size > 0
-          @current = @queue.pop
-          `#{@command} "#{@current.path}"`
+          song = @queue.pop
+          @current = CurrentSong.new(song)
+          puts "Running a song!"
+          puts "#{@command} #{song.path}"
+          puts "#########################################"
+          `#{@command} "#{song.path}"`
         end
       end
     end
@@ -68,5 +74,29 @@ module WavHead
     def vote!
       @votes = @votes + 1
     end
+  end
+
+  # Very simple container for info about the currently played song
+  class CurrentSong
+    def initialize(song)
+      @song = song
+      @start_time = Time.new
+      @end_time = @start_time + @song.length
+    end
+    def to_json
+      hash = {}
+      hash[:title] = @song.title
+      hash[:album] = @song.album.title
+      hash[:artist] = @song.artist.title
+      hash[:start_time] = @start_time
+      hash[:end_time] = @end_time
+      hash[:duration] = @song.length
+      hash[:timeleft] = @end_time - Time.new
+      hash[:percentfinished] =  (hash[:duration] - hash[:timeleft]) / hash[:duration]
+      hash.to_json
+    end
+    attr_reader :song
+    attr_reader :start_time
+    attr_reader :end_time
   end
 end
