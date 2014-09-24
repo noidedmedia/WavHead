@@ -46,22 +46,34 @@ module WavHead
       return @queue[-1].song
     end
     def start!
+      puts "######################"
+      puts "#      WAV HEAD      #"
+      puts "#      starting      #"
+      puts "#        now         #"
+      puts "######################"
       Thread.new do
         play
       end
     end
     def play
       loop do
+        puts("Looping...")
         if @queue && @queue.size > 0
           @queue_mut.lock
           @queue.sort!
-          song = @queue.pop
+          song = self.get
           @current = CurrentSong.new(song)
           @queue_mut.unlock
           puts "Running a song!"
           puts "#{@command} #{song.path}"
           puts "#########################################"
           `#{@command} "#{song.path}"`
+        end
+        unless @queue && @queue.size > 0
+          # No more queue items.
+          # Sleep a bit.
+          puts "Nothing to play, sleeping for 10 seconds..."
+          sleep(10)
         end
       end
     end
