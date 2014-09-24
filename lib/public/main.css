@@ -120,7 +120,7 @@ html, body{
 
 @media all and (max-width: 600px){
   #footer{
-    height: 60px;
+    height: 80px;
     padding: 4px 0px;
   }
 }
@@ -152,13 +152,13 @@ html, body{
 
 @media all and (max-width: 600px){
   .progressbar, .songprogress{
-    width: 400px;
+    width: 400px !important;
   }
 }
 
 @media all and (max-width: 425px){
   .progressbar, .songprogress{
-    width: 300px;
+    width: 300px !important;
   }
 }
 
@@ -183,7 +183,6 @@ html, body{
   text-align: right;
   display: inline;
   float: right;
-  position: relative;
 }
 
 .songprogresselapsed{
@@ -192,7 +191,6 @@ html, body{
   text-align: left;
   display: inline;
   float: left;
-  position: relative;
 }
 
 .songtitle{
