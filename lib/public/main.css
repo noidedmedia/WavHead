@@ -147,38 +147,41 @@ html, body{
   font-weight: 200;
   font-size: 16px;
   width: 600px;
+  height: 18px;
 }
 
 @media all and (max-width: 600px){
-  .songprogress{
+  .progressbar, .songprogress{
     width: 400px;
   }
 }
 
 @media all and (max-width: 425px){
-  .songprogress{
+  .progressbar, .songprogress{
     width: 300px;
   }
 }
 
 .progressbar{
-  height: 6px;
+  position: relative;
   border: 1px solid #AAAAB2;
-  width: 100%;
+  width: 600px;
+  height: 6px;
 }
 
 .progressbarfill{
-  height: 6px;
+  position: relative;
   background-color: black;
   width: 0%;
   max-width: 100%;
+  height: 6px;
 }
 
 .songprogresstotal{
   font-size: 14px;
   font-weight: 200;
   text-align: right;
-  display: block;
+  display: inline;
   float: right;
   position: relative;
 }
@@ -187,7 +190,7 @@ html, body{
   font-size: 14px;
   font-weight: 200;
   text-align: left;
-  display: block;
+  display: inline;
   float: left;
   position: relative;
 }
