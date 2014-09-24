@@ -4,10 +4,9 @@
 <title><%= @title ? @title : "WavHead" %></title>
 <link rel="stylesheet" type="text/css" href="/main.css">
 
-<script src="/main.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/main.js"></script>
 </head>
-
 <body>
 
 <div id="header">
@@ -37,6 +36,8 @@
   <div id="footercontainer">
     <div id="somethingplaying">
       <div class="songprogress">
+        <div class="songprogresselapsed"></div>
+        <div class="songprogresstotal"></div>
         <div class="progressbar">
           <div class="progressbarfill"></div>
         </div>
