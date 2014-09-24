@@ -1,4 +1,4 @@
-require 'singleton'
+require 'thread'
 require 'pqueue'
 require 'json'
 module WavHead
@@ -13,16 +13,24 @@ module WavHead
         # mplayer otherwise
         @command = "mplayer"
       end
-      @queue = PQueue.new
+      @queue_mut = Mutex.new
+      @queue = Array.new
+    end
+    def votes_for(song)
+      return 0 unless @song_votes[song]
+      @song_votes[song].votes
     end
     def vote(song)
-      if vote = @song_votes[song]
+      if @song_votes[song]
         # Incriment the vote count
-        vote.vote!
+        @song_votes[song].vote!
       else
         @song_votes[song] = SongVote.new(song)
       end
-      @queue << song unless @queue.include? song
+      @queue_mut.lock
+      @queue << @song_votes[song]  unless @queue.include? @song_votes[song]
+      @queue.sort!
+      @queue_mut.unlock
       return true
     end
     def count
@@ -32,7 +40,10 @@ module WavHead
       @queue.pop
     end
     def next
-      @queue.top if @queue
+      @queue_mut.lock
+      @queue.sort!
+      @queue_mut.unlock
+      return @queue[-1].song
     end
     def start!
       Thread.new do
@@ -42,8 +53,11 @@ module WavHead
     def play
       loop do
         if @queue && @queue.size > 0
+          @queue_mut.lock
+          @queue.sort!
           song = @queue.pop
           @current = CurrentSong.new(song)
+          @queue_mut.unlock
           puts "Running a song!"
           puts "#{@command} #{song.path}"
           puts "#########################################"
@@ -52,7 +66,10 @@ module WavHead
       end
     end
     def top(num)
-      @queue.to_a.take(num)
+      @queue_mut.lock
+      @top = @queue.sort{|x, y| y <=> x}
+      @queue_mut.unlock
+      return @top.map{|t| t.song}.take(num)
     end
   end
 
@@ -68,6 +85,12 @@ module WavHead
     end
     attr_accessor :song
     attr_reader :votes
+    ##
+    # Okay, so this next bit is technically bad design.
+    # Sorting is, by default, ascending. However, we want it to be
+    # sorted in descending order so the queue works properly. So
+    # we just use this hack, so we don't have to tell the queue
+    # to use the right block every time we add items
     def <=>(other)
       self.votes <=> other.votes
     end
