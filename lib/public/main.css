@@ -175,15 +175,21 @@ html, body{
 }
 
 .songprogresstotal{
-  text-align: right;
   font-size: 14px;
   font-weight: 200;
+  text-align: right;
+  display: block;
+  float: right;
+  position: relative;
 }
 
 .songprogresselapsed{
-  text-align: left;
   font-size: 14px;
   font-weight: 200;
+  text-align: left;
+  display: block;
+  float: left;
+  position: relative;
 }
 
 .songtitle{
