@@ -37,7 +37,7 @@ module WavHead
       @queue.size
     end
     def get
-      @queue.pop
+      @queue.pop.song
     end
     def next
       @queue_mut.lock
