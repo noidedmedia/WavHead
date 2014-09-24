@@ -7,7 +7,7 @@ module WavHead
     def initialize()
       @song_votes = {}
       if /darwin/ =~ RUBY_PLATFORM
-        # Use afplay on the mac
+        # Use afplay on OS X
         @command = "afplay"
       else
         # mplayer otherwise
