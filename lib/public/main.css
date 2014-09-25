@@ -277,6 +277,16 @@ html, body{
   font-size: 16px;
 }
 
+.artistalbumtitle a{
+  color: black;
+  text-decoration: none;
+}
+
+.artistalbumtitle a:hover{
+  color: black;
+  text-decoration: underline;
+}
+
 /* Styling for the "Nothing is playing right now." text. */
 .nothingplaying{
   color: #AAAAB2;
