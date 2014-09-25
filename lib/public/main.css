@@ -467,6 +467,16 @@ html, body{
   font-weight: 400;
 }
 
+.queueitemartist a{
+  color: black;
+  text-decoration: none;
+}
+
+.queueitemartist a:hover{
+  color: black;
+  text-decoration: underline;
+}
+
 
 /* 
 
