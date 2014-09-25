@@ -38,7 +38,7 @@ html, body{
 .artlistcontainer{
   margin: 0px 10px;
   width: auto;
-  min-width: 300px;
+  min-width: 325px;
   height: auto;
   display: flex;
   position: relative;
@@ -126,6 +126,12 @@ html, body{
   max-width: 300px;
   height: auto;
   max-height: 300px;
+}
+
+@media all and (max-width: 600px){
+  .albumart img{
+    max-width: 200px;
+  }
 }
 
 /* Container for the album information below the cover. */
@@ -362,7 +368,7 @@ html, body{
 /* 
 
 ====================================
-              CONTENT
+             CONTENT
 ====================================
 
 */
@@ -389,7 +395,7 @@ html, body{
 /* 
 
 ====================================
-            QUEUE SIDEBAR
+          QUEUE SIDEBAR
 ====================================
 
 */
@@ -442,6 +448,7 @@ html, body{
 .queueitemtitle{
   font-size: 16px;
   font-weight: 300;
+  padding-bottom: 3px;
 }
 
 /* Styling for the artist of a song in the Queue. */
