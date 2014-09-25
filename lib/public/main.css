@@ -244,6 +244,7 @@ html, body{
   background-color: #D6D5D5;
   width: 600px;
   height: 3px;
+  margin-bottom: 4px;
 }
 
 /* Styling of the progress bar's "fill", the darker color that shows progress as the song plays. */
