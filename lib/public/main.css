@@ -116,7 +116,7 @@ html, body{
   height: 100%;
   min-width: 150px;
   max-width: 300px;
-  padding: 0px 10px;
+  padding: 0px 0px 0px 10px;
 }
 
 /* Styling for the album cover displayed on album pages. */
