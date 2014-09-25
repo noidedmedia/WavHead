@@ -15,10 +15,11 @@ html, body{
   height: 100%;
 }
 
+/* Container for the sidebar and content areas, holds everything but the Header and Footer. */
 #masthead{
   background-color: #FFFFFF;
   position: relative;
-  margin: 0px 10px 0px 0px;
+  margin: 0px 0px 90px 0px;
   display: flex;
   flex-flow: row nowrap;
   min-height: 100%;
@@ -28,24 +29,33 @@ html, body{
 /* 
 
 ====================================
-      ARTLIST AND ARLTIST-ITEMS
+    ARTLIST AND ARLTIST-ITEMS
 ====================================
 
 */
 
+/* Container that holds the artlist items and forces similar margins on all pages. */
+.artlistcontainer{
+  margin: 0px 10px;
+  width: auto;
+  min-width: 300px;
+  height: auto;
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  flex-grow: 2;
+}
+
 /* The div that contains all artists/albums/songs on each page. */
 .artlist{
   width: 100%;
-  padding: auto;
 }
 
 /* Styling for the container of each respective artist/album/song. */
 .artistlistitem, .songlistitem{
   border-top: 1px solid #AAAAB2;
-  width: 100%;
   padding: 10px 5px;
   margin: 0px;
-  text-align: center;
 }
 
 /* This forces a bottom border for the final listed item. */
@@ -53,8 +63,14 @@ html, body{
   border-bottom: 1px solid #AAAAB2;
 }
 
-.artistlistitem:first-child, .albumlistitem:first-child, .songlistitem:first-child{
+/* Removes the separator line for the first use of each of the following elements on a page, since the first item in artist/song lists never needs its own top-border. */
+.artistlistitem:first-child, .songlistitem:first-child{
   border-top: 0px none;
+}
+
+/* This forces the song list on an album page to have proper vertical spacing. */
+.songlistitem:first-child{
+  padding-top: 0px;
 }
 
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
@@ -63,18 +79,18 @@ html, body{
   color: black;
 }
 
+/* Styling for the containers of each respective Album on the artist pages. */
 .albumlistitem{
   display: inline-flex;
   flex-grow: 1;
   width: 250px;
-  padding: 10px 5px;
-  margin: 5px;
+  padding: 0px 5px;
+  margin: 0px 5px 25px 5px; /* This makes a larger bottom margin to ensure that album covers/titles don't overlap. */
   text-align: center;
-  align-items: flex-start;
   flex-flow: row wrap;
 }
 
-/* Prevent overflow of the cover art */
+/* Prevent overflow of the cover art on artist pages. */
 .albumlistitem a img{
   width: 100%;
   min-width: 100px;
@@ -83,6 +99,7 @@ html, body{
   max-height: 300px;
 }
 
+/* Styling for album list items on any display with a width larger than 600px. */
 @media all and (min-width: 600px){
   .albumlistitem{
     width: 40%;
@@ -91,6 +108,51 @@ html, body{
     height: auto;
     max-height: 300px;
   }
+}
+
+/* Styling for the left column of an album page, contains the album cover and information. */
+#albuminfocontainer{
+  width: auto;
+  height: 100%;
+  min-width: 150px;
+  max-width: 300px;
+  padding: 0px 10px;
+}
+
+/* Styling for the album cover displayed on album pages. */
+.albumart img{
+  width: 100%;
+  min-width: 100px;
+  max-width: 300px;
+  height: auto;
+  max-height: 300px;
+}
+
+/* Container for the album information below the cover. */
+.albuminfo{
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  width: 100%;
+  min-width: 100px;
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Styling specifically for the album title. */
+.albuminfoalbum{
+  width: 100%;
+  font-size: 16px;
+  font-weight: 200;
+  padding-bottom: 3px;
+}
+
+/* Styling specifically for the album artist text. */
+.albuminfoartist{
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 
@@ -118,6 +180,7 @@ html, body{
   box-shadow: 0px 0px 20px 3px rgba(170,170,178,0.25);
 }
 
+/* Styling for the footer on smaller-width devices. */
 @media all and (max-width: 600px){
   #footer{
     height: 80px;
@@ -125,13 +188,7 @@ html, body{
   }
 }
 
-/* A buffer that will prevent the footer from displaying over content. */
-#footerbuffer{
-  position: relative;
-  bottom: 0px;
-  height: 100px;
-}
-
+/* Container to hold the footer items properly. */
 #footercontainer{
   height: 100%;
   width: 100%;
@@ -142,6 +199,7 @@ html, body{
   align-items: center;
 }
 
+/* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
   color: black;
   font-weight: 200;
@@ -150,18 +208,21 @@ html, body{
   height: 18px;
 }
 
+/* Styling to force the progress bar to become smaller on smaller devices. */
 @media all and (max-width: 600px){
   .progressbar, .songprogress{
     width: 400px !important;
   }
 }
 
+/* Styling to force the progress bar to become smaller on smaller devices. */
 @media all and (max-width: 425px){
   .progressbar, .songprogress{
     width: 300px !important;
   }
 }
 
+/* Styling for the progress bar when unfilled. */
 .progressbar{
   position: relative;
   background-color: #D6D5D5;
@@ -169,6 +230,7 @@ html, body{
   height: 3px;
 }
 
+/* Styling of the progress bar's "fill", the darker color that shows progress as the song plays. */
 .progressbarfill{
   position: relative;
   background-color: black;
@@ -177,6 +239,7 @@ html, body{
   height: 3px;
 }
 
+/* Styling for the currently playing song's total length. */
 .songprogresstotal{
   font-size: 14px;
   font-weight: 200;
@@ -185,6 +248,7 @@ html, body{
   float: right;
 }
 
+/* Styling for the currently playing song's progress value. */
 .songprogresselapsed{
   font-size: 14px;
   font-weight: 200;
@@ -193,24 +257,28 @@ html, body{
   float: left;
 }
 
+/* Styling for the title of the currently-playing song displayed in the footer. */
 .songtitle{
   color: black;
   font-weight: 400;
   font-size: 18px;
 }
 
+/* Styling for the artist and album text below the song title in the footer. */
 .artistalbumtitle{
   color: black;
   font-weight: 200;
   font-size: 16px;
 }
 
+/* Styling for the "Nothing is playing right now." text. */
 .nothingplaying{
   color: #AAAAB2;
   font-weight: 200;
   font-size: 16px;
 }
 
+/* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
 .songtitle, .artistalbumtitle, .nothingplaying{
   padding: 2px;
 }
@@ -224,26 +292,34 @@ html, body{
 
 */
 
-/* Styling for the the breadcrumbs, aka directories (e.g. WavHead > Daft Punk > Random Access Memories > Get Lucky) */
+/* Container for the breadcrumbs. */
+#breadcrumbscontainer{
+  padding: 10px;
+}
+
+/* Styling for the the breadcrumbs, a.k.a. directories (e.g. WavHead > Daft Punk > Random Access Memories > Get Lucky) */
 #breadcrumbs{
   font-size: 16px;
   font-weight: 400;
-  padding: 10px 0px 10px 0px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #AAAAB2;
   width: 100%;
   height: auto;
   text-align: left;
 }
 
+/* Styling for links in the breadcrumbs. */
 #breadcrumbs a{
   color: black;
   text-decoration: none;
 }
 
+/* Styling for the breadcrumb links on hover. */
 #breadcrumbs a:hover{
   text-decoration: underline;
 }
 
+/* Styling that emphasizes the breadcrumb for the right-most item, or the page that the user is presently on. */
 .boldbreadcrumb{
   font-weight: 500;
 }
@@ -291,16 +367,22 @@ html, body{
 
 */
 
-#content{
+/* Container that "contains" the entire content area, that being anything that isn't in the header, footer, or sidebar */
+#contentcontainercontainer{
+  display: flex;
+  flex-grow: 3;
+  flex-flow: column nowrap;
+  order: 1;
+}
+
+/* The container that goes below the Breadcrumbs on Artist and song listings, that way styles applied to the song listing don't effect the breadcrumbs (e.g. multicolumn view for albums. */
+#contentcontainer{
+  display: flex;
+  flex-flow: row wrap;
   background-color: #FFFFFF;
   position: relative;
   min-width: 200px;
   min-height: 100%;
-  margin: 0px 10px;
-  flex-grow: 3;
-  flex-flow: row wrap;
-  order: 2;
-  text-align: center;
 }
 
 
@@ -312,6 +394,7 @@ html, body{
 
 */
 
+/* Container for the sidebar that limits it to a certain size, places it to the left, etc. */
 #sidebarcontainer{
   background-color: #FFFFFF;
   position: static;
@@ -326,12 +409,14 @@ html, body{
   order: 1;
 }
 
+/* Hides the sidebar on devices with widths below 600px. */
 @media all and (max-width: 600px){
   #sidebarcontainer{
     display: none;
   }
 }
 
+/* Styling for the sidebar which hosts the Queue. */
 #sidebar{
   min-height: 100%;
   font-size: 16px;
@@ -339,23 +424,27 @@ html, body{
   color: #000000;
 }
 
+/* Styling for the Queue's header. */
 #queueheader{
   border-bottom: 1px solid #AAAAB2;
   padding-bottom: 3px;
   font-weight: 500;
 }
 
+/* Styling for each respective queue listing. */
 .queuelistitem{
   border-bottom: 1px solid #AAAAB2;
   padding: 4px 0px;
   width: 100%;
 }
 
+/* Styling for the name of a song in the Queue. */
 .queueitemtitle{
   font-size: 16px;
   font-weight: 300;
 }
 
+/* Styling for the artist of a song in the Queue. */
 .queueitemartist{
   font-size: 14px;
   font-weight: 400;
@@ -370,6 +459,7 @@ html, body{
 
 */
 
+/* Styling for the upvote button used on song pages. */
 .upvotebutton{
   text-align: center;
   display: inline-block;
@@ -377,7 +467,7 @@ html, body{
   height: 34px;
   width: 80px;
   padding: auto;
-  margin: 10px 5px 0px 5px;
+  margin: 0px 10px;
   font-size: 14px;
   font-weight: 200;
   vertical-align: middle;
@@ -391,16 +481,19 @@ html, body{
   transition: box-shadow 400ms ease-in-out;
 }
 
+/* Styling of the upvote button on hover. */
 .upvotebutton:hover{
   text-decoration: none;
   box-shadow: inset 0px -2px 0px #AAAAB2, 0px 2px 10px -4px rgba(170,170,178,0.5);
   transition: box-shadow 400ms ease-in-out;
 }
 
+/* Styling of the upvote button on focus. */
 .upvotebutton:focus{
   outline: none;
 }
 
+/* Styling of the upvote button when active (pressed). */
 .upvotebutton:active{
   background-color: #f5f5f5;
 }

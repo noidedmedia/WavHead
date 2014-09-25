@@ -1,11 +1,35 @@
-<div id="breadcrumbs">
-  <a href="/">WavHead</a> &gt; <a href="/browse/<%= @artist.title %>"><%= @artist.title %></a> &gt; <span class="boldbreadcrumb"><%= @album.title %></span>
+<div id="breadcrumbscontainer">
+  <div id="breadcrumbs">
+    <a href="/">WavHead</a> &gt; <a href="/browse/<%= @artist.title %>"><%= @artist.title %></a> &gt; <span class="boldbreadcrumb"><%= @album.title %></span>
+  </div>
 </div>
 
-<div class="artlist">
-  <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
-    <div class="songlistitem">
-      <a href="/browse/<%= @artist.title %>/<%= @album.title %>/<%= s.title %>"><%= s.title %></a>
+<div id="contentcontainer">
+  <div id="albuminfocontainer">
+
+    <div class="albumart">
+      <img src="/cover/<%= @artist.title %>/<%= @album.title %>">
     </div>
-  <% end %>
+
+    <div class="albuminfo">
+      <div class="albuminfoalbum">
+        <%= @album.title %>
+      </div>
+
+      <div class="albuminfoartist">
+        <%= @artist.title %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="artlistcontainer">
+    <div class="artlist">
+      <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
+        <div class="songlistitem">
+          <a href="/browse/<%= @artist.title %>/<%= @album.title %>/<%= s.title %>"><%= s.title %></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
