@@ -235,6 +235,7 @@ html, body{
 
 /* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
+  display: none;
   color: black;
   font-weight: 200;
   font-size: 16px;
