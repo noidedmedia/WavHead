@@ -47,8 +47,16 @@ html, body{
 }
 
 /* The div that contains all artists/albums/songs on each page. */
-.artlist{
+.artlist, .albumartlist{
   width: 100%;
+}
+
+/* This changes the layout of album listings on artist pages for smaller-width devices. Centers album art and makes the album titles smaller. */
+@media all and (max-width: 700px){
+  .albumartlist{
+    text-align: center;
+    font-size: 14px;
+  }
 }
 
 /* Styling for the container of each respective artist/album/song. */
