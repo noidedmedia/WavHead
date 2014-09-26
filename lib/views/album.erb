@@ -8,7 +8,14 @@
   <div id="albuminfocontainer">
 
     <div class="albumart">
-      <img src="/cover/<%= @artist.title %>/<%= @album.title %>">
+      <% a = @album %>
+      <% if a.art_path %>
+        <img src="/cover/<%= @artist.title %>/<%= @album.title %>">
+
+      <% else %>
+        <img src="/nocover.png">
+
+      <% end %>
     </div>
 
     <div class="albuminfo">
