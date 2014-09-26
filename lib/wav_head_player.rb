@@ -72,8 +72,8 @@ module WavHead
         unless @queue && @queue.size > 0
           # No more queue items.
           # Sleep a bit.
-          puts "Nothing to play, sleeping for 10 seconds..."
-          sleep(10)
+          puts "Nothing to play, sleeping for 5 seconds..."
+          sleep(5)
         end
       end
     end

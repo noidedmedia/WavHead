@@ -5,7 +5,7 @@ require_relative './wav_head_info.rb'
 module WavHead
   class Server < Sinatra::Base
     before do
-      @queue = settings.p.top(10)
+      @queue = settings.p.top(25)
       @current = settings.p.current
     end
     get '/queue' do
