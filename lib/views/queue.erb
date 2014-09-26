@@ -11,9 +11,9 @@
         </div>
 
         <div class="queueitemartist">
-          <a href="/browse/<%= i.artist.title %>">
-            <%= i.artist.title %>
-          </a>
+          <a href="/browse/<%= i.artist.title %>"><%= i.artist.title %></a>
+          &mdash;
+          <a href="/browse/<%= i.artist.title %>/<%= i.album.title %>"><%= i.album.title %></a>
         </div>
       </div>
     <% end %>
