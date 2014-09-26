@@ -232,7 +232,7 @@ html, body{
     align-items: center;
     margin: auto;
     justify-content: center;
-    padding-left: 0px;
+    padding-left: 0px !important;
   }
 }
 
