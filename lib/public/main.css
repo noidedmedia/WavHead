@@ -289,7 +289,6 @@ html, body{
   position: absolute;
   bottom: 87px;
   right: 0px;
-  width: 630px;
   background-color: #D6D5D5;
   height: 3px;
 }
@@ -301,7 +300,7 @@ html, body{
     position: relative;
     bottom: auto;
     margin-bottom: 4px;
-    width: 50%;
+    width: 100%;
     max-width: 800px;
   }
 }
@@ -368,6 +367,11 @@ html, body{
   .artistalbumtitle{
     font-size: 16px;
   }
+}
+
+#somethingplaying{
+  width: 60%;
+  height: auto;
 }
 
 /* Styling for the "Nothing is playing right now." text. */
