@@ -223,6 +223,16 @@ html, body{
   align-items: center;
 }
 
+/* Album art displayed in the footer when a song is playing. Will display nocover.png when nothing is playing. */
+.currentalbumart img{
+  width: 100px;
+  height: 100px;
+  /* The latter three lines force the album art to always display at the bottom left of the page on the footer. */
+  left: 0px;
+  bottom: 0px;
+  position: absolute;
+}
+
 /* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
   color: black;
@@ -248,6 +258,7 @@ html, body{
 
 /* Styling for the progress bar when unfilled. */
 .progressbar{
+  display: none;
   position: relative;
   background-color: #D6D5D5;
   width: 600px;
@@ -257,6 +268,7 @@ html, body{
 
 /* Styling of the progress bar's "fill", the darker color that shows progress as the song plays. */
 .progressbarfill{
+  display: none;
   position: relative;
   background-color: black;
   width: 0%;
@@ -311,6 +323,7 @@ html, body{
   color: #AAAAB2;
   font-weight: 200;
   font-size: 16px;
+  display: none;
 }
 
 /* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
