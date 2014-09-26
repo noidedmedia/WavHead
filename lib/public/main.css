@@ -38,7 +38,7 @@ html, body{
 .artlistcontainer{
   margin: 0px 10px;
   width: auto;
-  min-width: 325px;
+  min-width: 400px;
   height: auto;
   display: flex;
   position: relative;
@@ -52,10 +52,14 @@ html, body{
 }
 
 /* This changes the layout of album listings on artist pages for smaller-width devices. Centers album art and makes the album titles smaller. */
-@media all and (max-width: 700px){
+@media all and (min-width: 700px){
   .albumartlist{
     text-align: center;
     font-size: 14px;
+  }
+
+  .artlistcontainer{
+    min-width: 300px;
   }
 }
 
@@ -72,13 +76,19 @@ html, body{
 }
 
 /* Removes the separator line for the first use of each of the following elements on a page, since the first item in artist/song lists never needs its own top-border. */
-.artistlistitem:first-child, .songlistitem:first-child{
+.artistlistitem:first-child{
   border-top: 0px none;
 }
 
-/* This forces the song list on an album page to have proper vertical spacing. */
 .songlistitem:first-child{
-  padding-top: 0px;
+  border-top: 1px solid #AAAAB2;
+}
+
+@media all and (min-width: 700px){
+  .songlistitem:first-child{
+    border-top: 0px none;
+    padding-top: 0px;
+  }
 }
 
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
@@ -108,7 +118,7 @@ html, body{
 }
 
 /* Styling for album list items on any display with a width larger than 600px. */
-@media all and (min-width: 600px){
+@media all and (min-width: 700px){
   .albumlistitem{
     width: 40%;
     min-width: 150px;
@@ -121,10 +131,18 @@ html, body{
 /* Styling for the left column of an album page, contains the album cover and information. */
 #albuminfocontainer{
   width: auto;
-  height: 100%;
+  height: auto;
   min-width: 150px;
   max-width: 300px;
   padding: 0px 0px 0px 10px;
+  margin: 0px auto 10px auto;
+}
+
+@media all and (min-width: 700px){
+  #albuminfocontainer{
+    margin: 0px;
+    height: 100%;
+  }
 }
 
 /* Styling for the album cover displayed on album pages. */
@@ -133,12 +151,11 @@ html, body{
   min-width: 100px;
   max-width: 300px;
   height: auto;
-  max-height: 300px;
 }
 
-@media all and (max-width: 600px){
+@media all and (min-width: 700px){
   .albumart img{
-    max-width: 200px;
+    max-width: 300px;
   }
 }
 
@@ -199,16 +216,23 @@ html, body{
   border-top: 1px solid #AAAAB2;
   background-color: #FFFFFF;
   margin: 0px;
-  padding: 5px 10px;
-  text-align: center;
+  padding: 4px 0px;
+  text-align: left;
   box-shadow: 0px 0px 20px 3px rgba(170,170,178,0.25);
 }
 
-/* Styling for the footer on smaller-width devices. */
-@media all and (max-width: 600px){
+/* Styling for the footer on large-width devices. */
+@media all and (min-width: 700px){
   #footer{
-    height: 80px;
-    padding: 4px 0px;
+    padding: 5px 10px;
+    text-align: center;
+  }
+
+  #footercontainer{
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    padding-left: 0px;
   }
 }
 
@@ -216,55 +240,70 @@ html, body{
 #footercontainer{
   height: 100%;
   width: 100%;
-  margin: auto;
+  margin: 0px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: left;
+  padding-left: 95px;
 }
 
 /* Album art displayed in the footer when a song is playing. Will display nocover.png when nothing is playing. */
 .currentalbumart img{
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   /* The latter three lines force the album art to always display at the bottom left of the page on the footer. */
   left: 0px;
   bottom: 0px;
   position: absolute;
 }
 
+@media all and (min-width: 700px){
+  .currentalbumart img{
+    width: 100px;
+    height: 100px;
+  }
+}
+
 /* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
   display: none;
+  position: relative;
   color: black;
   font-weight: 200;
   font-size: 16px;
-  width: 600px;
+  width: 100%; /* Width is 100% because it's limited by the width of the progress bar below it. */
   height: 18px;
 }
 
-/* Styling to force the progress bar to become smaller on smaller devices. */
-@media all and (max-width: 600px){
-  .progressbar, .songprogress{
-    width: 400px !important;
+/* Hides the songprogress values on smaller devices. */
+@media all and (min-width: 700px){
+  .songprogress, .songprogresstotal, .songprogresselapsed{
+    display: block;
   }
 }
 
-/* Styling to force the progress bar to become smaller on smaller devices. */
-@media all and (max-width: 425px){
-  .progressbar, .songprogress{
-    width: 300px !important;
-  }
-}
-
-/* Styling for the progress bar when unfilled. */
+/* Styling for the progress bar when unfilled on smaller-width devices. */
 .progressbar{
   display: none;
-  position: relative;
+  position: absolute;
+  bottom: 87px;
+  right: 0px;
+  width: 630px;
   background-color: #D6D5D5;
-  width: 600px;
   height: 3px;
-  margin-bottom: 4px;
+}
+
+/* Styling for the progress bar when unfilled on devices/browser windows with a width larger than 700px. */
+@media all and (min-width: 700px){
+  .progressbar{
+    display: none;
+    position: relative;
+    bottom: auto;
+    margin-bottom: 4px;
+    width: 50%;
+    max-width: 800px;
+  }
 }
 
 /* Styling of the progress bar's "fill", the darker color that shows progress as the song plays. */
@@ -279,6 +318,7 @@ html, body{
 
 /* Styling for the currently playing song's total length. */
 .songprogresstotal{
+  display: none;
   font-size: 14px;
   font-weight: 200;
   text-align: right;
@@ -288,6 +328,7 @@ html, body{
 
 /* Styling for the currently playing song's progress value. */
 .songprogresselapsed{
+  display: none;
   font-size: 14px;
   font-weight: 200;
   text-align: left;
@@ -299,14 +340,14 @@ html, body{
 .songtitle{
   color: black;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* Styling for the artist and album text below the song title in the footer. */
 .artistalbumtitle{
   color: black;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .artistalbumtitle a{
@@ -319,12 +360,28 @@ html, body{
   text-decoration: underline;
 }
 
+@media all and (min-width: 700px){
+  .songtitle{
+    font-size: 18px;
+  }
+
+  .artistalbumtitle{
+    font-size: 16px;
+  }
+}
+
 /* Styling for the "Nothing is playing right now." text. */
 .nothingplaying{
+  display: none;
   color: #AAAAB2;
   font-weight: 200;
   font-size: 16px;
-  display: none;
+}
+
+@media all and (min-width: 700px){
+  .nothingplaying{
+    text-align: center;
+  }
 }
 
 /* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
