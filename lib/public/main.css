@@ -494,7 +494,7 @@ html, body{
 @media all and (min-width: 750px){
   #contentcontainercontainer{
     flex-flow: column nowrap;
-    right: 0;
+    left: 25vw;
     position: absolute;
   }
 }
