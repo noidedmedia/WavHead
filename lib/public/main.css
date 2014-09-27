@@ -28,7 +28,7 @@ html, body{
 .artlistcontainer{
   margin: 0px 10px;
   width: auto;
-  min-width: 400px;
+  min-width: 200px;
   height: auto;
   display: flex;
   position: relative;
@@ -38,9 +38,14 @@ html, body{
 }
 
 /* The div that contains all artists/albums/songs on each page. */
-.artlist, .albumartlist{
+.artlist{
   width: 100%;
   text-align: left;
+}
+
+.albumartlist{
+  width: 100%;
+  text-align: center;
 }
 
 /* Styling specifically to fix an issue with Firefox. */
@@ -51,7 +56,7 @@ html, body{
 }
 
 /* This changes the layout of album listings on artist pages for smaller-width devices. Centers album art and makes the album titles smaller. */
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .albumartlist{
     text-align: center;
     font-size: 14px;
@@ -83,7 +88,7 @@ html, body{
   border-top: 1px solid #AAAAB2;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .songlistitem:first-child{
     border-top: 0px none;
     padding-top: 0px;
@@ -117,7 +122,7 @@ html, body{
 }
 
 /* Styling for album list items on any display with a width larger than 600px. */
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .albumlistitem{
     width: 40%;
     min-width: 150px;
@@ -129,18 +134,19 @@ html, body{
 
 /* Styling for the left column of an album page, contains the album cover and information. */
 #albuminfocontainer{
-  width: auto;
+  width: 100%;
   height: auto;
-  min-width: 150px;
-  max-width: 300px;
+  text-align: center;
   padding: 0px 0px 0px 10px;
-  margin: 0px auto 10px auto;
+  margin-bottom: 10px;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   #albuminfocontainer{
     margin: 0px;
     height: 100%;
+    min-width: 150px;
+    max-width: 300px;
   }
 }
 
@@ -152,7 +158,7 @@ html, body{
   height: auto;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .albumart img{
     max-width: 300px;
   }
@@ -166,7 +172,6 @@ html, body{
   flex-grow: 1;
   width: 100%;
   min-width: 100px;
-  max-width: 300px;
   text-align: center;
 }
 
@@ -220,7 +225,7 @@ html, body{
 }
 
 /* Styling for the footer on large-width devices. */
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   #footer{
     padding: 5px 10px;
     text-align: center;
@@ -256,7 +261,7 @@ html, body{
   position: absolute;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .currentalbumart img{
     width: 100px;
     height: 100px;
@@ -275,7 +280,7 @@ html, body{
 }
 
 /* Hides the songprogress values on smaller devices. */
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .songprogress, .songprogresstotal, .songprogresselapsed{
     display: block;
   }
@@ -292,7 +297,7 @@ html, body{
 }
 
 /* Styling for the progress bar when unfilled on devices/browser windows with a width larger than 700px. */
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .progressbar{
     display: none;
     position: relative;
@@ -356,7 +361,7 @@ html, body{
   text-decoration: underline;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .songtitle{
     font-size: 18px;
   }
@@ -379,7 +384,7 @@ html, body{
   font-size: 16px;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   .nothingplaying{
     text-align: center;
   }
@@ -492,7 +497,7 @@ html, body{
   overflow-y: scroll;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   #contentcontainercontainer{
     padding: 5px 5px 5px 20px;
     flex-flow: column nowrap;
@@ -511,7 +516,7 @@ html, body{
   overflow-y: scroll;
 }
 
-@media all and (min-width: 700px){
+@media all and (min-width: 750px){
   #contentcontainer{
     flex-flow: row nowrap;
   }
@@ -527,6 +532,7 @@ html, body{
 
 /* Container for the sidebar that limits it to a certain size, places it to the left, etc. */
 #sidebarcontainer{
+  display: none;
   background-color: #FFFFFF;
   position: fixed;
   z-index: 80;
@@ -535,7 +541,6 @@ html, body{
   left: 0;
   top: 50px;
   margin-bottom: 90px;
-  min-width: 200px;
   flex-grow: 0;
   order: 1;
   overflow-y: scroll;
@@ -543,9 +548,9 @@ html, body{
 }
 
 /* Hides the sidebar on devices with widths below 600px. */
-@media all and (max-width: 700px){
+@media all and (min-width: 750px){
   #sidebarcontainer{
-    display: none;
+    display: block;
   }
 }
 
