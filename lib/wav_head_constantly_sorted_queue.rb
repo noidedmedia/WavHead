@@ -1,4 +1,4 @@
-require 'mutex'
+require 'thread'
 module WavHead
   class ConstantlySortedQueue
     def initialize
@@ -13,35 +13,24 @@ module WavHead
     ##
     # Add a new element to the array
     def insert(o)
-      @mut.lock
-      @array << o
-      @mut.unlock
-      return true
+      @mut.synchronize{@array << o}
     end
     def next
-      @mut.lock
-      to_ret = @array[-1]
-      @mut.unlock
-      return to_ret
+      @mut.synchronize{@array.sort![-1]}
     end
 
     def pop
-      @mut.lock
-      to_ret = @array.sort.pop
-      @mut.unlock
+      @mut.synchronize{@array.sort!.pop}
     end
     def top(num)
-      @mut.lock
-      to_ret = @array.sort{|x,y| y <=> x}.take(num)
-      @mut.unlock
-      return to_ret
+      @mut.synchronize{@array.sort{|x,y| y <=> x}.take(num)}
+      
     end
     def include?(o)
-      @mut.lock
-      to_ret = @array.include?(o)
-      @mut.unlock
-      return to_ret
+      @mut.synchronize{@array.include?(o)}
     end
-    
+    def size
+      return @array.size
+    end
   end
 end

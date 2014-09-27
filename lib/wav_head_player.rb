@@ -27,14 +27,13 @@ module WavHead
         @song_votes[song] = SongVote.new(song)
       end
       @queue << @song_votes[song]  unless @queue.include? @song_votes[song]
-      @queue.sort!
+
       return true
     end
     def count
       @queue.size
     end
     def next
-      @queue.sort!
       return @queue.next.song
     end
     def start!
@@ -64,7 +63,7 @@ module WavHead
       end
     end
     def top(num)
-      @queue.top(num)
+      @queue.top(num).map{|i| i.song}
     end
   end
 
@@ -80,12 +79,6 @@ module WavHead
     end
     attr_accessor :song
     attr_reader :votes
-    ##
-    # Okay, so this next bit is technically bad design.
-    # Sorting is, by default, ascending. However, we want it to be
-    # sorted in descending order so the queue works properly. So
-    # we just use this hack, so we don't have to tell the queue
-    # to use the right block every time we add items
     def <=>(other)
       self.votes <=> other.votes
     end
