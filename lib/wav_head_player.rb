@@ -1,6 +1,6 @@
 require 'thread'
 require 'pqueue'
-require 'json'
+require_relative 'wav_head_constantly_sorted_queue'
 module WavHead
   class Player
     attr_reader :current
@@ -13,8 +13,7 @@ module WavHead
         # mplayer otherwise
         @command = "mplayer"
       end
-      @queue_mut = Mutex.new
-      @queue = Array.new
+      @queue = WavHead::ConstantlySortedQueue.new
     end
     def votes_for(song)
       return 0 unless @song_votes[song]
@@ -27,23 +26,16 @@ module WavHead
       else
         @song_votes[song] = SongVote.new(song)
       end
-      @queue_mut.lock
       @queue << @song_votes[song]  unless @queue.include? @song_votes[song]
       @queue.sort!
-      @queue_mut.unlock
       return true
     end
     def count
       @queue.size
     end
-    def get
-      @queue.pop.song
-    end
     def next
-      @queue_mut.lock
       @queue.sort!
-      @queue_mut.unlock
-      return @queue[-1].song
+      return @queue.next.song
     end
     def start!
       puts "######################"
@@ -59,15 +51,9 @@ module WavHead
       loop do
         puts("Looping...")
         if @queue && @queue.size > 0
-          @queue_mut.lock
-          @queue.sort!
-          song = self.get
+          song = @queue.next
           @current = CurrentSong.new(song)
-          @queue_mut.unlock
-          puts "Running a song!"
-          puts "#{@command} #{song.path}"
-          puts "#########################################"
-          `#{@command} "#{song.path}"`
+          song.play!
         end
         unless @queue && @queue.size > 0
           # No more queue items.
@@ -78,10 +64,7 @@ module WavHead
       end
     end
     def top(num)
-      @queue_mut.lock
-      @top = @queue.sort{|x, y| y <=> x}
-      @queue_mut.unlock
-      return @top.map{|t| t.song}.take(num)
+      @queue.top(num)
     end
   end
 
