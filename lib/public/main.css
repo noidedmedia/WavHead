@@ -15,16 +15,6 @@ html, body{
   height: 100%;
 }
 
-/* Container for the sidebar and content areas, holds everything but the Header and Footer. */
-#masthead{
-  background-color: #FFFFFF;
-  position: relative;
-  margin: 0px 0px 90px 0px;
-  display: flex;
-  flex-flow: row nowrap;
-  min-height: 100%;
-}
-
 
 /* 
 
@@ -44,11 +34,20 @@ html, body{
   position: relative;
   flex-flow: row wrap;
   flex-grow: 2;
+  text-align: center;
 }
 
 /* The div that contains all artists/albums/songs on each page. */
 .artlist, .albumartlist{
   width: 100%;
+  text-align: left;
+}
+
+/* Styling specifically to fix an issue with Firefox. */
+@-moz-document url-prefix(){
+  .artlist, .albumartlist{
+    margin-bottom: 90px;
+  }
 }
 
 /* This changes the layout of album listings on artist pages for smaller-width devices. Centers album art and makes the album titles smaller. */
@@ -215,10 +214,9 @@ html, body{
   width: 100%;
   border-top: 1px solid #AAAAB2;
   background-color: #FFFFFF;
-  margin: 0px;
+  margin: -90px 0px 0px 0px;
   padding: 4px 0px;
   text-align: left;
-  box-shadow: 0px 0px 20px 3px rgba(170,170,178,0.25);
 }
 
 /* Styling for the footer on large-width devices. */
@@ -443,12 +441,17 @@ html, body{
 */
 
 #header{
+  position: fixed;
+  z-index: 100;
   border-bottom: 1px solid #AAAAB2;
   background-color: #F5F5F5;
   color: #000000;
   font-size: 24px;
   font-weight: 500;
   padding: 10px;
+  width: 100%;
+  height: 30px;
+  margin-bottom: -50px;
 }
 
 #header a{
@@ -478,10 +481,22 @@ html, body{
 
 /* Container that "contains" the entire content area, that being anything that isn't in the header, footer, or sidebar */
 #contentcontainercontainer{
-  display: flex;
-  flex-grow: 3;
-  flex-flow: column nowrap;
-  order: 1;
+  display: block;
+  flex-flow: column wrap;
+  background-color: #FFFFFF;
+  position: absolute;
+  margin: 50px 0px 80px 0px;
+  padding: 5px;
+  width: 100%;
+}
+
+@media all and (min-width: 700px){
+  #contentcontainercontainer{
+    margin: 50px 0px 90px 25vw;
+    padding: 5px 5px 5px 20px;
+    width: 73%;
+    flex-flow: column nowrap;
+  }
 }
 
 /* The container that goes below the Breadcrumbs on Artist and song listings, that way styles applied to the song listing don't effect the breadcrumbs (e.g. multicolumn view for albums. */
@@ -493,6 +508,11 @@ html, body{
   min-width: 200px;
 }
 
+@media all and (min-width: 700px){
+  #contentcontainer{
+    flex-flow: row nowrap;
+  }
+}
 
 /* 
 
@@ -505,13 +525,17 @@ html, body{
 /* Container for the sidebar that limits it to a certain size, places it to the left, etc. */
 #sidebarcontainer{
   background-color: #FFFFFF;
-  position: static;
+  position: fixed;
+  z-index: 80;
   display: flex;
-  height: 100vh;
+  height: 100%;
   border-right: 1px solid #AAAAB2;
+  margin-top: 50px;
+  margin-bottom: 90px;
   padding: 10px;
   width: 25vw;
   left: 0;
+  top: 0;
   min-width: 200px;
   flex-grow: 0;
   order: 1;
