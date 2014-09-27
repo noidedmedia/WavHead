@@ -26,7 +26,7 @@ html, body{
 
 /* Container that holds the artlist items and forces similar margins on all pages. */
 .artlistcontainer{
-  margin: 0px 10px;
+  margin: 0px 6px;
   width: auto;
   min-width: 200px;
   height: auto;
@@ -91,7 +91,7 @@ html, body{
 @media all and (min-width: 750px){
   .songlistitem:first-child{
     border-top: 0px none;
-    padding-top: 0px;
+    padding-top: 3px;
   }
 }
 
@@ -215,25 +215,22 @@ html, body{
   position: fixed;
   left: 0px;
   bottom: 0px;
-  height: 80px;
+  height: 90px;
+  max-height: 90px;
   width: 100%;
   border-top: 1px solid #AAAAB2;
   background-color: #FFFFFF;
-  margin: -90px 0px 0px 0px;
-  padding: 4px 0px;
   text-align: left;
 }
 
 /* Styling for the footer on large-width devices. */
 @media all and (min-width: 750px){
   #footer{
-    padding: 5px 10px;
     text-align: center;
   }
 
   #footercontainer{
     align-items: center;
-    margin: auto;
     justify-content: center;
     padding-left: 0px !important;
   }
@@ -248,7 +245,7 @@ html, body{
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: left;
-  padding-left: 95px;
+  padding: 5px 5px 5px 95px;
 }
 
 /* Album art displayed in the footer when a song is playing. Will display nocover.png when nothing is playing. */
@@ -271,7 +268,6 @@ html, body{
 /* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
   display: none;
-  position: relative;
   color: black;
   font-weight: 200;
   font-size: 16px;
@@ -490,16 +486,13 @@ html, body{
   flex-flow: column wrap;
   background-color: #FFFFFF;
   position: absolute;
-  margin-top: 50px;
-  margin-bottom: 90px;
-  padding: 5px;
+  top: 50px;
   flex-grow: 1;
   overflow-y: scroll;
 }
 
 @media all and (min-width: 750px){
   #contentcontainercontainer{
-    padding: 5px 5px 5px 20px;
     flex-flow: column nowrap;
     right: 0;
     position: absolute;
@@ -513,7 +506,6 @@ html, body{
   background-color: #FFFFFF;
   position: relative;
   min-width: 200px;
-  overflow-y: scroll;
 }
 
 @media all and (min-width: 750px){
@@ -540,7 +532,6 @@ html, body{
   width: 25vw;
   left: 0;
   top: 50px;
-  margin-bottom: 90px;
   flex-grow: 0;
   order: 1;
   overflow-y: scroll;
@@ -560,7 +551,7 @@ html, body{
   height: auto;
   font-size: 16px;
   color: #000000;
-  margin: 5px 10px;
+  padding: 5px 10px;
 }
 
 /* Styling for the Queue's header. */
@@ -575,6 +566,11 @@ html, body{
   border-bottom: 1px solid #AAAAB2;
   padding: 4px 0px;
   width: 100%;
+}
+
+.queuelistitem:last-child{
+  border-bottom: 0px none;
+  padding: 4px 0px 8px 0px;
 }
 
 /* Styling for the name of a song in the Queue. */
