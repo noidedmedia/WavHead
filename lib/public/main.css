@@ -11,7 +11,7 @@ html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   font-weight: 200;
-  background-color: #FFFFFF;
+  background-color: #cfd8dc;
   height: 100%;
 }
 
@@ -27,9 +27,8 @@ html, body{
 #header{
   position: fixed;
   z-index: 100;
-  border-bottom: 1px solid #AAAAB2;
-  background-color: #F5F5F5;
-  color: #000000;
+  background-color: #37474f;
+  color: #FFFFFF;
   font-size: 24px;
   font-weight: 500;
   padding: 10px;
@@ -40,7 +39,7 @@ html, body{
 
 #header a{
   text-decoration: none;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .githublink{
@@ -66,10 +65,9 @@ html, body{
 /* Container for the sidebar that limits it to a certain size, places it to the left, etc. */
 #sidebarcontainer{
   display: none;
-  background-color: #FFFFFF;
+  background-color: #78909c;
   position: fixed;
   z-index: 80;
-  border-right: 1px solid #AAAAB2;
   width: 25vw;
   left: 0;
   top: 90px;
@@ -95,7 +93,6 @@ html, body{
   top: 50px;
   width: 25vw;
   height: 40px;
-  border-right: 1px solid #AAAAB2;
   background-color: #455a64;
   font-weight: 500;
   color: white;
@@ -124,9 +121,10 @@ html, body{
 
 /* Styling for each respective queue listing. */
 .queuelistitem{
-  border-bottom: 1px solid #AAAAB2;
+  border-bottom: 1px solid #FFFFFF;
   padding: 4px 0px;
   width: 100%;
+  color: white;
 }
 
 .queuelistitem:last-child{
@@ -145,15 +143,16 @@ html, body{
 .queueitemartist{
   font-size: 14px;
   font-weight: 400;
+  color: white;
 }
 
 .queueitemartist a{
-  color: black;
   text-decoration: none;
+  color: white;
 }
 
 .queueitemartist a:hover{
-  color: black;
+  color: white;
   text-decoration: underline;
 }
 
@@ -170,7 +169,7 @@ html, body{
 #contentcontainercontainer{
   display: flex;
   flex-flow: column wrap;
-  background-color: #FFFFFF;
+  background-color: #cfd8dc;
   position: absolute;
   top: 50px;
   flex-grow: 1;
@@ -189,7 +188,7 @@ html, body{
 #contentcontainer{
   display: flex;
   flex-flow: row wrap;
-  background-color: #FFFFFF;
+  background-color: #cfd8dc;
   position: relative;
   min-width: 200px;
 }
@@ -219,15 +218,16 @@ html, body{
   font-size: 16px;
   font-weight: 400;
   padding-bottom: 10px;
-  border-bottom: 1px solid #AAAAB2;
+  border-bottom: 1px solid #455a64;
   width: 100%;
   height: auto;
   text-align: left;
+  color: #455a64;
 }
 
 /* Styling for links in the breadcrumbs. */
 #breadcrumbs a{
-  color: black;
+  color: #455a64;
   text-decoration: none;
 }
 
@@ -295,14 +295,14 @@ html, body{
 
 /* Styling for the container of each respective artist/album/song. */
 .artistlistitem, .songlistitem{
-  border-top: 1px solid #AAAAB2;
+  border-top: 1px solid #455a64;
   padding: 10px 5px;
   margin: 0px;
 }
 
 /* This forces a bottom border for the final listed item. */
 .artistlistitem:last-child, .songlistitem:last-child{
-  border-bottom: 1px solid #AAAAB2;
+  border-bottom: 1px solid #455a64;
 }
 
 /* Removes the separator line for the first use of each of the following elements on a page, since the first item in artist/song lists never needs its own top-border. */
@@ -311,7 +311,7 @@ html, body{
 }
 
 .songlistitem:first-child{
-  border-top: 1px solid #AAAAB2;
+  border-top: 1px solid #455a64;
 }
 
 @media all and (min-width: 750px){
@@ -324,7 +324,7 @@ html, body{
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
 .artistlistitem a, .albumlistitem a, .songlistitem a{
   text-decoration: none;
-  color: black;
+  color: #455a64;
 }
 
 /* Styling for the containers of each respective Album on the artist pages. */
@@ -417,12 +417,12 @@ html, body{
 }
 
 .albuminfoartist a{
-  color: black;
+  color: #455a64;
   text-decoration: none;
 }
 
 .albuminfoartist a:hover{
-  color: black;
+  color: #455a64;
   text-decoration: underline;
 }
 
@@ -492,8 +492,7 @@ html, body{
   height: 90px;
   max-height: 90px;
   width: 100%;
-  border-top: 1px solid #AAAAB2;
-  background-color: #FFFFFF;
+  background-color: #546e7a;
   text-align: left;
 }
 
@@ -543,7 +542,7 @@ html, body{
 /* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
   display: none;
-  color: black;
+  color: #cfd8dc;
   font-weight: 200;
   font-size: 16px;
   width: 100%; /* Width is 100% because it's limited by the width of the progress bar below it. */
@@ -563,7 +562,7 @@ html, body{
   position: absolute;
   bottom: 87px;
   right: 0px;
-  background-color: #D6D5D5;
+  background-color: #37474f;
   height: 3px;
 }
 
@@ -582,7 +581,7 @@ html, body{
 .progressbarfill{
   display: none;
   position: relative;
-  background-color: black;
+  background-color: #b0bec5;
   width: 0%;
   max-width: 100%;
   height: 3px;
@@ -610,25 +609,25 @@ html, body{
 
 /* Styling for the title of the currently-playing song displayed in the footer. */
 .songtitle{
-  color: black;
+  color: #cfd8dc;
   font-weight: 400;
   font-size: 20px;
 }
 
 /* Styling for the artist and album text below the song title in the footer. */
 .artistalbumtitle{
-  color: black;
+  color: #cfd8dc;
   font-weight: 200;
   font-size: 18px;
 }
 
 .artistalbumtitle a{
-  color: black;
+  color: #cfd8dc;
   text-decoration: none;
 }
 
 .artistalbumtitle a:hover{
-  color: black;
+  color: #cfd8dc;
   text-decoration: underline;
 }
 
@@ -650,7 +649,7 @@ html, body{
 /* Styling for the "Nothing is playing right now." text. */
 .nothingplaying{
   display: none;
-  color: #AAAAB2;
+  color: #cfd8dc;
   font-weight: 200;
   font-size: 16px;
 }
