@@ -481,21 +481,23 @@ html, body{
 
 /* Container that "contains" the entire content area, that being anything that isn't in the header, footer, or sidebar */
 #contentcontainercontainer{
-  display: block;
+  display: flex;
   flex-flow: column wrap;
   background-color: #FFFFFF;
   position: absolute;
-  margin: 50px 0px 80px 0px;
+  margin-top: 50px;
+  margin-bottom: 90px;
   padding: 5px;
-  width: 100%;
+  flex-grow: 1;
+  overflow-y: scroll;
 }
 
 @media all and (min-width: 700px){
   #contentcontainercontainer{
-    margin: 50px 0px 90px 25vw;
     padding: 5px 5px 5px 20px;
-    width: 73%;
     flex-flow: column nowrap;
+    right: 0;
+    position: absolute;
   }
 }
 
@@ -506,6 +508,7 @@ html, body{
   background-color: #FFFFFF;
   position: relative;
   min-width: 200px;
+  overflow-y: scroll;
 }
 
 @media all and (min-width: 700px){
@@ -527,18 +530,16 @@ html, body{
   background-color: #FFFFFF;
   position: fixed;
   z-index: 80;
-  display: flex;
-  height: 100%;
   border-right: 1px solid #AAAAB2;
-  margin-top: 50px;
-  margin-bottom: 90px;
-  padding: 10px;
   width: 25vw;
   left: 0;
-  top: 0;
+  top: 50px;
+  margin-bottom: 90px;
   min-width: 200px;
   flex-grow: 0;
   order: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* Hides the sidebar on devices with widths below 600px. */
@@ -550,10 +551,11 @@ html, body{
 
 /* Styling for the sidebar which hosts the Queue. */
 #sidebar{
-  min-height: 100%;
+  position: relative;
+  height: auto;
   font-size: 16px;
-  width: 100%;
   color: #000000;
+  margin: 5px 10px;
 }
 
 /* Styling for the Queue's header. */
