@@ -11,7 +11,7 @@ html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   font-weight: 200;
-  background-color: #cfd8dc;
+  background-color: #FFFFFF;
   height: 100%;
 }
 
@@ -27,7 +27,7 @@ html, body{
 #header{
   position: fixed;
   z-index: 100;
-  background-color: #37474f;
+  background-color: #3C4361;
   color: #FFFFFF;
   font-size: 24px;
   font-weight: 500;
@@ -43,7 +43,7 @@ html, body{
 }
 
 .githublink{
-  color: white;
+  color: #ABB6CE;
   font-size: 16px;
   font-weight: 200;
   text-decoration: none;
@@ -65,7 +65,7 @@ html, body{
 /* Container for the sidebar that limits it to a certain size, places it to the left, etc. */
 #sidebarcontainer{
   display: none;
-  background-color: #78909c;
+  background-color: #F2F2F0;
   position: fixed;
   z-index: 80;
   width: 25vw;
@@ -93,7 +93,7 @@ html, body{
   top: 50px;
   width: 25vw;
   height: 40px;
-  background-color: #455a64;
+  background-color: #262E4F;
   font-weight: 500;
   color: white;
 }
@@ -121,7 +121,7 @@ html, body{
 
 /* Styling for each respective queue listing. */
 .queuelistitem{
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #3C4361;
   padding: 4px 0px;
   width: 100%;
   color: white;
@@ -169,7 +169,7 @@ html, body{
 #contentcontainercontainer{
   display: flex;
   flex-flow: column wrap;
-  background-color: #cfd8dc;
+  background-color: #FFFFFF;
   position: absolute;
   top: 50px;
   flex-grow: 1;
@@ -188,7 +188,7 @@ html, body{
 #contentcontainer{
   display: flex;
   flex-flow: row wrap;
-  background-color: #cfd8dc;
+  background-color: #FFFFFF;
   position: relative;
   min-width: 200px;
 }
@@ -218,16 +218,16 @@ html, body{
   font-size: 16px;
   font-weight: 400;
   padding-bottom: 10px;
-  border-bottom: 1px solid #455a64;
+  border-bottom: 1px solid #131B3C;
   width: 100%;
   height: auto;
   text-align: left;
-  color: #455a64;
+  color: #000000;
 }
 
 /* Styling for links in the breadcrumbs. */
 #breadcrumbs a{
-  color: #455a64;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -324,7 +324,7 @@ html, body{
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
 .artistlistitem a, .albumlistitem a, .songlistitem a{
   text-decoration: none;
-  color: #455a64;
+  color: #424242;
 }
 
 /* Styling for the containers of each respective Album on the artist pages. */
@@ -417,12 +417,12 @@ html, body{
 }
 
 .albuminfoartist a{
-  color: #455a64;
+  color: #424242;
   text-decoration: none;
 }
 
 .albuminfoartist a:hover{
-  color: #455a64;
+  color: #424242;
   text-decoration: underline;
 }
 
@@ -492,7 +492,7 @@ html, body{
   height: 90px;
   max-height: 90px;
   width: 100%;
-  background-color: #546e7a;
+  background-color: #3C4361;
   text-align: left;
 }
 
@@ -542,7 +542,7 @@ html, body{
 /* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
   display: none;
-  color: #cfd8dc;
+  color: #FFFFFF;
   font-weight: 200;
   font-size: 16px;
   width: 100%; /* Width is 100% because it's limited by the width of the progress bar below it. */
@@ -562,7 +562,7 @@ html, body{
   position: absolute;
   bottom: 87px;
   right: 0px;
-  background-color: #37474f;
+  background-color: #131B3C;
   height: 3px;
 }
 
@@ -581,7 +581,7 @@ html, body{
 .progressbarfill{
   display: none;
   position: relative;
-  background-color: #b0bec5;
+  background-color: #60A4EA;
   width: 0%;
   max-width: 100%;
   height: 3px;
@@ -609,25 +609,25 @@ html, body{
 
 /* Styling for the title of the currently-playing song displayed in the footer. */
 .songtitle{
-  color: #cfd8dc;
+  color: #FFFFFF;
   font-weight: 400;
   font-size: 20px;
 }
 
 /* Styling for the artist and album text below the song title in the footer. */
 .artistalbumtitle{
-  color: #cfd8dc;
+  color: #ABB6CE;
   font-weight: 200;
   font-size: 18px;
 }
 
 .artistalbumtitle a{
-  color: #cfd8dc;
+  color: #ABB6CE;
   text-decoration: none;
 }
 
 .artistalbumtitle a:hover{
-  color: #cfd8dc;
+  color: #ABB6CE;
   text-decoration: underline;
 }
 
@@ -649,7 +649,7 @@ html, body{
 /* Styling for the "Nothing is playing right now." text. */
 .nothingplaying{
   display: none;
-  color: #cfd8dc;
+  color: #ABB6CE;
   font-weight: 200;
   font-size: 16px;
 }
