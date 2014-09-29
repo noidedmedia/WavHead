@@ -12,8 +12,17 @@ class Song
   property :length, Integer, required: true
   belongs_to :album
   has 1, :artist, {through: :album}
-  before :save do |song|
-    song.title.gsub("/","%2F")
+  ##
+  # Plays the song through the speakers
+  def play!
+    if /darwin/ =~ RUBY_PLATFORM
+      command = "afplay"
+    else
+      command = "mplayer"
+    end
+    puts "Playing...."
+    puts "#{command} #{self.path}"
+    system command, path
   end
 end
 
