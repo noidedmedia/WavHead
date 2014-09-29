@@ -87,7 +87,8 @@ module WavHead
         ##
         # If we have a song...
         if @queue && @queue.size > 0
-          song = @queue.next
+          song = @queue.pop
+          puts "Sending play to #{song.inspect}"
           ##
           # Set current to a new CurrentSong.
           # A "CurrentSong" is an object with the currently played song,

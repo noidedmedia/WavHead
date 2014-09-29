@@ -11,6 +11,21 @@ RSpec.describe WavHead::ConstantlySortedQueue do
     c << 1
     expect(c.next).to eq(3)
   end
+  it "gives back the top elements" do
+    c = WavHead::ConstantlySortedQueue.new
+    c << 2 
+    c << 3
+    c << 1
+    expect(c.top(2)).to eq([3,2])
+  end
+  it "removes elements when popped" do
+    c = WavHead::ConstantlySortedQueue.new
+    c << 2
+    c << 3
+    c << 1
+    expect(c.pop).to eq(3)
+    expect(c.include? 3).to eq(false)
+  end
   it "updates size properly" do
     c = WavHead::ConstantlySortedQueue.new
     c << 2 

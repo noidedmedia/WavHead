@@ -15,14 +15,14 @@ class Song
   ##
   # Plays the song through the speakers
   def play!
-    if /darwin/ =~ RUBY_PLATFROM
+    if /darwin/ =~ RUBY_PLATFORM
       command = "afplay"
     else
       command = "mplayer"
     end
     puts "Playing...."
     puts "#{command} #{self.path}"
-    `#{command} #{self.path}`
+    system command, path
   end
 end
 
