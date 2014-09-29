@@ -24,6 +24,7 @@ html, body{
 
 */
 
+/* Style for the fixed header at the top of the site. It has a height of 50px (20px of which are due to padding). */
 #header{
   position: fixed;
   z-index: 100;
@@ -37,18 +38,21 @@ html, body{
   margin-bottom: -50px;
 }
 
+/* Styling for links in the header. */
 #header a{
   text-decoration: none;
   color: #FFFFFF;
 }
 
+/* Styling specifically for the "(View on GitHub)" text in the header. */
 .githublink{
-  color: #ABB6CE;
+  color: #ABB6CE !important;
   font-size: 16px;
   font-weight: 200;
   text-decoration: none;
 }
 
+/* Hover styles for links in the header. */
 #header a:hover, .githublink a:hover{
   text-decoration: underline;
 }
@@ -84,7 +88,7 @@ html, body{
   }
 }
 
-/* Styling for the Queue's header. */
+/* Styling for the Queue's fixed header. */
 #queueheader{
   display: none;
   position: fixed;
@@ -104,6 +108,7 @@ html, body{
   }
 }
 
+/* Text in the Queue sidebar's header. */
 #queuetitle{
   width: 100%;
   height: 100%;
@@ -141,11 +146,13 @@ html, body{
   color: #3c4361;
 }
 
+/* Same as above, specific to text with links. */
 .queueitemartist a{
   text-decoration: none;
   color: #3c4361;
 }
 
+/* Same as both above, styles specific to hovering over links. */
 .queueitemartist a:hover{
   text-decoration: underline;
   color: #3c4361;
@@ -175,8 +182,8 @@ html, body{
 @media all and (min-width: 750px){
   #contentcontainercontainer{
     flex-flow: column nowrap;
-    left: 25vw;
-    position: absolute;
+    left: 25vw; /* This compensates for the 25% of the browser window width which is taken up by the Queue sidebar. */
+    position: absolute; /* This ensures that the Queue sidebar doesn't effect the positioning of the main content area. */
   }
 }
 
@@ -185,7 +192,6 @@ html, body{
   display: flex;
   flex-flow: row wrap;
   background-color: #FFFFFF;
-  position: absolute;
   min-width: 200px;
   width: 100%;
   top: 50px;
@@ -194,6 +200,7 @@ html, body{
 @media all and (min-width: 750px){
   #contentcontainer{
     flex-flow: row nowrap;
+    position: absolute;
   }
 }
 
@@ -307,6 +314,7 @@ html, body{
 .artistlistitem:first-child{
   border-top: 0px none;
 }
+
 
 .songlistitem:first-child{
   border-top: 1px solid #455a64;
@@ -433,7 +441,7 @@ html, body{
 
 */
 
-/* Styling for the upvote button used on song pages. */
+/* Styling for the upvote button used on album pages. */
 .upvote{
   display: inline-block;
   padding: auto;
@@ -601,6 +609,7 @@ html, body{
   text-decoration: underline;
 }
 
+/* Text size is smaller on larger devices, since larger text is necessary for legibility on mobile devices. */
 @media all and (min-width: 750px){
   .songtitle{
     font-size: 18px;
@@ -618,12 +627,14 @@ html, body{
 
 /* Styling for the "Nothing is playing right now." text. */
 .nothingplaying{
+  text-align: left;
   display: none;
   color: #ABB6CE;
   font-weight: 200;
   font-size: 16px;
 }
 
+/* If nothing is playing and the browser window's width is 750 pixels or more, then the text is centered. */
 @media all and (min-width: 750px){
   .nothingplaying{
     text-align: center;
