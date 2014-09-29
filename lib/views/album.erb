@@ -46,7 +46,7 @@
       <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
         <div class="songlistitem">
           
-          <form action="<%= @album.title %>/<%= s.title %>/vote" method="post">
+          <form class="voteform" action="<%= @album.title %>/<%= s.title %>/vote" method="post">
             <%= s.title %>
             
             <input type="submit" title="vote" value="Upvote" class="upvote">
