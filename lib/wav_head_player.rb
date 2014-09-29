@@ -73,6 +73,8 @@ module WavHead
       puts "#      starting      #"
       puts "#        now         #"
       puts "######################"
+      Thread.abort_on_exception = true # Crash the server if something goes 
+      # horribly wrong in a thread
       Thread.new do
         ##
         # In a new Thread, we run the "play" loop.
@@ -87,7 +89,7 @@ module WavHead
         ##
         # If we have a song...
         if @queue && @queue.size > 0
-          song = @queue.pop
+          song = @queue.pop.song
           puts "Sending play to #{song.inspect}"
           ##
           # Set current to a new CurrentSong.
