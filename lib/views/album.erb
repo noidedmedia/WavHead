@@ -46,13 +46,11 @@
       <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
         <div class="songlistitem">
           
-          <form action="<%= @album.title %>/<%= s.title %>/vote" method="post" target="upvote <%= s.title %>">
+          <form action="<%= @album.title %>/<%= s.title %>/vote" method="post">
             <%= s.title %>
             
-            <input type="submit" title="vote" value="Upvote" class="upvote" onclick="updateQueue()">
+            <input type="submit" title="vote" value="Upvote" class="upvote">
           </form>
-
-          <iframe name="upvote <%= s.title %>" height="0" width="0" style="display: none"></iframe>
         </div>
       <% end %>
     </div>
