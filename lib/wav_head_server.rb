@@ -21,13 +21,13 @@ module WavHead
       erb :home
     end
     get "/browse/:artist" do
-      @artist = Artist.first(title: params[:artist])
+      @artist = Artist.first(safe_title: params[:artist])
       @albums = Album.all(artist: @artist, order: [:title.asc])
       erb :artist
     end
     get "/browse/:artist/:album" do
-      @artist = Artist.first(title: params[:artist])
-      @album = Album.first(title: params[:album], artist: @artist)
+      @artist = Artist.first(safe_title: params[:artist])
+      @album = Album.first(safe_title: params[:album], artist: @artist)
       @songs = Song.all(album: @album, order: [:track.asc])
       erb :album
     end
