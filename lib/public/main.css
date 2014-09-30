@@ -315,7 +315,6 @@ html, body{
   border-top: 0px none;
 }
 
-
 .songlistitem:first-child{
   border-top: 1px solid #455a64;
 }
@@ -362,6 +361,22 @@ html, body{
     height: auto;
     max-height: 300px;
   }
+}
+
+.songtitle{
+  position: relative;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 200;
+  text-align: left;
+}
+
+.songlength{
+  position: relative;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 200;
+  align-self: flex-end;
 }
 
 /* Styling for the left column of an album page, contains the album cover and information. */
@@ -432,20 +447,11 @@ html, body{
   text-decoration: underline;
 }
 
-
-/* 
-
-====================================
-            UPVOTE BUTTON
-====================================
-
-*/
-
 /* Styling for the upvote button used on album pages. */
 .upvote{
-  display: inline-block;
+  display: inline;
   padding: auto;
-  margin: 0px 10px;
+  margin: 0px;
   font-size: 14px;
   font-weight: 200;
   vertical-align: middle;
@@ -586,7 +592,7 @@ html, body{
 }
 
 /* Styling for the title of the currently-playing song displayed in the footer. */
-.songtitle{
+.currentsongtitle{
   color: #FFFFFF;
   font-weight: 400;
   font-size: 20px;
@@ -611,7 +617,7 @@ html, body{
 
 /* Text size is smaller on larger devices, since larger text is necessary for legibility on mobile devices. */
 @media all and (min-width: 750px){
-  .songtitle{
+  .currentsongtitle{
     font-size: 18px;
   }
 
@@ -642,6 +648,6 @@ html, body{
 }
 
 /* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
-.songtitle, .artistalbumtitle, .nothingplaying{
+.currentsongtitle, .artistalbumtitle, .nothingplaying{
   padding: 2px;
 }
