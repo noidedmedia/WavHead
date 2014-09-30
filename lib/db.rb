@@ -7,6 +7,7 @@ DataMapper.setup(:default, "sqlite://#{Dir.pwd}/.db.sqlite")
 # We keep this in here since it isn't used outside of this file
 module WavHead
   def self.url_encode(u)
+    return nil if u.nil?
     return u.gsub("/","-slash-")
       .gsub('"',"-quote-")
       .gsub("(","-paren-")
@@ -50,7 +51,7 @@ class Album
   belongs_to :artist, required: true
   has n, :songs
   before(:save) do
-    safe_title = WavHead::url_encode(title)
+    self.safe_title = WavHead::url_encode(title)
   end
 end
 
@@ -62,7 +63,7 @@ class Artist
   has n, :albums
   has n, :songs, through: :albums
   before(:save) do
-    safe_title = WavHead::url_encode(title)
+    self.safe_title = WavHead::url_encode(title.to_s)
   end
 end
 

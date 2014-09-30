@@ -32,21 +32,21 @@ module WavHead
       erb :album
     end
     get "/browse/:artist/:album/:song" do
-      @artist = Artist.first(title: params[:artist])
-      @album = Album.first(title: params[:album], artist: @artist)
-      @song = Song.first(title: params[:song], album: @album)
+      @artist = Artist.first(safe_title: params[:artist])
+      @album = Album.first(safe_title: params[:album], artist: @artist)
+      @song = Song.first(safe_title: params[:song], album: @album)
       erb :song
     end
     post "/browse/:artist/:album/:song/vote" do
-      @artist = Artist.first(title: params[:artist])
-      @album = Album.first(title: params[:album], artist: @artist)
-      @song = Song.first(title: params[:song], album: @album)
+      @artist = Artist.first(safe_title: params[:artist])
+      @album = Album.first(safe_title: params[:album], artist: @artist)
+      @song = Song.first(safe_title: params[:song], album: @album)
       settings.p.vote(@song)
       redirect back
     end
     get "/cover/:artist/:album" do
-      @artist = Artist.first(title: params[:artist])
-      @album = Album.first(title: params[:album], artist: @artist)
+      @artist = Artist.first(safe_title: params[:artist])
+      @album = Album.first(safe_title: params[:album], artist: @artist)
       send_file @album.art_path
     end
   end

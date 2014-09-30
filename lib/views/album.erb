@@ -13,7 +13,7 @@
     <div class="albumart">
       <% a = @album %>
       <% if a.art_path %>
-        <img src="/cover/<%= @artist.title %>/<%= @album.title %>">
+        <img src="/cover/<%= @artist.safe_title %>/<%= @album.safe_title %>">
 
       <% else %>
         <img src="/nocover.png">
@@ -30,7 +30,7 @@
 
       <!-- The album's artist is displayed here. -->
       <div class="albuminfoartist">
-        <a href="/browse/<%= @artist.title %>">
+        <a href="/browse/<%= @artist.safe_title %>">
           <%= @artist.title %>
         </a>
       </div>
@@ -46,8 +46,8 @@
       <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
         <div class="songlistitem">
           
-          <form class="voteform" action="<%= @album.title %>/<%= s.title %>/vote" method="post">
-            <%= s.title %>
+          <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
+            <%= s.safe_title %>
             
             <input type="submit" title="vote" value="Upvote" class="upvote">
           </form>
