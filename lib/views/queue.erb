@@ -13,7 +13,7 @@
 
       <!-- Displays and links to the queued song's respective artist and album. -->
       <div class="queueitemartist">
-        <a href="/browse/<%= i.artist.safe_title %>"><%= i.artist.safe_title %></a>
+        <a href="/browse/<%= i.artist.safe_title %>"><%= i.artist.title %></a>
         &mdash;
         <a href="/browse/<%= i.artist.safe_title %>/<%= i.album.safe_title %>"><%= i.album.title %></a>
       </div>
