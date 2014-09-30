@@ -101,7 +101,7 @@ module WavHead
           song.play!
           ##
           # Remove it from the queue, so people can vote on it again.
-          @queue[song] = nil
+          @song_votes[song] = nil
         end
         unless @queue && @queue.size > 0
           ##
