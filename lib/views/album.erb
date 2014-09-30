@@ -47,7 +47,7 @@
         <div class="songlistitem">
           
           <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
-            <%= s.safe_title %>
+            <%= s.title %>
             
             <input type="submit" title="vote" value="Upvote" class="upvote">
           </form>
