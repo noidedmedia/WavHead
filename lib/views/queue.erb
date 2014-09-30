@@ -1,20 +1,22 @@
+<!-- The content on this page is "embedded" inside the sidebar div in layout.erb, any changes being made to the Queue should be made here. -->
+
 <div id="queue">
-  <% if @queue %>
-    <% @queue.each do |i| %>
-      <div class="queuelistitem">
-        <div class="queueitemtitle">
-          <%= i.title %>
-        </div>
 
-        <div class="queueitemartist">
-          <a href="/browse/<%= i.artist.title %>"><%= i.artist.title %></a>
-          &mdash;
-          <a href="/browse/<%= i.artist.title %>/<%= i.album.title %>"><%= i.album.title %></a>
-        </div>
+  <!-- For each queued song, the following will be displayed. -->
+  <% @queue.each do |i| %>
+    <div class="queuelistitem">
+    
+      <!-- This displays the respective queued song's title. -->
+      <div class="queueitemtitle">
+        <%= i.title %>
       </div>
-    <% end %>
-  <% else %>
-    No songs are queued.
 
+      <!-- Displays and links to the queued song's respective artist and album. -->
+      <div class="queueitemartist">
+        <a href="/browse/<%= i.artist.title %>"><%= i.artist.title %></a>
+        &mdash;
+        <a href="/browse/<%= i.artist.title %>/<%= i.album.title %>"><%= i.album.title %></a>
+      </div>
+    </div>
   <% end %>
 </div>

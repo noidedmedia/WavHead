@@ -1,3 +1,4 @@
+<!-- The "breadcrumbs" are displayed at the top of every artist's page, and allow the user to navigate back to the home page. -->
 <div id="breadcrumbscontainer">
   <div id="breadcrumbs">
     <a href="/">WavHead</a> &gt; <span class="boldbreadcrumb"><%= @artist.title %></span>
@@ -5,9 +6,13 @@
 </div>
 
 <div class="albumartlist">
+
+  <!-- For each album belonging to the relevant artist, the following is displayed. -->
   <% @artist.albums.each do |a| %>
     <a href="/browse/<%= @artist.title %>/<%= a.title %>">
       <div class="albumlistitem">
+
+        <!-- If an album cover exists, then it's displayed. Otherwise a placeholder image is given. -->
         <% if a.art_path %>
           <img src="/cover/<%= @artist.title %>/<%= a.title %>">
 
@@ -18,6 +23,7 @@
         
         <br>
 
+        <!-- The title of the album is displayed below the album cover. -->
         <%= a.title %>
       </a>
     </div>

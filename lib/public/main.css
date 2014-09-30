@@ -24,12 +24,12 @@ html, body{
 
 */
 
+/* Style for the fixed header at the top of the site. It has a height of 50px (20px of which are due to padding). */
 #header{
   position: fixed;
   z-index: 100;
-  border-bottom: 1px solid #AAAAB2;
-  background-color: #F5F5F5;
-  color: #000000;
+  background-color: #3C4361;
+  color: #FFFFFF;
   font-size: 24px;
   font-weight: 500;
   padding: 10px;
@@ -38,18 +38,21 @@ html, body{
   margin-bottom: -50px;
 }
 
+/* Styling for links in the header. */
 #header a{
   text-decoration: none;
-  color: #000000;
+  color: #FFFFFF;
 }
 
+/* Styling specifically for the "(View on GitHub)" text in the header. */
 .githublink{
-  color: white;
+  color: #ABB6CE !important;
   font-size: 16px;
   font-weight: 200;
   text-decoration: none;
 }
 
+/* Hover styles for links in the header. */
 #header a:hover, .githublink a:hover{
   text-decoration: underline;
 }
@@ -66,10 +69,9 @@ html, body{
 /* Container for the sidebar that limits it to a certain size, places it to the left, etc. */
 #sidebarcontainer{
   display: none;
-  background-color: #FFFFFF;
+  background-color: #F2F2F0;
   position: fixed;
   z-index: 80;
-  border-right: 1px solid #AAAAB2;
   width: 25vw;
   left: 0;
   top: 90px;
@@ -86,7 +88,7 @@ html, body{
   }
 }
 
-/* Styling for the Queue's header. */
+/* Styling for the Queue's fixed header. */
 #queueheader{
   display: none;
   position: fixed;
@@ -95,10 +97,9 @@ html, body{
   top: 50px;
   width: 25vw;
   height: 40px;
-  border-right: 1px solid #AAAAB2;
-  background-color: #455a64;
+  background-color: #262E4F;
   font-weight: 500;
-  color: white;
+  color: #FFFFFF;
 }
 
 @media all and (min-width: 750px){
@@ -107,10 +108,11 @@ html, body{
   }
 }
 
+/* Text in the Queue sidebar's header. */
 #queuetitle{
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
 }
 
 /* Styling for the sidebar which hosts the Queue. */
@@ -118,20 +120,16 @@ html, body{
   position: relative;
   height: auto;
   font-size: 16px;
-  color: #000000;
-  padding: 5px 10px;
+  color: #3c4361;
+  padding: 0px 10px 5px 10px;
 }
 
 /* Styling for each respective queue listing. */
 .queuelistitem{
-  border-bottom: 1px solid #AAAAB2;
+  border-bottom: 1px solid #3C4361;
   padding: 4px 0px;
   width: 100%;
-}
-
-.queuelistitem:last-child{
-  border-bottom: 0px none;
-  padding: 4px 0px 8px 0px;
+  color: #3c4361;
 }
 
 /* Styling for the name of a song in the Queue. */
@@ -145,16 +143,19 @@ html, body{
 .queueitemartist{
   font-size: 14px;
   font-weight: 400;
+  color: #3c4361;
 }
 
+/* Same as above, specific to text with links. */
 .queueitemartist a{
-  color: black;
   text-decoration: none;
+  color: #3c4361;
 }
 
+/* Same as both above, styles specific to hovering over links. */
 .queueitemartist a:hover{
-  color: black;
   text-decoration: underline;
+  color: #3c4361;
 }
 
 
@@ -175,13 +176,14 @@ html, body{
   top: 50px;
   flex-grow: 1;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @media all and (min-width: 750px){
   #contentcontainercontainer{
     flex-flow: column nowrap;
-    left: 25vw;
-    position: absolute;
+    left: 25vw; /* This compensates for the 25% of the browser window width which is taken up by the Queue sidebar. */
+    position: absolute; /* This ensures that the Queue sidebar doesn't effect the positioning of the main content area. */
   }
 }
 
@@ -190,13 +192,15 @@ html, body{
   display: flex;
   flex-flow: row wrap;
   background-color: #FFFFFF;
-  position: relative;
   min-width: 200px;
+  width: 100%;
+  top: 50px;
 }
 
 @media all and (min-width: 750px){
   #contentcontainer{
     flex-flow: row nowrap;
+    position: absolute;
   }
 }
 
@@ -211,7 +215,7 @@ html, body{
 
 /* Container for the breadcrumbs. */
 #breadcrumbscontainer{
-  padding: 10px;
+  margin: 10px 6px 10px 10px;
 }
 
 /* Styling for the the breadcrumbs, a.k.a. directories (e.g. WavHead > Daft Punk > Random Access Memories > Get Lucky) */
@@ -219,15 +223,16 @@ html, body{
   font-size: 16px;
   font-weight: 400;
   padding-bottom: 10px;
-  border-bottom: 1px solid #AAAAB2;
+  border-bottom: 1px solid #131B3C;
   width: 100%;
   height: auto;
   text-align: left;
+  color: #000000;
 }
 
 /* Styling for links in the breadcrumbs. */
 #breadcrumbs a{
-  color: black;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -295,14 +300,14 @@ html, body{
 
 /* Styling for the container of each respective artist/album/song. */
 .artistlistitem, .songlistitem{
-  border-top: 1px solid #AAAAB2;
+  border-top: 1px solid #455a64;
   padding: 10px 5px;
   margin: 0px;
 }
 
 /* This forces a bottom border for the final listed item. */
-.artistlistitem:last-child, .songlistitem:last-child{
-  border-bottom: 1px solid #AAAAB2;
+.songlistitem:last-child{
+  border-bottom: 1px solid #455a64;
 }
 
 /* Removes the separator line for the first use of each of the following elements on a page, since the first item in artist/song lists never needs its own top-border. */
@@ -310,8 +315,9 @@ html, body{
   border-top: 0px none;
 }
 
+
 .songlistitem:first-child{
-  border-top: 1px solid #AAAAB2;
+  border-top: 1px solid #455a64;
 }
 
 @media all and (min-width: 750px){
@@ -324,7 +330,7 @@ html, body{
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
 .artistlistitem a, .albumlistitem a, .songlistitem a{
   text-decoration: none;
-  color: black;
+  color: #424242;
 }
 
 /* Styling for the containers of each respective Album on the artist pages. */
@@ -417,12 +423,12 @@ html, body{
 }
 
 .albuminfoartist a{
-  color: black;
+  color: #424242;
   text-decoration: none;
 }
 
 .albuminfoartist a:hover{
-  color: black;
+  color: #424242;
   text-decoration: underline;
 }
 
@@ -435,43 +441,15 @@ html, body{
 
 */
 
-/* Styling for the upvote button used on song pages. */
-.upvotebutton{
-  text-align: center;
+/* Styling for the upvote button used on album pages. */
+.upvote{
   display: inline-block;
-  color: #333333;
-  height: 34px;
-  width: 80px;
   padding: auto;
   margin: 0px 10px;
   font-size: 14px;
   font-weight: 200;
   vertical-align: middle;
-  text-decoration: none;
   cursor: pointer;
-  position: relative;
-  background-color: #FFFFFF;
-  border: 1px solid #AAAAB2;
-  border-radius: 3px;
-  box-shadow: inset 0px 0px 0px transparent;
-  transition: box-shadow 400ms ease-in-out;
-}
-
-/* Styling of the upvote button on hover. */
-.upvotebutton:hover{
-  text-decoration: none;
-  box-shadow: inset 0px -2px 0px #AAAAB2, 0px 2px 10px -4px rgba(170,170,178,0.5);
-  transition: box-shadow 400ms ease-in-out;
-}
-
-/* Styling of the upvote button on focus. */
-.upvotebutton:focus{
-  outline: none;
-}
-
-/* Styling of the upvote button when active (pressed). */
-.upvotebutton:active{
-  background-color: #f5f5f5;
 }
 
 
@@ -492,8 +470,7 @@ html, body{
   height: 90px;
   max-height: 90px;
   width: 100%;
-  border-top: 1px solid #AAAAB2;
-  background-color: #FFFFFF;
+  background-color: #3C4361;
   text-align: left;
 }
 
@@ -543,11 +520,11 @@ html, body{
 /* Song progress container that holds the song's progress values as well as the progress bar. */
 .songprogress{
   display: none;
-  color: black;
+  color: #FFFFFF;
   font-weight: 200;
   font-size: 16px;
   width: 100%; /* Width is 100% because it's limited by the width of the progress bar below it. */
-  height: 18px;
+  height: 20px;
 }
 
 /* Hides the songprogress values on smaller devices. */
@@ -563,7 +540,7 @@ html, body{
   position: absolute;
   bottom: 87px;
   right: 0px;
-  background-color: #D6D5D5;
+  background-color: #131B3C;
   height: 3px;
 }
 
@@ -582,7 +559,7 @@ html, body{
 .progressbarfill{
   display: none;
   position: relative;
-  background-color: black;
+  background-color: #60A4EA;
   width: 0%;
   max-width: 100%;
   height: 3px;
@@ -610,28 +587,29 @@ html, body{
 
 /* Styling for the title of the currently-playing song displayed in the footer. */
 .songtitle{
-  color: black;
+  color: #FFFFFF;
   font-weight: 400;
   font-size: 20px;
 }
 
 /* Styling for the artist and album text below the song title in the footer. */
 .artistalbumtitle{
-  color: black;
+  color: #ABB6CE;
   font-weight: 200;
   font-size: 18px;
 }
 
 .artistalbumtitle a{
-  color: black;
+  color: #ABB6CE;
   text-decoration: none;
 }
 
 .artistalbumtitle a:hover{
-  color: black;
+  color: #ABB6CE;
   text-decoration: underline;
 }
 
+/* Text size is smaller on larger devices, since larger text is necessary for legibility on mobile devices. */
 @media all and (min-width: 750px){
   .songtitle{
     font-size: 18px;
@@ -649,12 +627,14 @@ html, body{
 
 /* Styling for the "Nothing is playing right now." text. */
 .nothingplaying{
+  text-align: left;
   display: none;
-  color: #AAAAB2;
+  color: #ABB6CE;
   font-weight: 200;
   font-size: 16px;
 }
 
+/* If nothing is playing and the browser window's width is 750 pixels or more, then the text is centered. */
 @media all and (min-width: 750px){
   .nothingplaying{
     text-align: center;

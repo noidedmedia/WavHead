@@ -1,12 +1,15 @@
+<!-- The "breadcrumbs" are displayed at the top of every artist's page, and allow the user to navigate back to the home page or the artist's page. -->
 <div id="breadcrumbscontainer">
   <div id="breadcrumbs">
     <a href="/">WavHead</a> &gt; <a href="/browse/<%= @artist.title %>"><%= @artist.title %></a> &gt; <span class="boldbreadcrumb"><%= @album.title %></span>
   </div>
 </div>
 
+<!-- The contentcontainer hosts two columns, one for the album information (album art, title, artist) and one for the song list. -->
 <div id="contentcontainer">
   <div id="albuminfocontainer">
 
+    <!-- Album art is displayed here. If the album has a cover, that cover is shown. Otherwise, a placeholder is given. -->
     <div class="albumart">
       <% a = @album %>
       <% if a.art_path %>
@@ -19,10 +22,13 @@
     </div>
 
     <div class="albuminfo">
+
+      <!-- The album's title is displayed here. -->
       <div class="albuminfoalbum">
         <%= @album.title %>
       </div>
 
+      <!-- The album's artist is displayed here. -->
       <div class="albuminfoartist">
         <a href="/browse/<%= @artist.title %>">
           <%= @artist.title %>
@@ -32,11 +38,19 @@
 
   </div>
 
+  <!-- The list of songs is displayed in a second column to the right of the album information, or below on mobile devices. -->
   <div class="artlistcontainer">
     <div class="artlist">
+
+      <!-- For each songin the album, the following is displayed. -->
       <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
         <div class="songlistitem">
-          <a href="/browse/<%= @artist.title %>/<%= @album.title %>/<%= s.title %>"><%= s.title %></a>
+          
+          <form class="voteform" action="<%= @album.title %>/<%= s.title %>/vote" method="post">
+            <%= s.title %>
+            
+            <input type="submit" title="vote" value="Upvote" class="upvote">
+          </form>
         </div>
       <% end %>
     </div>

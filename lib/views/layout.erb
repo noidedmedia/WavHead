@@ -9,41 +9,54 @@
 </head>
 <body>
 
+<!-- Div for the fixed header that contains the product title and a link to the GitHub repository. -->
 <div id="header">
   <a href="/">WavHead</a>
   <a href="https://github.com/SHTheSuper/WavHead" class="githublink">(View on GitHub)</a>
 </div>
 
+<!-- Div for the Queue sidebar's fixed header. -->
 <div id="queueheader">
   <div id="queuetitle">Queue</div>
 </div>
 
+<!-- Div that contains the sidebar and thus all the information about the Queued songs. -->
 <div id="sidebarcontainer">
   <div id="sidebar"></div>
 </div>
 
+<!-- A poorly titled div that contains the content on all pages to ensure that it doesn't overflow into other sections or get covered up in any way. -->
 <div id="contentcontainercontainer">
   <%= yield %>
 </div>
 
+<!-- The footer contains information on the song that is currently being played (assuming anything is being played at all). -->
 <div id="footer">
   <div id="footercontainer">
+
+    <!-- Assuming that something is being played, the content inside the "somethingisplaying" div is displayed. -->
     <div id="somethingplaying">
       <div class="currentalbumart"></div>
       
+      <!-- Song progress values (0:42 / 4:20). -->
       <div class="songprogress">
         <div class="songprogresselapsed"></div>
         <div class="songprogresstotal"></div>
       </div>
       
+      <!-- The progress bar that visualizes how much of the current song has been played. -->
       <div class="progressbar">
         <div class="progressbarfill"></div>
       </div>
 
-      <div class="songtitle"></div>  
+      <!-- The current song's title. -->
+      <div class="songtitle"></div>
+
+      <!-- The current song's artist and album titles. -->
       <div class="artistalbumtitle"></div>
     </div>
     
+    <!-- If nothing is playing, then the "nothingplaying" div is displayed. -->
     <div class="nothingplaying">
       <div class="currentalbumart">
         <img src="/nocover.png">
