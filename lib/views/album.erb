@@ -1,7 +1,7 @@
 <!-- The "breadcrumbs" are displayed at the top of every artist's page, and allow the user to navigate back to the home page or the artist's page. -->
 <div id="breadcrumbscontainer">
   <div id="breadcrumbs">
-    <a href="/">WavHead</a> &gt; <a href="/browse/<%= @artist.safe_title %>"><%= @artist.title %></a> &gt; <span class="boldbreadcrumb"><%= @album.safe_title %></span>
+    <a href="/">WavHead</a> &gt; <a href="/browse/<%= @artist.safe_title %>"><%= @artist.title %></a> &gt; <span class="boldbreadcrumb"><%= @album.title %></span>
   </div>
 </div>
 
@@ -47,9 +47,11 @@
         <div class="songlistitem">
           
           <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
-            <%= s.title %>
-            
             <input type="submit" title="vote" value="Upvote" class="upvote">
+
+            <div class="songtitle"><%= s.title %></div>
+
+            <div class="songlength">4:20</div>
           </form>
         </div>
       <% end %>
