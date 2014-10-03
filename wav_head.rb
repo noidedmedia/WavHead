@@ -5,6 +5,7 @@ require_relative './lib/db'
 require_relative './lib/wav_head_player'
 require_relative './lib/wav_head_info'
 require_relative './lib/wav_head_server'
+require_relative './lib/wav_head_vote_manager'
 opts = {}
 OptionParser.new do |o|
   o.banner = "Usage: wav_head.rb [options]"
@@ -33,6 +34,8 @@ WavHead::Info.delete! if opts[:delete]
 if opts[:server]
   puts "Starting a server..." 
   WavHead::Server.set :p, WavHead::Player.new
+  WavHead::Server.set :votemanager, WavHead::VoteManager.new
+  puts WavHead::Server.settings.votemanager.inspect
   WavHead::Server.settings.p.start!
   WavHead::Server.set :port, opts[:port] if opts[:port]
   WavHead::Server.set :bind, "0.0.0.0"
