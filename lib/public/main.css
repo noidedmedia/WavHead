@@ -39,13 +39,29 @@ html, body{
 }
 
 /* Styling for links in the header. */
-#header a{
+#wavheadtitle{
+  display: inline-block;
+  text-decoration: none;
+  color: #FFFFFF;
+  position: absolute;
+  left: 55px;
+}
+
+#wavheadtitle a{
   text-decoration: none;
   color: #FFFFFF;
 }
 
+@media all and (min-width: 750px){
+  #wavheadtitle{
+    position: static;
+    left: auto;
+  }
+}
+
 /* Styling specifically for the "(View on GitHub)" text in the header. */
 .githublink{
+  display: inline-block;
   color: #ABB6CE !important;
   font-size: 16px;
   font-weight: 200;
@@ -57,11 +73,30 @@ html, body{
   text-decoration: underline;
 }
 
+/* Button that appears in the header on mobile and opens the Queue sidebar. */
+#mobilequeuebutton{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+}
+
+#mobilequeuebutton:hover{
+  cursor: pointer;
+}
+
+@media all and (min-width: 750px){
+  #mobilequeuebutton{
+    display: none;
+  }
+}
+
 
 /* 
 
 ====================================
-          QUEUE SIDEBAR
+      DESKTOP QUEUE SIDEBAR
 ====================================
 
 */
@@ -89,13 +124,15 @@ html, body{
 }
 
 /* Styling for the Queue's fixed header. */
-#queueheader{
+.queueheader{
   display: none;
   position: fixed;
   z-index: 81;
   left: 0;
   top: 50px;
-  width: 25vw;
+  width: 75%;
+  min-width: 300px;
+  max-width: 500px;
   height: 40px;
   background-color: #262E4F;
   font-weight: 500;
@@ -103,20 +140,23 @@ html, body{
 }
 
 @media all and (min-width: 750px){
-  #queueheader{
+  .queueheader{
     display: block;
+    width: 25vw;
+    min-width: 0px;
+    max-width: 100%;
   }
 }
 
 /* Text in the Queue sidebar's header. */
-#queuetitle{
+.queuetitle{
   width: 100%;
   height: 100%;
   padding: 10px 10px 0px 10px;
 }
 
 /* Styling for the sidebar which hosts the Queue. */
-#sidebar{
+.sidebar{
   position: relative;
   height: auto;
   font-size: 16px;
@@ -156,6 +196,49 @@ html, body{
 .queueitemartist a:hover{
   text-decoration: underline;
   color: #3c4361;
+}
+
+
+/* 
+
+====================================
+        MOBILE QUEUE SIDEBAR
+====================================
+
+*/
+
+#mobileoverlay{
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 300;
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+#mobilesidebarcontainer{
+  z-index: 301;
+  position: fixed;
+  left: 0px;
+  top: 90px;
+  width: 75%;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #F2F2F0;
+  overflow-y: scroll;
+  transition: width ease 400ms;
+}
+
+
+@media all and (min-width: 750px){
+  #mobileoverlay{
+    display: none;
+  }
+    
+  #mobilesidebarcontainer{
+    display: none;
+  }
 }
 
 
@@ -272,6 +355,7 @@ html, body{
 .artlist{
   width: 100%;
   text-align: left;
+  margin-bottom: 90px;
 }
 
 .albumartlist{
@@ -288,6 +372,10 @@ html, body{
 
 /* This changes the layout of album listings on artist pages for smaller-width devices. Centers album art and makes the album titles smaller. */
 @media all and (min-width: 750px){
+  .artlist{
+    margin-bottom: 0px;
+  }
+
   .albumartlist{
     text-align: center;
     font-size: 14px;
