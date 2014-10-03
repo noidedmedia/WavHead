@@ -124,13 +124,15 @@ html, body{
 }
 
 /* Styling for the Queue's fixed header. */
-#queueheader{
+.queueheader{
   display: none;
   position: fixed;
   z-index: 81;
   left: 0;
   top: 50px;
-  width: 25vw;
+  width: 75%;
+  min-width: 300px;
+  max-width: 500px;
   height: 40px;
   background-color: #262E4F;
   font-weight: 500;
@@ -138,13 +140,16 @@ html, body{
 }
 
 @media all and (min-width: 750px){
-  #queueheader{
+  .queueheader{
     display: block;
+    width: 25vw;
+    min-width: 0px;
+    max-width: 100%;
   }
 }
 
 /* Text in the Queue sidebar's header. */
-#queuetitle{
+.queuetitle{
   width: 100%;
   height: 100%;
   padding: 10px 10px 0px 10px;
@@ -216,8 +221,13 @@ html, body{
   z-index: 301;
   position: fixed;
   left: 0px;
-  background-color: #FFFFFF;
+  top: 90px;
+  width: 75%;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #F2F2F0;
   overflow-y: hidden;
+  transition: width ease 400ms;
 }
 
 
@@ -345,6 +355,7 @@ html, body{
 .artlist{
   width: 100%;
   text-align: left;
+  margin-bottom: 90px;
 }
 
 .albumartlist{
@@ -361,6 +372,10 @@ html, body{
 
 /* This changes the layout of album listings on artist pages for smaller-width devices. Centers album art and makes the album titles smaller. */
 @media all and (min-width: 750px){
+  .artlist{
+    margin-bottom: 0px;
+  }
+
   .albumartlist{
     text-align: center;
     font-size: 14px;
