@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<div id="mobileoverlay" style="display: none">
+  <div id="mobilesidebarcontainer">
+    <div class="sidebar"></div>
+  </div>
+</div>
+
 <!-- Div for the fixed header that contains the product title and a link to the GitHub repository. -->
 <div id="header">
   <div id="mobilequeuebutton" onclick="mobileQueue()">
@@ -31,7 +37,7 @@
 
 <!-- Div that contains the sidebar and thus all the information about the Queued songs. -->
 <div id="sidebarcontainer">
-  <div id="sidebar"></div>
+  <div class="sidebar"></div>
 </div>
 
 <!-- A poorly titled div that contains the content on all pages to ensure that it doesn't overflow into other sections or get covered up in any way. -->
