@@ -226,7 +226,7 @@ html, body{
   min-width: 300px;
   max-width: 500px;
   background-color: #F2F2F0;
-  overflow-y: hidden;
+  overflow-y: scroll;
   transition: width ease 400ms;
 }
 
