@@ -13,6 +13,7 @@ module WavHead
       .gsub("(","-paren-")
       .gsub(")","-paren-")
       .gsub("\\","-backslash-")
+      .gsub("#","-numsign-")
   end
 end
 class Song
