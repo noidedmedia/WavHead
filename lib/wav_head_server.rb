@@ -4,10 +4,14 @@ require_relative './db'
 require_relative './wav_head_info.rb'
 module WavHead
   class Server < Sinatra::Base
-    disable :logging
+    configure do
+      disable :logging
+      enable :sessions
+    end
     before do
       @queue = settings.p.top(25)
       @current = settings.p.current
+      session[:uuid] = SecureRandom.uuid unless session[:uuid]
     end
     get '/queue' do
       erb :queue
@@ -41,13 +45,17 @@ module WavHead
       @artist = Artist.first(safe_title: params[:artist])
       @album = Album.first(safe_title: params[:album], artist: @artist)
       @song = Song.first(safe_title: params[:song], album: @album)
-      settings.p.vote(@song)
+      if settings.votemanager.can_vote?(session[:uuid], @song) then
+        settings.votemanager.vote!(session[:uuid],@song)
+        settings.p.vote(@song)
+      end
+
       redirect back
     end
     get "/cover/:artist/:album" do
       @artist = Artist.first(safe_title: params[:artist])
       @album = Album.first(safe_title: params[:album], artist: @artist)
-      send_file @album.art_path
+      send_file @album.art_path if @album.art_path
     end
   end
 end

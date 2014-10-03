@@ -15,15 +15,17 @@ module WavHead
     ##
     # See if a user can vote on a song.
     def can_vote?(uuid, song)
+      puts "Seeing if user with id #{uuid} can vote on #{song.inspect}"
+      return true unless @users[uuid]
       @users[uuid].can_vote? song
     end
     def vote!(uuid, song)
-      @users[uuid] ||= UserVote.new(@time)
+      @users[uuid] = WavHead::UserVote.new(@time) unless @users[uuid]
       @users[uuid].vote!(song)
     end
   end
 
-  class UserVotes
+  class UserVote
     ## 
     # Time is the amount of time to wait before a user can vote on a song again
     def initialize(time)
@@ -38,10 +40,13 @@ module WavHead
       @songs[song] = Time.now + @time
     end
     def can_vote?(song)
+      puts "Checking to see if a user can vote..."
       return true unless @songs[song]
       if Time.now > @songs[song]
+        puts "We can play it."
         return true
       else
+        puts "Nope, uplayable! We can play again at #{@songs[song]}"
         return false
       end
     end
