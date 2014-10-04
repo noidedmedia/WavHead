@@ -8,7 +8,7 @@
 <div class="albumartlist">
 
   <!-- For each album belonging to the relevant artist, the following is displayed. -->
-  <% @artist.albums.each do |a| %>
+  <% @albums.each do |a| %>
     <a href="/browse/<%= @artist.safe_title %>/<%= a.safe_title %>">
       <div class="albumlistitem">
 

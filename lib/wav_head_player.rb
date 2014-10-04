@@ -154,8 +154,11 @@ module WavHead
     def to_json
       hash = {}
       hash[:title] = @song.title
+      hash[:safe_title] = @song.safe_title
       hash[:album] = @song.album.title
+      hash[:safe_album] = @song.album.safe_title
       hash[:artist] = @song.artist.title
+      hash[:safe_artist] = @song.artist.safe_title
       hash[:start_time] = @start_time
       hash[:end_time] = @end_time
       hash[:duration] = @song.length

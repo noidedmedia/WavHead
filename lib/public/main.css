@@ -207,6 +207,7 @@ html, body{
 
 */
 
+/* "Overlay" that goes below the mobile Queue sidebar and de-emphasizes the content below. */
 #mobileoverlay{
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 300;
@@ -217,6 +218,7 @@ html, body{
   overflow-y: hidden;
 }
 
+/* Container for the mobile Queue sidebar. */
 #mobilesidebarcontainer{
   z-index: 301;
   position: fixed;
@@ -230,7 +232,7 @@ html, body{
   transition: width ease 400ms;
 }
 
-
+/* Hides the overlay and mobile sidebar if the viewport width is 750px or more. */
 @media all and (min-width: 750px){
   #mobileoverlay{
     display: none;
@@ -538,7 +540,6 @@ html, body{
 /* Styling for the upvote button used on album pages. */
 .upvote{
   display: inline;
-  padding: auto;
   margin: 0px;
   font-size: 14px;
   font-weight: 200;
@@ -589,7 +590,6 @@ html, body{
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: left;
   padding: 5px 5px 5px 95px;
 }
 
@@ -714,6 +714,7 @@ html, body{
   }
 }
 
+/* When something is playing, this is displayed in the footer. */
 #somethingplaying{
   width: 60%;
   height: auto;

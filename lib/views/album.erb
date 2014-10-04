@@ -43,7 +43,7 @@
     <div class="artlist">
 
       <!-- For each songin the album, the following is displayed. -->
-      <% @songs.sort{|x,y| x.track <=> y.track}.each do |s| %>
+      <% @songs.each do |s| %>
         <div class="songlistitem">
           
           <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
