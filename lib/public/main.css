@@ -540,7 +540,6 @@ html, body{
 /* Styling for the upvote button used on album pages. */
 .upvote{
   display: inline;
-  padding: auto;
   margin: 0px;
   font-size: 14px;
   font-weight: 200;
@@ -591,7 +590,6 @@ html, body{
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: left;
   padding: 5px 5px 5px 95px;
 }
 
