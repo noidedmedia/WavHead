@@ -56,6 +56,7 @@ module WavHead
       @artist = Artist.first(safe_title: params[:artist])
       @album = Album.first(safe_title: params[:album], artist: @artist)
       send_file @album.art_path if @album.art_path
+      send_file File.dirname(File.expand_path(__FILE__)) + "/public/nocover.png"
     end
   end
 end
