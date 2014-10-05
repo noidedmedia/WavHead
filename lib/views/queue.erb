@@ -3,20 +3,32 @@
 <div id="queue">
 
   <!-- For each queued song, the following will be displayed. -->
-  <% @queue.each do |i| %>
-    <div class="queuelistitem">
-    
-      <!-- This displays the respective queued song's title. -->
-      <div class="queueitemtitle">
-        <%= i.title %>
-      </div>
+  <% if @queue %>
+    <% @queue.each do |i| %>
+      <div class="queuelistitem">
+      
+        <!-- This displays the respective queued song's title. -->
+        <div class="queueitemtitle">
+          <%= i.title %>
+        </div>
 
-      <!-- Displays and links to the queued song's respective artist and album. -->
-      <div class="queueitemartist">
-        <a href="/browse/<%= i.artist.safe_title %>"><%= i.artist.title %></a>
-        &mdash;
-        <a href="/browse/<%= i.artist.safe_title %>/<%= i.album.safe_title %>"><%= i.album.title %></a>
+        <!-- Displays and links to the queued song's respective artist and album. -->
+        <div class="queueitemartist">
+          <a href="/browse/<%= i.artist.safe_title %>"><%= i.artist.title %></a>
+          &mdash;
+          <a href="/browse/<%= i.artist.safe_title %>/<%= i.album.safe_title %>"><%= i.album.title %></a>
+        </div>
       </div>
+    <% end %>
+  <% end %>
+
+  <% if @queue.empty? %>
+
+    <div id="emptyqueue">
+      <img src="/emptyqueue.png">
+      <br>
+      <span>No songs are queued.</span>
     </div>
+  
   <% end %>
 </div>
