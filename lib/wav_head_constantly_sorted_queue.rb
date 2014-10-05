@@ -18,7 +18,7 @@ module WavHead
     ##
     # Add a new element to the array
     def insert(o)
-      @mut.synchronize{@array << o}
+      @mut.synchronize{@array.unshift o}
     end
     ##
     # The item that will be returned by "pop" next.
