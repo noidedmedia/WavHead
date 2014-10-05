@@ -391,8 +391,15 @@ html, body{
 /* Styling for the container of each respective artist/album/song. */
 .artistlistitem, .songlistitem{
   border-top: 1px solid #455a64;
-  padding: 10px 5px;
   margin: 0px;
+}
+
+.artistlistitem{
+  padding: 10px 5px;
+}
+
+.songlistitem{
+  padding: 8px 5px;
 }
 
 /* This forces a bottom border for the final listed item. */
@@ -412,7 +419,7 @@ html, body{
 @media all and (min-width: 750px){
   .songlistitem:first-child{
     border-top: 0px none;
-    padding-top: 3px;
+    padding-top: 1px;
   }
 }
 
@@ -454,19 +461,25 @@ html, body{
 }
 
 .songtitle{
+  cursor: pointer;
   position: relative;
-  display: inline-flex;
   font-size: 16px;
   font-weight: 200;
   text-align: left;
+  text-decoration: none;
+}
+
+.songtitle:hover{
+  text-decoration: none;
 }
 
 .songlength{
-  position: relative;
-  display: inline-flex;
+  display: inline;
+  position: absolute;
+  right: 10px;
   font-size: 16px;
   font-weight: 200;
-  align-self: flex-end;
+  padding-top: 5px;
 }
 
 /* Styling for the left column of an album page, contains the album cover and information. */
@@ -474,7 +487,7 @@ html, body{
   width: 100%;
   height: auto;
   text-align: center;
-  padding: 0px 0px 0px 10px;
+  padding: 0px 10px 0px 10px;
   margin-bottom: 10px;
 }
 
@@ -538,13 +551,40 @@ html, body{
 }
 
 /* Styling for the upvote button used on album pages. */
-.upvote{
+.upvotebutton{
   display: inline;
-  margin: 0px;
-  font-size: 14px;
-  font-weight: 200;
-  vertical-align: middle;
+  margin: 0px 6px 0px 0px;
+  padding: 0px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
+  background-color: #FFFFFF;
+  background-image: none;
+  border: none;
+  vertical-align: -2px;
+}
+
+.upvotebutton:focus{
+  outline: none;
+}
+
+.upvote{
+  cursor: pointer;
+  display: inline;
+  background-color: #FFFFFF;
+  background-image: none;
+  border: none;
+  color: #000000;
+  fill: #000000;
+}
+
+.upvote:hover{
+  color: #5856D6;
+  fill: #5856D6;
+}
+
+.upvote:focus{
+  outline: none;
 }
 
 
