@@ -60,7 +60,7 @@
                 <use xlink:href="#plus"></use>
               </svg>
 
-              <span class="songtitle"><%= s.title %></span>
+              <span class="songtitle"><%= s.title %> - <%= Time.at(s.length).strftime "%M:%S" %></span>
             </button>
 
             <span class="songlength"></span>
