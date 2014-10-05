@@ -39,8 +39,17 @@ module WavHead
     end
     def self.parse(f)
       info = get_info(f) # Retrieve the info
-      # Create an artist from the info, or find one if it exists
-      artist = Artist.first_or_create(title: info[:artist])
+      # Create an artist from the info, or find one if it exists.
+      # Thus, unless we can find an album with the name, we make a new one.
+      # (Would use first_or_create if my frontend guy didn't complain about his
+      # poorly-tagged music not working :L)
+      return nil unless info[:artist] && info[:album] && info[:title]
+      arttitle = info[:artist]
+      unless  artist = Artist.all(:conditions => ["lower(title) = ?", arttitle.downcase]).first then
+        artist = Artist.create(title: arttitle)
+      end
+
+
       # Do the same for an album
       album = Album.first_or_create(title: info[:album], artist: artist)
       # Create a new song
