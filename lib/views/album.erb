@@ -1,3 +1,11 @@
+<svg height="0" width="0" viewBox="0 0 16 16" >
+  <polygon id="checkmark" points="16.051,3.171 15.344,2.464 5.445,12.364 1.202,8.121 0.495,8.828 5.444,13.778 "/>
+</svg>
+
+<svg height="0" width="0" viewBox="0 0 16 16" >
+  <polygon id="plus" points="16.5,8.5 8.5,8.5 8.5,0.5 7.5,0.5 7.5,8.5 0.5,8.5 0.5,9.5 7.5,9.5 7.5,16.5 8.5,16.5 8.5,9.5 16.5,9.5 "/>
+</svg>
+
 <!-- The "breadcrumbs" are displayed at the top of every artist's page, and allow the user to navigate back to the home page or the artist's page. -->
 <div id="breadcrumbscontainer">
   <div id="breadcrumbs">
@@ -44,14 +52,18 @@
 
       <!-- For each songin the album, the following is displayed. -->
       <% @songs.each do |s| %>
-        <div class="songlistitem">
+        <div class="songlistitem" id="<%= s.safe_title %>">
           
           <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
-            <input type="submit" title="vote" value="Upvote" class="upvote">
+            <button type="submit" title="vote" value="Upvote" class="upvote" onclick="upvoteSong()">
+              <svg class="upvotebutton" height="16" width="16">
+                <use xlink:href="#plus"></use>
+              </svg>
 
-            <div class="songtitle"><%= s.title %></div>
+              <span class="songtitle"><%= s.title %></span>
+            </button>
 
-            <div class="songlength"></div>
+            <span class="songlength"></span>
           </form>
         </div>
       <% end %>
