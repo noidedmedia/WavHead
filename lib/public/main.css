@@ -773,17 +773,21 @@ html, body{
   display: none;
   color: #ABB6CE;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 20px;
+  padding: 8px;
 }
 
 /* If nothing is playing and the browser window's width is 750 pixels or more, then the text is centered. */
 @media all and (min-width: 750px){
   #nothingplaying{
+    font-size: 16px;
     text-align: center;
+    margin: auto;
+    margin-bottom: 40px;
   }
 }
 
 /* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
-.currentsongtitle, .artistalbumtitle, #nothingplaying{
+.currentsongtitle, .artistalbumtitle{
   padding: 2px;
 }
