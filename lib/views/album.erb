@@ -55,7 +55,7 @@
         <div class="songlistitem" id="<%= s.safe_title %>">
           
           <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
-            <button type="submit" title="vote" value="Upvote" class="upvote" onclick="upvoteSong()">
+            <button type="submit" title="vote" value="Upvote" class="upvote">
               <svg class="upvotebutton" height="16" width="16">
                 <use xlink:href="#plus"></use>
               </svg>

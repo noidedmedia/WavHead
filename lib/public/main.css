@@ -571,6 +571,11 @@ html, body{
   fill: #000000;
 }
 
+.upvote:hover{
+  color: #5856D6;
+  fill: #5856D6;
+}
+
 .upvote:focus{
   outline: none;
 }
