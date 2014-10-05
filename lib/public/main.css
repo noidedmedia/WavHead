@@ -198,6 +198,12 @@ html, body{
   color: #3c4361;
 }
 
+#emptyqueue{
+  margin: 20px;
+  display: none;
+  text-align: center;
+}
+
 
 /* 
 
