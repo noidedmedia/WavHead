@@ -43,10 +43,12 @@ module WavHead
       # Thus, unless we can find an album with the name, we make a new one.
       # (Would use first_or_create if my frontend guy didn't complain about his
       # poorly-tagged music not working :L)
-      return nil unless info[:artist] && info[:album] && info[:title] 
-      unless artist = Artist.find(condition: ["lower(title) = ?", info[:artist]]).first then
-        artist = Artist.create(title: info[:artist])
+      return nil unless info[:artist] && info[:album] && info[:title]
+      arttitle = info[:artist]
+      unless  artist = Artist.all(:conditions => ["lower(title) = ?", arttitle.downcase]).first then
+        artist = Artist.create(title: arttitle)
       end
+
 
       # Do the same for an album
       album = Album.first_or_create(title: info[:album], artist: artist)
