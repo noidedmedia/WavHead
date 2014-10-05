@@ -52,19 +52,21 @@
 
       <!-- For each songin the album, the following is displayed. -->
       <% @songs.each do |s| %>
-        <div class="songlistitem" id="<%= s.safe_title %>">
+        <div class="songlistitemcontainer">
+          <div class="songlistitem">
           
-          <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
-            <button type="submit" title="vote" value="Upvote" class="upvote">
-              <svg class="upvotebutton" height="16" width="16">
-                <use xlink:href="#plus"></use>
-              </svg>
+            <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
+              <button type="submit" title="vote" value="Upvote" class="upvote">
+                <svg class="upvotebutton" height="16" width="16">
+                  <use xlink:href="#plus"></use>
+                </svg>
 
-              <span class="songtitle"><%= s.title %> - <%= Time.at(s.length).strftime "%M:%S" %></span>
-            </button>
+                <span class="songtitle"><%= s.title %></span>
+              </button>
+            </form>
 
-            <span class="songlength"></span>
-          </form>
+            <span class="songlength"><%= Time.at(s.length).strftime "%M:%S" %></span>
+          </div>
         </div>
       <% end %>
     </div>

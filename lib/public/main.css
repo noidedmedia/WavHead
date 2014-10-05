@@ -394,7 +394,7 @@ html, body{
 }
 
 /* Styling for the container of each respective artist/album/song. */
-.artistlistitem, .songlistitem{
+.artistlistitem, .songlistitemcontainer{
   border-top: 1px solid #455a64;
   margin: 0px;
 }
@@ -403,12 +403,13 @@ html, body{
   padding: 10px 5px;
 }
 
-.songlistitem{
+.songlistitemcontainer{
+  align-items: baseline;
   padding: 8px 5px;
 }
 
 /* This forces a bottom border for the final listed item. */
-.songlistitem:last-child{
+.songlistitemcontainer:last-child{
   border-bottom: 1px solid #455a64;
 }
 
@@ -417,19 +418,19 @@ html, body{
   border-top: 0px none;
 }
 
-.songlistitem:first-child{
+.songlistitemcontainer:first-child{
   border-top: 1px solid #455a64;
 }
 
 @media all and (min-width: 750px){
-  .songlistitem:first-child{
+  .songlistitemcontainer:first-child{
     border-top: 0px none;
     padding-top: 1px;
   }
 }
 
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
-.artistlistitem a, .albumlistitem a, .songlistitem a{
+.artistlistitem a, .albumlistitem a, .songlistitemcontainer a{
   text-decoration: none;
   color: #424242;
 }
@@ -479,12 +480,13 @@ html, body{
 }
 
 .songlength{
-  display: inline;
+  display: inline-flex;
   position: absolute;
   right: 10px;
+  text-align: right;
   font-size: 16px;
   font-weight: 200;
-  padding-top: 5px;
+  margin-top: -22px;
 }
 
 /* Styling for the left column of an album page, contains the album cover and information. */
