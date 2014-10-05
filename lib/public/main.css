@@ -198,6 +198,12 @@ html, body{
   color: #3c4361;
 }
 
+#emptyqueue{
+  margin: 20px;
+  display: none;
+  text-align: center;
+}
+
 
 /* 
 
@@ -312,12 +318,12 @@ html, body{
   width: 100%;
   height: auto;
   text-align: left;
-  color: #000000;
+  color: #424242;
 }
 
 /* Styling for links in the breadcrumbs. */
 #breadcrumbs a{
-  color: #000000;
+  color: #424242;
   text-decoration: none;
 }
 
@@ -487,7 +493,7 @@ html, body{
   width: 100%;
   height: auto;
   text-align: center;
-  padding: 0px 10px 0px 10px;
+  padding: 4px 10px 0px 20px;
   margin-bottom: 10px;
 }
 
@@ -506,6 +512,7 @@ html, body{
   min-width: 100px;
   max-width: 300px;
   height: auto;
+  padding-bottom: 8px;
 }
 
 @media all and (min-width: 750px){
@@ -523,6 +530,7 @@ html, body{
   width: 100%;
   min-width: 100px;
   text-align: center;
+  color: #424242;
 }
 
 /* Styling specifically for the album title. */
@@ -530,7 +538,6 @@ html, body{
   width: 100%;
   font-size: 16px;
   font-weight: 200;
-  padding-bottom: 3px;
 }
 
 /* Styling specifically for the album artist text. */
@@ -574,8 +581,8 @@ html, body{
   background-color: #FFFFFF;
   background-image: none;
   border: none;
-  color: #000000;
-  fill: #000000;
+  color: #424242;
+  fill: #424242;
 }
 
 .upvote:hover{
@@ -761,7 +768,7 @@ html, body{
 }
 
 /* Styling for the "Nothing is playing right now." text. */
-.nothingplaying{
+#nothingplaying{
   text-align: left;
   display: none;
   color: #ABB6CE;
@@ -771,12 +778,12 @@ html, body{
 
 /* If nothing is playing and the browser window's width is 750 pixels or more, then the text is centered. */
 @media all and (min-width: 750px){
-  .nothingplaying{
+  #nothingplaying{
     text-align: center;
   }
 }
 
 /* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
-.currentsongtitle, .artistalbumtitle, .nothingplaying{
+.currentsongtitle, .artistalbumtitle, #nothingplaying{
   padding: 2px;
 }
