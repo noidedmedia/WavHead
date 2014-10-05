@@ -35,7 +35,7 @@ module WavHead
           # Open the file and try to find art for it
           TagLib::MPEG::File.open(s.path) do |f|
             tag = f.id3v2_tag
-            parse_id3(tag, a) # Parse unless it has the art already
+            parse_id3(tag, a) unless a.art_path || !tag# Parse unless it has the art already
           end
         end
       end
@@ -47,7 +47,7 @@ module WavHead
           puts "Attempting to add cover art for #{a.title}"
           TagLib::FLAC::File.open(s.path) do |f|
             tag = f.id3v2_tag
-            parse_id3(tag, a) unless a.art_path # Parse unless it has the art already
+            parse_id3(tag, a) unless a.art_path || ! tag# Parse unless it is untagged or has the art already
           end
         end
       end
@@ -57,9 +57,10 @@ module WavHead
       ## 
       # frame_list("APIC") is the art pic.
       # Use first since it can be an array.
-      cover = tag.frame_list('APIC').first
+      cover = tag.frame_list('APIC').first if tag.frame_list('APIC')
       # We skip the next bit unless there's actually cover art
       unless cover.nil? 
+        return nil unless cover.picture && cover.mime_type
         ## 
         # The data of the picture
         picture = cover.picture
