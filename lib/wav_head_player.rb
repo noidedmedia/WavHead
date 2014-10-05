@@ -100,6 +100,9 @@ module WavHead
           # Play the song.
           song.play!
           ##
+          # Set nothing to be currently playing
+          @current = nil
+          ##
           # Remove it from the queue, so people can vote on it again.
           @song_votes[song] = nil
         end
