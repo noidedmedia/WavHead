@@ -391,8 +391,15 @@ html, body{
 /* Styling for the container of each respective artist/album/song. */
 .artistlistitem, .songlistitem{
   border-top: 1px solid #455a64;
-  padding: 8px 5px;
   margin: 0px;
+}
+
+.artistlistitem{
+  padding: 10px 5px;
+}
+
+.songlistitem{
+  padding: 8px 5px;
 }
 
 /* This forces a bottom border for the final listed item. */
