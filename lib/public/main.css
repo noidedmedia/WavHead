@@ -199,7 +199,8 @@ html, body{
 }
 
 #emptyqueue{
-  margin: 20px auto;
+  padding: 10px;
+  margin: auto;
   text-align: center;
 }
 

@@ -1,6 +1,14 @@
 <!-- The content on this page is "embedded" inside the sidebar div in layout.erb, any changes being made to the Queue should be made here. -->
-
 <div id="queue">
+<svg height="0" width="0" viewBox="0 0 172 115" style="display: none">
+  <g id="stereo">
+    <rect y="16.036" fill="#3C4361" width="114.838" height="155.088"/>
+    <circle fill="#262E4F" cx="57.211" cy="123.846" r="35.058"/>
+    <circle fill="#262E4F" cx="57.21" cy="53.202" r="22.427"/>
+    <circle fill="#3C4361" cx="57.21" cy="123.846" r="10.036"/>
+    <polygon fill="#262E4F" points="100.271,0 14.567,0 0,16.036 114.838,16.036 "/>
+  </g>
+</svg>
 
   <!-- For each queued song, the following will be displayed. -->
   <% if @queue %>
@@ -25,7 +33,9 @@
   <% if @queue.empty? %>
 
     <div id="emptyqueue">
-      <img src="/emptyqueue.png">
+      <svg height="172" width="115" version="1.1">
+        <use xlink:href="#stereo"></use>
+      </svg>
       <br>
       <span>No songs are queued.</span>
     </div>
