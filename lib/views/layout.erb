@@ -18,6 +18,8 @@
 <body>
 
 <div id="mobileoverlay" style="display: none">
+  <div id="mobileoverlaybackground" onclick="mobileQueue()"></div>
+
   <div class="queueheader">
     <div class="queuetitle">Queue</div>
   </div>
@@ -84,7 +86,10 @@
       <div class="currentsongtitle"></div>
 
       <!-- The current song's artist and album titles. -->
-      <div class="artistalbumtitle"></div>
+      <div class="currentartisttitle"></div> 
+      <div id="currentdivider"> &mdash; </div>
+      <div id="currentlinebreak"><br></div>
+      <div class="currentalbumtitle"></div>
     </div>
     
     <!-- If nothing is playing, then the "nothingplaying" div is displayed. -->
