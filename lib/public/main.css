@@ -276,7 +276,7 @@ html, body{
 /* Container that "contains" the entire content area, that being anything that isn't in the header, footer, or sidebar */
 #contentcontainercontainer{
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   background-color: #FFFFFF;
   position: absolute;
   top: 50px;
@@ -298,9 +298,7 @@ html, body{
   display: flex;
   flex-flow: row wrap;
   background-color: #FFFFFF;
-  min-width: 200px;
   width: 100%;
-  top: 50px;
 }
 
 @media all and (min-width: 750px){
@@ -321,7 +319,13 @@ html, body{
 
 /* Container for the breadcrumbs. */
 #breadcrumbscontainer{
-  margin: 10px 6px 10px 10px;
+  display: flex;
+  margin: 5px 6px 10px 10px;
+  padding: 5px 0px 5px 0px;
+  height: 25px;
+  min-height: 25px;
+  max-height: 25px;
+  border-bottom: 1px solid #131B3C;
   white-space: nowrap;
   overflow-x: scroll;
 }
@@ -330,10 +334,7 @@ html, body{
 #breadcrumbs{
   font-size: 16px;
   font-weight: 400;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #131B3C;
   width: 100%;
-  height: auto;
   text-align: left;
   color: #424242;
 }
@@ -380,19 +381,11 @@ html, body{
 .artlist{
   width: 100%;
   text-align: left;
-  margin-bottom: 90px;
 }
 
 .albumartlist{
   width: 100%;
   text-align: center;
-}
-
-/* Styling specifically to fix an issue with Firefox. */
-@-moz-document url-prefix(){
-  .artlist, .albumartlist{
-    margin-bottom: 90px;
-  }
 }
 
 /* This changes the layout of album listings on artist pages for smaller-width devices. Centers album art and makes the album titles smaller. */
