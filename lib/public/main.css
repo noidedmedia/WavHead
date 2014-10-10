@@ -280,6 +280,7 @@ html, body{
   background-color: #FFFFFF;
   position: absolute;
   top: 50px;
+  width: 75vw;
   flex-grow: 1;
   overflow-y: scroll;
   overflow-x: hidden;

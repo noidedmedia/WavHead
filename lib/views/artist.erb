@@ -9,8 +9,8 @@
 
   <!-- For each album belonging to the relevant artist, the following is displayed. -->
   <% @albums.each do |a| %>
-    <a href="/browse/<%= @artist.safe_title %>/<%= a.safe_title %>">
-      <div class="albumlistitem">
+    <div class="albumlistitem">
+      <a href="/browse/<%= @artist.safe_title %>/<%= a.safe_title %>">
 
         <!-- If an album cover exists, then it's displayed. Otherwise a placeholder image is given. -->
         <% if a.art_path %>
