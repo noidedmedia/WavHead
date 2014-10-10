@@ -601,6 +601,7 @@ html, body{
   color: #424242;
   fill: #424242;
   white-space: nowrap;
+  transition: color 400ms ease, fill 400ms ease;
 }
 
 .upvote:hover{
@@ -816,14 +817,13 @@ html, body{
   display: none;
   color: #ABB6CE;
   font-weight: 200;
-  font-size: 18px;
+  font-size: 16px;
   padding: 8px;
 }
 
 /* If nothing is playing and the browser window's width is 750 pixels or more, then the text is centered. */
 @media all and (min-width: 750px){
   #nothingplaying{
-    font-size: 16px;
     text-align: center;
     margin: auto;
     margin-bottom: 40px;
