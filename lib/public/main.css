@@ -453,7 +453,7 @@ html, body{
   flex-grow: 1;
   width: 250px;
   padding: 0px 5px;
-  margin: 0px 5px 25px 5px; /* This makes a larger bottom margin to ensure that album covers/titles don't overlap. */
+  margin: 0px 5px 35px 5px; /* This makes a larger bottom margin to ensure that album covers/titles don't overlap. */
   text-align: center;
   flex-flow: row wrap;
 }
@@ -553,6 +553,7 @@ html, body{
   width: 100%;
   font-size: 16px;
   font-weight: 200;
+  line-height: 1.4em;
 }
 
 /* Styling specifically for the album artist text. */
