@@ -337,12 +337,12 @@ html, body{
   font-weight: 400;
   width: 100%;
   text-align: left;
-  color: #424242;
+  color: #3C4361;
 }
 
 /* Styling for links in the breadcrumbs. */
 #breadcrumbs a{
-  color: #424242;
+  color: #3C4361;
   text-decoration: none;
 }
 
@@ -444,7 +444,7 @@ html, body{
 /* Styling for the text (names of artists/albums/songs) inside the artlistitem containers. */
 .artistlistitem a, .albumlistitem a, .songlistitemcontainer a{
   text-decoration: none;
-  color: #424242;
+  color: #3C4361;
 }
 
 /* Styling for the containers of each respective Album on the artist pages. */
@@ -501,6 +501,7 @@ html, body{
   font-weight: 200;
   margin-top: -22px;
   white-space: nowrap;
+  color: #3C4361;
 }
 
 /* Styling for the left column of an album page, contains the album cover and information. */
@@ -545,7 +546,7 @@ html, body{
   width: 100%;
   min-width: 100px;
   text-align: center;
-  color: #424242;
+  color: #3C4361;
 }
 
 /* Styling specifically for the album title. */
@@ -564,12 +565,12 @@ html, body{
 }
 
 .albuminfoartist a{
-  color: #424242;
+  color: #3C4361;
   text-decoration: none;
 }
 
 .albuminfoartist a:hover{
-  color: #424242;
+  color: #3C4361;
   text-decoration: underline;
 }
 
@@ -598,8 +599,8 @@ html, body{
   background-color: #FFFFFF;
   background-image: none;
   border: none;
-  color: #424242;
-  fill: #424242;
+  color: #3C4361;
+  fill: #3C4361;
   white-space: nowrap;
   transition: color 400ms ease, fill 400ms ease;
 }
