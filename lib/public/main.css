@@ -282,8 +282,9 @@ html, body{
   top: 50px;
   width: 75vw;
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
+  margin: 0px;
 }
 
 @media all and (min-width: 750px){
@@ -297,18 +298,18 @@ html, body{
 /* The container that goes below the Breadcrumbs on Artist and song listings, that way styles applied to the song listing don't effect the breadcrumbs (e.g. multicolumn view for albums. */
 #contentcontainer{
   display: flex;
+  position: relative;
   flex-flow: row wrap;
   background-color: #FFFFFF;
   top: 40px;
-  width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @media all and (min-width: 750px){
   #contentcontainer{
     flex-flow: row nowrap;
-    position: absolute;
     width: auto;
-    flex-grow: 2;
   }
 }
 
@@ -326,17 +327,25 @@ html, body{
   display: flex;
   position: fixed;
   z-index: 100;
-  top: 50px;
-  margin: 0px 6px 0px 6px;
+  margin: 0px;
   padding: 10px 6px 4px 10px;
   height: 25px;
   min-height: 25px;
   max-height: 25px;
-  width: 73.3vw;
+  width: 100%;
   border-bottom: 1px solid #131B3C;
   background-color: #FFFFFF;
   white-space: nowrap;
   overflow-x: scroll;
+}
+
+@media all and (min-width: 750px){
+  #breadcrumbscontainer{
+    top: 50px;
+    position: fixed;
+    margin: 0px 6px 0px 6px;
+    width: 73.3vw;
+  }
 }
 
 /* Styling for the the breadcrumbs, a.k.a. directories (e.g. WavHead > Daft Punk > Random Access Memories > Get Lucky) */
@@ -375,7 +384,7 @@ html, body{
 
 .homecontainer{
   margin: 0px 6px 0px 0px;
-  width: 75vw;
+  width: 100%;
   left: auto;
   min-width: 200px;
   height: auto;
@@ -386,19 +395,20 @@ html, body{
   overflow-y: scroll;
 }
 
+@media all and (min-width: 750px){
+  width: 75vw;
+}
+
 /* Container that holds the artlist items and forces similar margins on all pages. */
 .artlistcontainer{
-  margin: 10px 6px 0px 6px;
+  padding: 10px 15px 0px 6px;
   width: 100%;
-  left: auto;
   min-width: 200px;
-  height: auto;
-  display: flex;
   position: relative;
   flex-flow: row wrap;
-  flex-grow: 1;
   text-align: center;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* The div that contains all artists/albums/songs on each page. */
@@ -523,7 +533,7 @@ html, body{
 .songlength{
   display: inline-flex;
   position: absolute;
-  right: 10px;
+  right: 15px;
   text-align: right;
   font-size: 16px;
   font-weight: 200;
@@ -534,17 +544,22 @@ html, body{
 
 /* Styling for the left column of an album page, contains the album cover and information. */
 #albuminfocontainer{
-  position: fixed;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
   width: 100%;
+  position: relative;
   height: auto;
-  text-align: center;
-  padding: 4px 10px 0px 20px;
-  margin-bottom: 10px;
+  text-align: left;
+  padding: 10px 15px 0px 15px;
 }
 
 @media all and (min-width: 750px){
   #albuminfocontainer{
-    margin: 10px 5px;
+    text-align: center;
+    padding: 4px 5px 0px 20px;
+    position: fixed;
+    margin: 50px 5px 10px 5px;
     height: 100%;
     min-width: 150px;
     max-width: 300px;
@@ -552,47 +567,63 @@ html, body{
 }
 
 /* Styling for the album cover displayed on album pages. */
+.albumart{
+  display: inline-flex;
+  width: 40vw;
+  height: 40vw;
+}
+
 .albumart img{
-  width: 100%;
-  min-width: 100px;
-  max-width: 300px;
+  width: auto;
   height: auto;
-  padding-bottom: 8px;
+  padding-right: 5px;
 }
 
 @media all and (min-width: 750px){
+  .albumart{
+    width: 300px;
+    height: 300px;
+  }
+
   .albumart img{
+    width: 100%;
     max-width: 300px;
+    padding-bottom: 8px;
   }
 }
 
 /* Container for the album information below the cover. */
 .albuminfo{
-  display: flex;
-  position: relative;
+  width: 50vw;
+  display: inline-flex;
   flex-flow: row wrap;
-  flex-grow: 1;
-  width: 100%;
-  min-width: 100px;
-  text-align: center;
+  position: relative;
+  text-align: left;
   color: #3C4361;
+}
+
+@media all and (min-width: 750px){
+  .albuminfo{
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Styling specifically for the album title. */
 .albuminfoalbum{
   width: 100%;
+  align-self: flex-start;
   font-size: 16px;
   font-weight: 200;
-  line-height: 1.4em;
 }
 
 /* Styling specifically for the album artist text. */
 .albuminfoartist{
-  color: #3C4361;
   width: 100%;
-  font-size: 14px;
+  align-self: flex-start;
+  color: #3C4361;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.4em;
 }
 
 .albuminfoartist a{
@@ -607,19 +638,42 @@ html, body{
 
 .albuminfosongnumber{
   width: 100%;
+  align-self: flex-end;
   color: #3C4361;
   font-size: 14px;
   font-weight: 200;
-  line-height: 1.4em;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .albuminfolength{
   width: 100%;
+  align-self: flex-end;
   color: #3C4361;
   font-size: 14px;
-  line-height: 1.4em;
   font-weight: 200;
+}
+
+@media all and (min-width: 750px){
+  .albuminfoalbum{
+    font-size: 16px;
+    line-height: 1.4em;
+  }
+
+  .albuminfoartist{
+    font-size: 14px;
+    line-height: 1.4em;
+  }
+
+  .albuminfosongnumber{
+    align-self: flex-start;
+    line-height: 1.4em;
+    margin-top: 20px;
+  }
+
+  .albuminfolength{
+    line-height: 1.4em;
+    align-self: flex-start;
+  }
 }
 
 /* Styling for the upvote button used on album pages. */
