@@ -42,6 +42,14 @@
           <%= @artist.title %>
         </a>
       </div>
+
+      <!-- The number of songs and length (in minutes) of the album are displayed here. -->
+      <div class="albuminfosongnumber">
+        <%= @album.songs.count %> songs
+      </div>
+      <div class="albuminfolength">
+        <%= @album.total_length.strftime("%M minutes") %>
+      </div>
     </div>
 
   </div>
@@ -61,7 +69,7 @@
                   <use xlink:href="#plus"></use>
                 </svg>
 
-                <span class="songtitle"><%= s.title %></span>
+                <div class="songtitle"><%= s.title %></div>
               </button>
             </form>
 

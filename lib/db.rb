@@ -52,6 +52,9 @@ class Album
   property :art_path, String, length: 600
   belongs_to :artist, required: true
   has n, :songs
+  def total_length
+    Time.at self.songs.map(&:length).inject(&:+)
+  end
   before(:save) do
     self.safe_title = WavHead::url_encode(title)
   end

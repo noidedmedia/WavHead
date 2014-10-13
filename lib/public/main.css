@@ -11,6 +11,7 @@ html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   font-weight: 200;
+  font-size: 16px;
   background-color: #FFFFFF;
   height: 100%;
 }
@@ -282,8 +283,9 @@ html, body{
   top: 50px;
   width: 75vw;
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
+  margin: 0px;
 }
 
 @media all and (min-width: 750px){
@@ -297,15 +299,18 @@ html, body{
 /* The container that goes below the Breadcrumbs on Artist and song listings, that way styles applied to the song listing don't effect the breadcrumbs (e.g. multicolumn view for albums. */
 #contentcontainer{
   display: flex;
+  position: relative;
   flex-flow: row wrap;
   background-color: #FFFFFF;
-  width: 100%;
+  top: 40px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @media all and (min-width: 750px){
   #contentcontainer{
     flex-flow: row nowrap;
-    position: absolute;
+    width: auto;
   }
 }
 
@@ -321,23 +326,43 @@ html, body{
 /* Container for the breadcrumbs. */
 #breadcrumbscontainer{
   display: flex;
-  margin: 5px 6px 10px 10px;
-  padding: 5px 0px 5px 0px;
-  height: 25px;
-  min-height: 25px;
-  max-height: 25px;
+  position: fixed;
+  z-index: 100;
+  margin: 0px;
+  padding: 0px;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  width: 100%;
   border-bottom: 1px solid #131B3C;
+  background-color: #FFFFFF;
   white-space: nowrap;
   overflow-x: scroll;
 }
 
+@media all and (min-width: 750px){
+  #breadcrumbscontainer{
+    top: 50px;
+    position: fixed;
+    margin: 0px 6px 0px 6px;
+    width: 74.1vw;
+  }
+}
+
 /* Styling for the the breadcrumbs, a.k.a. directories (e.g. WavHead > Daft Punk > Random Access Memories > Get Lucky) */
 #breadcrumbs{
+  margin: 10px 10px 6px 10px;
   font-size: 16px;
   font-weight: 400;
   width: 100%;
   text-align: left;
   color: #3C4361;
+}
+
+@media all and (min-width: 750px){
+  #breadcrumbs{
+    margin: 10px 0px 6px 10px;
+  }
 }
 
 /* Styling for links in the breadcrumbs. */
@@ -365,27 +390,49 @@ html, body{
 
 */
 
-/* Container that holds the artlist items and forces similar margins on all pages. */
-.artlistcontainer{
-  margin: 0px 6px;
-  width: auto;
+.homecontainer{
+  margin: 0px 6px 0px 0px;
+  width: 100%;
+  left: auto;
   min-width: 200px;
   height: auto;
   display: flex;
   position: relative;
   flex-flow: row wrap;
-  flex-grow: 2;
   text-align: center;
+  overflow-y: scroll;
+}
+
+@media all and (min-width: 750px){
+  width: 75vw;
+}
+
+/* Container that holds the artlist items and forces similar margins on all pages. */
+.artlistcontainer{
+  padding: 10px 15px 0px 6px;
+  width: 100%;
+  min-width: 200px;
+  position: relative;
+  flex-flow: row wrap;
+  text-align: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* The div that contains all artists/albums/songs on each page. */
 .artlist{
+  margin: 0px 6px 0px 6px;
   width: 100%;
   text-align: left;
 }
 
 .albumartlist{
+  position: absolute;
+  top: 40px;
   width: 100%;
+  padding-top: 10px;
+  bottom: 0px;
+  overflow-y: scroll;
   text-align: center;
 }
 
@@ -402,6 +449,7 @@ html, body{
 
   .artlistcontainer{
     min-width: 300px;
+    left: 330px;
   }
 }
 
@@ -479,6 +527,7 @@ html, body{
 }
 
 .songtitle{
+  display: inline-flex;
   cursor: pointer;
   position: relative;
   font-size: 16px;
@@ -486,6 +535,7 @@ html, body{
   text-align: left;
   text-decoration: none;
   white-space: nowrap;
+  text-overflow: clip;
 }
 
 .songtitle:hover{
@@ -495,27 +545,35 @@ html, body{
 .songlength{
   display: inline-flex;
   position: absolute;
-  right: 10px;
+  right: 0px;
   text-align: right;
   font-size: 16px;
   font-weight: 200;
-  margin-top: -22px;
+  margin-top: -21px;
   white-space: nowrap;
   color: #3C4361;
+  background-color: #FFFFFF;
+  padding: 0px 15px 0px 2px;
 }
 
 /* Styling for the left column of an album page, contains the album cover and information. */
 #albuminfocontainer{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
   width: 100%;
+  position: relative;
   height: auto;
-  text-align: center;
-  padding: 4px 10px 0px 20px;
-  margin-bottom: 10px;
+  text-align: left;
+  padding: 10px 15px 0px 15px;
 }
 
 @media all and (min-width: 750px){
   #albuminfocontainer{
-    margin: 0px;
+    text-align: center;
+    padding: 4px 5px 0px 20px;
+    position: fixed;
+    margin: 50px 5px 10px 5px;
     height: 100%;
     min-width: 150px;
     max-width: 300px;
@@ -523,44 +581,62 @@ html, body{
 }
 
 /* Styling for the album cover displayed on album pages. */
+.albumart{
+  display: inline-flex;
+  width: 40vw;
+  height: 40vw;
+}
+
 .albumart img{
-  width: 100%;
-  min-width: 100px;
-  max-width: 300px;
+  width: auto;
   height: auto;
-  padding-bottom: 8px;
+  padding-right: 5px;
 }
 
 @media all and (min-width: 750px){
+  .albumart{
+    width: 300px;
+    height: 300px;
+  }
+
   .albumart img{
+    width: 100%;
     max-width: 300px;
+    padding-bottom: 8px;
   }
 }
 
 /* Container for the album information below the cover. */
 .albuminfo{
-  display: flex;
-  position: relative;
+  width: 50vw;
+  display: inline-flex;
   flex-flow: row wrap;
-  flex-grow: 1;
-  width: 100%;
-  min-width: 100px;
-  text-align: center;
+  position: relative;
+  text-align: left;
   color: #3C4361;
+}
+
+@media all and (min-width: 750px){
+  .albuminfo{
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Styling specifically for the album title. */
 .albuminfoalbum{
   width: 100%;
+  align-self: flex-start;
   font-size: 16px;
   font-weight: 200;
-  line-height: 1.4em;
 }
 
 /* Styling specifically for the album artist text. */
 .albuminfoartist{
   width: 100%;
-  font-size: 14px;
+  align-self: flex-start;
+  color: #3C4361;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -574,6 +650,46 @@ html, body{
   text-decoration: underline;
 }
 
+.albuminfosongnumber{
+  width: 100%;
+  align-self: flex-end;
+  color: #3C4361;
+  font-size: 14px;
+  font-weight: 200;
+  margin-top: 60px;
+}
+
+.albuminfolength{
+  width: 100%;
+  align-self: flex-end;
+  color: #3C4361;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+@media all and (min-width: 750px){
+  .albuminfoalbum{
+    font-size: 16px;
+    line-height: 1.4em;
+  }
+
+  .albuminfoartist{
+    font-size: 14px;
+    line-height: 1.4em;
+  }
+
+  .albuminfosongnumber{
+    align-self: flex-start;
+    line-height: 1.4em;
+    margin-top: 20px;
+  }
+
+  .albuminfolength{
+    line-height: 1.4em;
+    align-self: flex-start;
+  }
+}
+
 /* Styling for the upvote button used on album pages. */
 .upvotebutton{
   display: inline;
@@ -582,7 +698,7 @@ html, body{
   width: 16px;
   height: 16px;
   cursor: pointer;
-  background-color: #FFFFFF;
+  background-color: transparent;
   background-image: none;
   border: none;
   vertical-align: -2px;
@@ -596,7 +712,7 @@ html, body{
 .upvote{
   cursor: pointer;
   display: inline;
-  background-color: #FFFFFF;
+  background-color: transparent;
   background-image: none;
   border: none;
   color: #3C4361;
@@ -747,20 +863,25 @@ html, body{
 }
 
 /* Styling for the title of the currently-playing song displayed in the footer. */
-.currentsongtitle{
+#currentsongtitle{
   color: #FFFFFF;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   white-space: nowrap;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
 /* Styling for the artist and album text below the song title in the footer. */
 .currentartisttitle, .currentalbumtitle{
-  display: inline;
+  display: inline-block;
   color: #ABB6CE;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 1.3em;
+  font-size: 16px;
+  line-height: 1.2em;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .currentartisttitle a, .currentalbumtitle a{
@@ -785,12 +906,16 @@ html, body{
 
 /* Text size is smaller on larger devices, since larger text is necessary for legibility on mobile devices. */
 @media all and (min-width: 750px){
-  .currentsongtitle{
+  #currentsongtitle{
+    width: 100%;
     font-size: 18px;
+    margin-bottom: 0px;
   }
 
   .currentartisttitle, .currentalbumtitle{
     font-size: 16px;
+    width: auto;
+    display: inline;
   }
 
   /* "—" between artist and album title. */
@@ -808,7 +933,7 @@ html, body{
 
 /* When something is playing, this is displayed in the footer. */
 #somethingplaying{
-  width: 60%;
+  width: auto;
   height: auto;
 }
 
@@ -832,6 +957,6 @@ html, body{
 }
 
 /* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
-.currentsongtitle, .currentartisttitle, .currentalbumtitle{
+#currentsongtitle, .currentartisttitle, .currentalbumtitle{
   padding: 2px;
 }
