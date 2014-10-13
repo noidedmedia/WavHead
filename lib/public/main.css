@@ -111,8 +111,10 @@ html, body{
   width: 25vw;
   left: 0;
   top: 90px;
-  flex-grow: 0;
-  order: 1;
+  -webkit-flex-grow: 0;
+          flex-grow: 0;
+  -webkit-order: 1;
+          order: 1;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -276,13 +278,16 @@ html, body{
 
 /* Container that "contains" the entire content area, that being anything that isn't in the header, footer, or sidebar */
 #contentcontainercontainer{
+  display: -webkit-flex;
   display: flex;
-  flex-flow: column nowrap;
+  -webkit-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   background-color: #FFFFFF;
   position: absolute;
   top: 50px;
   width: 75vw;
-  flex-grow: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
   overflow-y: hidden;
   overflow-x: hidden;
   margin: 0px;
@@ -290,7 +295,8 @@ html, body{
 
 @media all and (min-width: 750px){
   #contentcontainercontainer{
-    flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap;
     left: 25vw; /* This compensates for the 25% of the browser window width which is taken up by the Queue sidebar. */
     position: absolute; /* This ensures that the Queue sidebar doesn't effect the positioning of the main content area. */
   }
@@ -298,9 +304,11 @@ html, body{
 
 /* The container that goes below the Breadcrumbs on Artist and song listings, that way styles applied to the song listing don't effect the breadcrumbs (e.g. multicolumn view for albums. */
 #contentcontainer{
+  display: -webkit-flex;
   display: flex;
   position: relative;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
   background-color: #FFFFFF;
   top: 40px;
   overflow-y: scroll;
@@ -309,7 +317,8 @@ html, body{
 
 @media all and (min-width: 750px){
   #contentcontainer{
-    flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
+            flex-flow: row nowrap;
     width: auto;
   }
 }
@@ -325,6 +334,7 @@ html, body{
 
 /* Container for the breadcrumbs. */
 #breadcrumbscontainer{
+  display: -webkit-flex;
   display: flex;
   position: fixed;
   z-index: 100;
@@ -396,15 +406,13 @@ html, body{
   left: auto;
   min-width: 200px;
   height: auto;
+  display: -webkit-flex;
   display: flex;
   position: relative;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
   text-align: center;
   overflow-y: scroll;
-}
-
-@media all and (min-width: 750px){
-  width: 75vw;
 }
 
 /* Container that holds the artlist items and forces similar margins on all pages. */
@@ -413,7 +421,8 @@ html, body{
   width: 100%;
   min-width: 200px;
   position: relative;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
   text-align: center;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -464,7 +473,8 @@ html, body{
 }
 
 .songlistitemcontainer{
-  align-items: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
   padding: 8px 5px;
 }
 
@@ -497,13 +507,16 @@ html, body{
 
 /* Styling for the containers of each respective Album on the artist pages. */
 .albumlistitem{
+  display: -webkit-inline-flex;
   display: inline-flex;
-  flex-grow: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
   width: 250px;
   padding: 0px 5px;
   margin: 0px 5px 35px 5px; /* This makes a larger bottom margin to ensure that album covers/titles don't overlap. */
   text-align: center;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 /* Prevent overflow of the cover art on artist pages. */
@@ -527,6 +540,7 @@ html, body{
 }
 
 .songtitle{
+  display: -webkit-inline-flex;
   display: inline-flex;
   cursor: pointer;
   position: relative;
@@ -543,6 +557,7 @@ html, body{
 }
 
 .songlength{
+  display: -webkit-inline-flex;
   display: inline-flex;
   position: absolute;
   right: 0px;
@@ -558,9 +573,12 @@ html, body{
 
 /* Styling for the left column of an album page, contains the album cover and information. */
 #albuminfocontainer{
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-align-content: flex-start;
+          align-content: flex-start;
   width: 100%;
   position: relative;
   height: auto;
@@ -582,6 +600,7 @@ html, body{
 
 /* Styling for the album cover displayed on album pages. */
 .albumart{
+  display: -webkit-inline-flex;
   display: inline-flex;
   width: 40vw;
   height: 40vw;
@@ -609,8 +628,10 @@ html, body{
 /* Container for the album information below the cover. */
 .albuminfo{
   width: 50vw;
+  display: -webkit-inline-flex;
   display: inline-flex;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
   position: relative;
   text-align: left;
   color: #3C4361;
@@ -626,7 +647,8 @@ html, body{
 /* Styling specifically for the album title. */
 .albuminfoalbum{
   width: 100%;
-  align-self: flex-start;
+  -webkit-align-self: flex-start;
+          align-self: flex-start;
   font-size: 16px;
   font-weight: 200;
 }
@@ -634,7 +656,8 @@ html, body{
 /* Styling specifically for the album artist text. */
 .albuminfoartist{
   width: 100%;
-  align-self: flex-start;
+  -webkit-align-self: flex-start;
+          align-self: flex-start;
   color: #3C4361;
   font-size: 16px;
   font-weight: 400;
@@ -652,7 +675,8 @@ html, body{
 
 .albuminfosongnumber{
   width: 100%;
-  align-self: flex-end;
+  -webkit-align-self: flex-end;
+          align-self: flex-end;
   color: #3C4361;
   font-size: 14px;
   font-weight: 200;
@@ -661,7 +685,8 @@ html, body{
 
 .albuminfolength{
   width: 100%;
-  align-self: flex-end;
+  -webkit-align-self: flex-end;
+          align-self: flex-end;
   color: #3C4361;
   font-size: 14px;
   font-weight: 200;
@@ -679,14 +704,16 @@ html, body{
   }
 
   .albuminfosongnumber{
-    align-self: flex-start;
+    -webkit-align-self: flex-start;
+            align-self: flex-start;
     line-height: 1.4em;
     margin-top: 20px;
   }
 
   .albuminfolength{
     line-height: 1.4em;
-    align-self: flex-start;
+    -webkit-align-self: flex-start;
+            align-self: flex-start;
   }
 }
 
@@ -759,8 +786,10 @@ html, body{
   }
 
   #footercontainer{
-    align-items: center;
-    justify-content: center;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-justify-content: center;
+            justify-content: center;
     padding-left: 0px !important;
   }
 }
@@ -770,9 +799,12 @@ html, body{
   height: 100%;
   width: 100%;
   margin: 0px;
+  display: -webkit-flex;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
+  -webkit-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
   padding: 5px 5px 5px 95px;
 }
 
