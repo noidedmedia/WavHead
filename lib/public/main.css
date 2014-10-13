@@ -69,16 +69,23 @@ html, body{
 }
 
 /* Styling specifically for the "(View on GitHub)" text in the header. */
-.githublink{
-  display: inline-block;
-  color: #ABB6CE !important;
-  font-size: 16px;
-  font-weight: 200;
-  text-decoration: none;
+#GitHub{
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  fill: #ABB6CE;
+  transition: fill ease 400ms;
+}
+
+#GitHub:hover{
+  fill: #FFFFFF;
 }
 
 /* Hover styles for links in the header. */
-#header a:hover, .githublink a:hover{
+#header a:hover{
   text-decoration: underline;
 }
 
@@ -257,7 +264,6 @@ html, body{
   max-width: 500px;
   background-color: #F2F2F0;
   overflow-y: scroll;
-  transition: width ease 400ms;
 }
 
 /* Hides the overlay and mobile sidebar if the viewport width is 750px or more. */
