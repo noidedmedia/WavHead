@@ -16,6 +16,14 @@ html, body{
   height: 100%;
 }
 
+/* Fix so WebKit doesn't show scrollbars everywhere on mobile. */
+@media all and (max-width: 750px){
+  ::-webkit-scrollbar{
+    -webkit-appearance: none;
+    height: 0px;
+    width: 0px;
+  }
+}
 
 /* 
 
