@@ -35,7 +35,7 @@ module WavHead
     # Give the top(num) items in the queue.
     # So top(10) will give the top 10 items in the queue.
     def top(num)
-      @mut.synchronize{@array.sort{|x,y| y <=> x}.take(num)}
+      @mut.synchronize{@array.sort!.reverse.take(num)}
     end
     ##
     # See if an item is in our queue
