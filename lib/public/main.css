@@ -11,6 +11,7 @@ html, body{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   font-weight: 200;
+  font-size: 16px;
   background-color: #FFFFFF;
   height: 100%;
 }
@@ -862,11 +863,13 @@ html, body{
 }
 
 /* Styling for the title of the currently-playing song displayed in the footer. */
-.currentsongtitle{
+#currentsongtitle{
   color: #FFFFFF;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   white-space: nowrap;
+  margin-bottom: 8px;
+  box-sizing: border-box;
 }
 
 /* Styling for the artist and album text below the song title in the footer. */
@@ -874,8 +877,9 @@ html, body{
   display: inline;
   color: #ABB6CE;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 1.3em;
+  font-size: 16px;
+  line-height: 1.4em;
+  white-space: nowrap;
 }
 
 .currentartisttitle a, .currentalbumtitle a{
@@ -900,8 +904,9 @@ html, body{
 
 /* Text size is smaller on larger devices, since larger text is necessary for legibility on mobile devices. */
 @media all and (min-width: 750px){
-  .currentsongtitle{
+  #currentsongtitle{
     font-size: 18px;
+    margin-bottom: 0px;
   }
 
   .currentartisttitle, .currentalbumtitle{
@@ -923,7 +928,7 @@ html, body{
 
 /* When something is playing, this is displayed in the footer. */
 #somethingplaying{
-  width: 60%;
+  width: auto;
   height: auto;
 }
 
@@ -947,6 +952,6 @@ html, body{
 }
 
 /* Padding in the footer for the song title, album title, and "Nothing is playing right now." text. */
-.currentsongtitle, .currentartisttitle, .currentalbumtitle{
+#currentsongtitle, .currentartisttitle, .currentalbumtitle{
   padding: 2px;
 }
