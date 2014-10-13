@@ -45,8 +45,7 @@
 
       <!-- The number of songs and length (in minutes) of the album are displayed here. -->
       <div class="albuminfosongnumber">
-        <%= @album.songs.count %>
-
+        <%= @album.songs.count %> songs
       </div>
       <div class="albuminfolength">
         <%= @album.total_length.strftime("%M minutes, %S seconds") %>
