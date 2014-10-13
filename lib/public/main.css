@@ -868,18 +868,20 @@ html, body{
   font-weight: 400;
   font-size: 18px;
   white-space: nowrap;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   box-sizing: border-box;
+  display: inline-block;
 }
 
 /* Styling for the artist and album text below the song title in the footer. */
 .currentartisttitle, .currentalbumtitle{
-  display: inline;
+  display: inline-block;
   color: #ABB6CE;
   font-weight: 200;
   font-size: 16px;
-  line-height: 1.4em;
+  line-height: 1.2em;
   white-space: nowrap;
+  width: 100%;
 }
 
 .currentartisttitle a, .currentalbumtitle a{
@@ -905,12 +907,15 @@ html, body{
 /* Text size is smaller on larger devices, since larger text is necessary for legibility on mobile devices. */
 @media all and (min-width: 750px){
   #currentsongtitle{
+    width: 100%;
     font-size: 18px;
     margin-bottom: 0px;
   }
 
   .currentartisttitle, .currentalbumtitle{
     font-size: 16px;
+    width: auto;
+    display: inline;
   }
 
   /* "—" between artist and album title. */
