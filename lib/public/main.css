@@ -328,10 +328,10 @@ html, body{
   position: fixed;
   z-index: 100;
   margin: 0px;
-  padding: 10px 6px 4px 10px;
-  height: 25px;
-  min-height: 25px;
-  max-height: 25px;
+  padding: 0px;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
   width: 100%;
   border-bottom: 1px solid #131B3C;
   background-color: #FFFFFF;
@@ -344,17 +344,24 @@ html, body{
     top: 50px;
     position: fixed;
     margin: 0px 6px 0px 6px;
-    width: 73.3vw;
+    width: 74.1vw;
   }
 }
 
 /* Styling for the the breadcrumbs, a.k.a. directories (e.g. WavHead > Daft Punk > Random Access Memories > Get Lucky) */
 #breadcrumbs{
+  margin: 10px 10px 6px 10px;
   font-size: 16px;
   font-weight: 400;
   width: 100%;
   text-align: left;
   color: #3C4361;
+}
+
+@media all and (min-width: 750px){
+  #breadcrumbs{
+    margin: 10px 0px 6px 10px;
+  }
 }
 
 /* Styling for links in the breadcrumbs. */
@@ -423,6 +430,8 @@ html, body{
   top: 40px;
   width: 100%;
   padding-top: 10px;
+  bottom: 0px;
+  overflow-y: scroll;
   text-align: center;
 }
 
@@ -517,6 +526,7 @@ html, body{
 }
 
 .songtitle{
+  display: inline-flex;
   cursor: pointer;
   position: relative;
   font-size: 16px;
@@ -524,6 +534,7 @@ html, body{
   text-align: left;
   text-decoration: none;
   white-space: nowrap;
+  text-overflow: clip;
 }
 
 .songtitle:hover{
@@ -533,13 +544,15 @@ html, body{
 .songlength{
   display: inline-flex;
   position: absolute;
-  right: 15px;
+  right: 0px;
   text-align: right;
   font-size: 16px;
   font-weight: 200;
-  margin-top: -22px;
+  margin-top: -21px;
   white-space: nowrap;
   color: #3C4361;
+  background-color: #FFFFFF;
+  padding: 0px 15px 0px 2px;
 }
 
 /* Styling for the left column of an album page, contains the album cover and information. */
