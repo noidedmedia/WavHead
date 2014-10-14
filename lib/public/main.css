@@ -51,15 +51,15 @@ html, body{
 #wavheadtitle a{
   display: inline-block;
   text-decoration: none;
-  color: #ABB6CE;
-  transition: color ease 400ms;
+  color: #FFFFFF;
   position: absolute;
   left: 55px;
+  transition: color ease 400ms;
 }
 
 #wavheadtitle a:hover{
   text-decoration: none !important;
-  color: #FFFFFF;
+  color: #60a4ea;
 }
 
 @media all and (min-width: 750px){
