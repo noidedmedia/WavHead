@@ -1,6 +1,10 @@
 window.onload = setup;
 
 function setup(){
+  var windowheight = $(window).height();
+
+  console.log(windowheight);
+
   var homecontainer = document.getElementById("homecontainer");
   var designcontainer = document.getElementById("designcontainer");
   var featurescontainer = document.getElementById("featurescontainer");
