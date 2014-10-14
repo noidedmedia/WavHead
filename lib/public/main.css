@@ -48,21 +48,22 @@ html, body{
 }
 
 /* Styling for links in the header. */
-#wavheadtitle{
+#wavheadtitle a{
   display: inline-block;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ABB6CE;
+  transition: color ease 400ms;
   position: absolute;
   left: 55px;
 }
 
-#wavheadtitle a{
-  text-decoration: none;
+#wavheadtitle a:hover{
+  text-decoration: none !important;
   color: #FFFFFF;
 }
 
 @media all and (min-width: 750px){
-  #wavheadtitle{
+  #wavheadtitle a{
     position: static;
     left: auto;
   }
