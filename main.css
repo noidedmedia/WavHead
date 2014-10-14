@@ -48,9 +48,9 @@ html, body{
 
 #contentcontainer{
   z-index: 50;
-  position: fixed;
+  position: absolute;
+  overflow-y: scroll;
   width: 100vw;
-  height: 100%;
 }
 
 #content{
@@ -60,7 +60,7 @@ html, body{
 }
 
 #homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer{
-  margin-top: 60px;
+  padding-top: 60px;
   width: 100vw;
 }
 
