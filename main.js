@@ -2,6 +2,7 @@ window.onload = setup;
 
 function setup(){
   var windowheight = $(window).height();
+  var windowwidth = $(window).width();
 
   $("#homecontainer").css("height", windowheight - 60 + "px");
   $("#designcontainer").css("height", windowheight - 60 + "px");
