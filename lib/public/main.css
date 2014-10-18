@@ -131,7 +131,7 @@ html, body{
           flex-grow: 0;
   -webkit-order: 1;
           order: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -189,7 +189,7 @@ html, body{
   padding: 4px 0px;
   width: 100%;
   color: #3c4361;
-  overflow-x: scroll;
+  overflow-x: auto;
   text-overflow: ellipsis;
 }
 
@@ -264,7 +264,7 @@ html, body{
   min-width: 300px;
   max-width: 500px;
   background-color: #F2F2F0;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 /* Hides the overlay and mobile sidebar if the viewport width is 750px or more. */
@@ -326,7 +326,7 @@ html, body{
           flex-flow: row wrap;
   background-color: #FFFFFF;
   top: 40px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -362,7 +362,7 @@ html, body{
   border-bottom: 1px solid #131B3C;
   background-color: #FFFFFF;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 @media all and (min-width: 750px){
@@ -427,7 +427,7 @@ html, body{
   -webkit-flex-flow: row wrap;
           flex-flow: row wrap;
   text-align: center;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 /* Container that holds the artlist items and forces similar margins on all pages. */
@@ -439,7 +439,7 @@ html, body{
   -webkit-flex-flow: row wrap;
           flex-flow: row wrap;
   text-align: center;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -456,7 +456,7 @@ html, body{
   width: 100%;
   padding-top: 10px;
   bottom: 0px;
-  overflow-y: scroll;
+  overflow-y: auto;
   text-align: center;
 }
 
