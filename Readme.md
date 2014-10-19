@@ -41,3 +41,4 @@ As I mentioned earlier, TagLib. You'll also need a copy of mplayer on linux,
 which is probably in your distro's package manager.
 
 
+All media released under the BSD License. 
