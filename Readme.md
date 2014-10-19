@@ -1,20 +1,44 @@
 # WavHead: Vote on Music
-
+![A screen shot. Not terribly important.](http://i.imgur.com/vrExOkH.png)
 ### What is this?
 A simple program to let people vote on music. Essentially, you run a local
 server which lists music. People vote on what they want to listen to, and it
 plays songs in order of votes.
 
+
 ### How do I use it?
 
-The usage is very simple. Run ````./wav_head.rb -i DIRECTORY```` to index a
-directory (By default, ````~/Music/````). Run ````./wav_head.rb -s```` to start a
-server. Optionally, set the port with ````./wav_head.rb -p PORT````. Navigate any
-browser to your hostname and port, and start playing some tunes!
+First off, clone the repository. Navigate to the folder created in a termainl,
+and type "bundle install". You'll need to install TagLib, which is easily done
+on most Linux distros and on OSX with homebrew - it should output instructions
+on how to do so when you run "bundle install". 
 
-If you ever need to delete the index of songs, just run ````./wav_head.rb -d````. For
-a pretty-printed output of indexed songs, just use ````./wav_head.rb -l````.
+After that's done, you'll need to index some music. This lets WavHead know that
+your music exists. Run ````./wav_head.rb -i $(DIRECTORY)```` to do that. If you
+do not supply a directory, it will look in ````~/Music/````.
 
-More features to follow.
+After that's done, you'll probably want to start up a server. Run
+````./wav_head.rb -s```` to do that, optionally setting the port with the 
+-p flag. Now, users can vote on music by navigating to your computer with
+their browser.
 
-Licensed under the BSD License.
+#### Wait a minute. What url should they visit?
+
+Well, they'll need to go to your computer's hostname. Thankfully, finding
+out what that is is easy: type ````hostname```` in a terminal, and bam,
+you're ready to go. They'll also need to go to the right port, so simply
+append a ":" and the port number (by default, 4567) to your hostname and you're
+good to go.
+
+### Does this work on Windows?
+
+It's not officially supported, but with a bit of wizardry you can probably
+get it working.
+
+### What do I need to install?
+
+As I mentioned earlier, TagLib. You'll also need a copy of mplayer on linux,
+which is probably in your distro's package manager.
+
+
+All media released under the BSD License. 
