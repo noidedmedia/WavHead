@@ -1,5 +1,5 @@
 # WavHead: Vote on Music
-![A screen shot. Not terribly important.]()
+![A screen shot. Not terribly important.](http://i.imgur.com/vrExOkH.png)
 ### What is this?
 A simple program to let people vote on music. Essentially, you run a local
 server which lists music. People vote on what they want to listen to, and it
@@ -34,5 +34,10 @@ good to go.
 
 It's not officially supported, but with a bit of wizardry you can probably
 get it working.
+
+### What do I need to install?
+
+As I mentioned earlier, TagLib. You'll also need a copy of mplayer on linux,
+which is probably in your distro's package manager.
 
 
