@@ -7,12 +7,14 @@
 <link rel="icon" type="image/png" href="/favicon-64x64.png"/> 
 
 <!-- CSS Stylesheets -->
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
 
 <!-- JavaScript -->
 <!-- REVERT THE JQUERY URL TO "//" INSTEAD OF "https://" BEFORE YOU RELEASE IT, MORON. -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="waypoints.min.js"></script>
+<script src="jquery.fullPage.min.js"></script>
+<script src="jquery.easings.min.js"></script>
 <script src="main.js"></script>
 
 <!-- Viewport meta tags -->
@@ -23,37 +25,36 @@
 <body>
 
   <header id="headercontainer">
-    <div id="header">
-      <div id="wavheadtitle">WavHead</div>
-
-      <div class="headeritems" id="headeritems-about">ABOUT</div>
-      <div class="headeritems" id="headeritems-install">INSTALL</div>
-      <div class="headeritems" id="headeritems-features">FEATURES</div>
-      <div class="headeritems" id="headeritems-design">DESIGN</div>
-    </div>
+    <ul id="header">
+      <li id="wavheadtitle" class="active" data-menuanchor="home"><a href="#home">WavHead</a></li>
+      <li data-menuanchor="design"><a href="#design">DESIGN</a></li>
+      <li data-menuanchor="features"><a href="#features">FEATURES</a></li>
+      <li data-menuanchor="install"><a href="#install">INSTALL</a></li>
+      <li data-menuanchor="about"><a href="#about">ABOUT</a></li>
+    </ul>
   </header>
 
   <div id="contentcontainer">
     <div id="content">
-      <div id="homecontainer">
+      <div class="section" id="homecontainer">
         <div class="titletext" id="wavheadtitletext">WavHead</div>
 
         <div class="subtitletext">Musical Democracy</div>
       </div>
 
-      <div id="designcontainer">
+      <div class="section" id="designcontainer">
         DESIGN
       </div>
 
-      <div id="featurescontainer">
+      <div class="section" id="featurescontainer">
         FEATURES
       </div>
 
-      <div id="installcontainer">
+      <div class="section" id="installcontainer">
         INSTALL
       </div>
 
-      <div id="aboutcontainer">
+      <div class="section" id="aboutcontainer">
 
         <div id="madewithlove">
 
