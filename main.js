@@ -6,6 +6,7 @@ $(document).ready(function() {
       loopBottom: false,
       loopTop: false,
       slidesNavigation: true,
+      slidesNavPosition: 'bottom',
       menu: '#header',
       anchors: ['home', 'design', 'features', 'install', 'about'],
     });

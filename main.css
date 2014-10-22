@@ -204,3 +204,12 @@ html, body {
     text-align: right;
   }
 }
+
+.fp-slidesNav ul li a span {
+  border-color: #5856D6;
+}
+
+.fp-slidesNav .active span {
+  background: #5856D6 !important;
+  border-color: #5856D6 !important;
+}
