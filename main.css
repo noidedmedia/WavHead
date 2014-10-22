@@ -82,7 +82,7 @@ html, body {
 #contentcontainer {
   z-index: 50;
   position: absolute;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   width: 100vw;
 }
