@@ -213,3 +213,23 @@ html, body {
   background: #5856D6 !important;
   border-color: #5856D6 !important;
 }
+
+.fp-prev {
+  border-color: transparent rgba(88, 86, 214, 0.6) transparent transparent !important;
+  transition: all 250ms ease-in-out !important;
+}
+
+.fp-prev:hover {
+  border-color: transparent rgba(88, 86, 214, 1.0) transparent transparent !important; 
+}
+
+.fp-next {
+  border-color: transparent transparent transparent rgba(88, 86, 214, 0.6) !important;
+  transition: all 250ms ease-in-out !important;
+}
+
+.fp-next:hover {
+  border-color: transparent transparent transparent rgba(88, 86, 214, 1.0) !important;
+}
+
+
