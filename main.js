@@ -5,6 +5,7 @@ $(document).ready(function() {
       easing: 'easeInCubic',
       loopBottom: false,
       loopTop: false,
+      loopHorizontal: false,
       slidesNavigation: true,
       slidesNavPosition: 'bottom',
       menu: '#header',
