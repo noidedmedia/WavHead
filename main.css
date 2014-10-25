@@ -120,30 +120,11 @@ li#wavheadtitle.active a{
 
 #homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer {
   margin: 0px 15px;
-}
-
-#homecontainer {
   text-align: center;
 }
 
 #wavheadtitletext {
   padding-top: 60vh;
-}
-
-#designcontainer {
-  text-align: center;
-}
-
-#featurescontainer {
-  text-align: center;
-}
-
-#installcontainer {
-  text-align: center;
-}
-
-#aboutcontainer {
-  text-align: center;
 }
 
 #madewithlove {
@@ -226,8 +207,8 @@ li#wavheadtitle.active a{
   border-color: #5856D6;
   background-color: transparent;
   box-shadow: inset 0 0 0 0px #5856D6;
-  -webkit-transition: box-shadow 300ms ease-in-out;
-  transition: box-shadow 300ms ease-in-out;
+  -webkit-transition: box-shadow 400ms ease-in-out;
+  transition: box-shadow 400ms ease-in-out;
 }
 
 .fp-slidesNav ul li a span:focus {
