@@ -202,11 +202,11 @@ li#wavheadtitle.active a {
 }
 
 .imagecontainer img {
-	position: absolute;
-	bottom: 0px;
-	left: 17vw;
-	width: 66vw;
-	height: auto;
+	position: relative;
+	text-align: center;
+  width: auto;
+	margin-top: 20vh;
+  height: 74vh;
 	z-index: 5;
 }
 
@@ -220,14 +220,15 @@ li#wavheadtitle.active a {
 
 #featuresmobileimagecontainer img {
   position: relative;
-  padding-top: 15vh;
   text-align: center;
   width: auto;
-  height: 75vh;
+  height: 70vh;
   z-index: 5;
+	margin-top: 15vh;
 }
 
 @media all and (min-width: 700px) {
+
   #featuresdesktopimagecontainer {
     display: block;
   }
