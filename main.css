@@ -212,7 +212,7 @@ li#wavheadtitle.active a {
 
 .imagecontainer2 {
 	height: auto;
-	width: auto;
+	width: 100vw;
 	display: block;
 }
 
@@ -281,6 +281,52 @@ li#wavheadtitle.active a {
 .home-subtitletext {
   font-weight: 200;
   font-size: 30px;
+}
+
+/*
+
+    =================================
+              "INSTALL" SECTION
+    =================================
+
+*/
+
+.buttoncontainer {
+	left: 42vw;
+	position: absolute;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	width: 200px;
+}
+
+#GitHub-button, #download-button {
+	border: #5856D6 1px solid;
+	border-radius: 5px;
+	height: 24px;
+	width: 180px;
+	padding: 12px 12px;
+	background-color: transparent;
+  transition: all 300ms ease-in-out;
+}
+
+#GitHub-button:hover, #download-button:hover {
+	background-color: #5856D6;
+}
+
+.button {
+	margin: 10px;
+  line-height: 24px;
+	height: 100%;
+	font-size: 24px;
+	font-weight: 200;
+	color: #5856D6;
+	text-align: center;
+	text-decoration: none;
+}
+
+.button:hover {
+	color: #FFFFFF;
 }
 
 
@@ -409,8 +455,10 @@ li#wavheadtitle.active a {
   box-shadow: inset 0 0 0 8px #5856D6;
 }
 
-.fp-controllArrow, .fp-prev, .fp-next {
+.fp-controlArrow, .fp-prev, .fp-next {
 	display: none !important;
 }
 
-
+.fp-tableCell {
+	width: auto !important;
+}
