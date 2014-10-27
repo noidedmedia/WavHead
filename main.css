@@ -195,8 +195,8 @@ li#wavheadtitle.active a{
 .imagecontainer img{
 	position: absolute;
 	bottom: 0px;
-	left: 15vw;
-	width: 70vw;
+	left: 17vw;
+	width: 66vw;
 	height: auto;
 	z-index: 5;
 }
