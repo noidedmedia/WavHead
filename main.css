@@ -210,6 +210,19 @@ li#wavheadtitle.active a {
 	z-index: 5;
 }
 
+.imagecontainer2 {
+	height: auto;
+	width: auto;
+	display: block;
+}
+
+.imagecontainer2 img {
+	position: relative;
+	margin-top: 15vh;
+	z-index: 5;
+	height: 70vh;
+}
+
 #featuresdesktopimagecontainer {
   display: none;
 }
