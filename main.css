@@ -28,7 +28,7 @@ html, body {
   position: fixed;
   z-index: 100;
   background-color: transparent;
-  transition: all 700ms ease-in-out;
+  transition: background-color 700ms ease-in-out;
   width: 100vw;
   height: 60px;
 }
@@ -43,7 +43,7 @@ html, body {
   cursor: pointer;
 }
 
-li#wavheadtitle a{
+li#wavheadtitle a {
   color: rgba(255,255,255,0.60);
   transition: all 700ms ease-in-out;
 }
@@ -53,7 +53,7 @@ li#wavheadtitle a:hover {
   transition: all 150ms ease-in-out;
 }
 
-li#wavheadtitle.active a{
+li#wavheadtitle.active a {
   color: transparent;
   cursor: default;
 }
@@ -73,31 +73,31 @@ li#wavheadtitle.active a{
   transition: all 150ms ease-in-out;
 }
 
-#header li:last-of-type{
+#header li:last-of-type {
   position: absolute;
   right: 10ex;
   top: 21px;
 }
 
-#header li:nth-last-of-type(2){
+#header li:nth-last-of-type(2) {
   position: absolute;
   right: 22ex;
   top: 21px;
 }
 
-#header li:nth-last-of-type(3){
+#header li:nth-last-of-type(3) {
   position: absolute;
   right: 35ex;
   top: 21px;
 }
 
-#header li:nth-last-of-type(4){
+#header li:nth-last-of-type(4) {
   position: absolute;
   right: 50ex;
   top: 21px;
 }
 
-#header a{
+#header a {
   transition: all 150ms ease-in-out;
   color: rgba(255,255,255,0.60);
   text-decoration: none;
@@ -107,7 +107,7 @@ li#wavheadtitle.active a{
   color: rgba(255,255,255,1.0);
 }
 
-#header .active a{
+#header .active a {
   transition: all 150ms ease-in-out;
   color: rgba(255,255,255,1.0);
 }
@@ -135,8 +135,14 @@ li#wavheadtitle.active a{
 }
 
 #homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer {
-  margin: 0px 15px;
+  margin: 0px;
   text-align: center;
+}
+
+@media all and (min-width: 700px) {
+  #homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer {
+    margin: 0px 15px;
+  }
 }
 
 
@@ -160,6 +166,7 @@ li#wavheadtitle.active a{
   top: 12vh;
   text-align: center;
   width: 100vw;
+  padding: 0px 10px 5px 10px;
 }
 
 .titletext {
@@ -168,6 +175,7 @@ li#wavheadtitle.active a{
   font-weight: 200;
   font-size: 32px;
   padding-bottom: 5px;
+  padding: 0px 10px 5px 10px;
 }
 
 .subtitletext {
@@ -175,6 +183,7 @@ li#wavheadtitle.active a{
 	position: relative;
   font-weight: 400;
   font-size: 18px;
+  padding: 0px 10px 5px 10px;
 }
 
 
@@ -192,13 +201,40 @@ li#wavheadtitle.active a{
 	display: block;
 }
 
-.imagecontainer img{
+.imagecontainer img {
 	position: absolute;
 	bottom: 0px;
 	left: 17vw;
 	width: 66vw;
 	height: auto;
 	z-index: 5;
+}
+
+#designdesktopimagecontainer {
+  display: none;
+}
+
+#designmobileimagecontainer {
+  display: block;
+}
+
+#designmobileimagecontainer img {
+  position: relative;
+  padding-top: 20vh;
+  text-align: center;
+  width: auto;
+  height: 66vh;
+  z-index: 5;
+}
+
+@media all and (min-width: 700px) {
+  #designdesktopimagecontainer {
+    display: block;
+  }
+
+  #designmobileimagecontainer {
+    display: none;
+  }
 }
 
 /*
@@ -211,9 +247,15 @@ li#wavheadtitle.active a{
 
 #hometextcontainer {
   position: absolute;
-  bottom: 15vh;
+  bottom: 5vh;
   width: 100vw;
   text-align: center;
+}
+
+@media all and (min-width: 700px) {
+  #hometextcontainer {
+    bottom: 15vh;
+  }
 }
 
 .home-titletext {
@@ -237,7 +279,7 @@ li#wavheadtitle.active a{
 */
 
 #madewithlove {
-  margin-bottom: 15vh;
+  margin-bottom: 25px;
   width: 100%;
 }
 
@@ -259,29 +301,42 @@ li#wavheadtitle.active a{
 .credit {
   width: 100vw;
   margin: 0px;
-  padding-top: 40px;
-}
-
-@media all and (min-width: 700px) {
-  .credit {
-    padding-top: 0px;
-    width: auto;
-    min-width: 400px;
-    margin: 0px 50px;
-  }
+  padding-top: 20px;
 }
 
 .creditname {
   width: 100%;
   font-size: 36px;
-  font-weight: 300;
-  padding-bottom: 5px;
+  font-weight: 400;
+  padding-bottom: 0px;
 }
 
 .creditdescription {
   width: 100%;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 200;
+}
+
+@media all and (min-width: 700px) {
+  #madewithlove {
+    margin-bottom: 15vh;
+  }
+
+  .credit {
+    padding-top: 40px;
+    width: auto;
+    min-width: 400px;
+    margin: 0px 50px;
+  }
+
+  .creditname {
+    padding-bottom: 5px;
+    font-weight: 300;
+  }
+
+  .creditdescription {
+    font-weight: 500;
+  }
 }
 
 .creditlinks {
