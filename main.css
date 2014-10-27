@@ -1,3 +1,11 @@
+/*
+
+    =================================
+               HTML/BODY
+    =================================
+
+*/
+
 html, body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
@@ -6,6 +14,15 @@ html, body {
   background-color: #262E4F;
   color: rgba(255,255,255,1.0);
 }
+
+
+/*
+
+    =================================
+              HEADER
+    =================================
+
+*/
 
 #headercontainer {
   position: fixed;
@@ -27,7 +44,7 @@ html, body {
 }
 
 li#wavheadtitle a{
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.60);
   transition: all 700ms ease-in-out;
 }
 
@@ -51,7 +68,7 @@ li#wavheadtitle.active a{
   position: relative;
   text-align: right;
   cursor: pointer;
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.60);
   white-space: nowrap;
   transition: all 150ms ease-in-out;
 }
@@ -82,7 +99,7 @@ li#wavheadtitle.active a{
 
 #header a{
   transition: all 150ms ease-in-out;
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.60);
   text-decoration: none;
 }
 
@@ -94,6 +111,15 @@ li#wavheadtitle.active a{
   transition: all 150ms ease-in-out;
   color: rgba(255,255,255,1.0);
 }
+
+
+/*
+
+    =================================
+                CONTENT
+    =================================
+
+*/
 
 #contentcontainer {
   z-index: 50;
@@ -108,24 +134,80 @@ li#wavheadtitle.active a{
   height: 100%;
 }
 
-.titletext {
-  font-weight: 500;
-  font-size: 60px;
-}
-
-.subtitletext {
-  font-weight: 200;
-  font-size: 30px;
-}
-
 #homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer {
   margin: 0px 15px;
   text-align: center;
 }
 
-#wavheadtitletext {
-  padding-top: 60vh;
+
+/*
+
+    =================================
+        TEXT STYLING AND PLACEMENT
+    =================================
+
+*/
+
+.textcontainer {
+  position: absolute;
+  top: 20vh;
+  text-align: center;
+  width: 100vw;
 }
+
+.slidetextcontainer {
+  position: absolute;
+  top: 12vh;
+  text-align: center;
+  width: 100vw;
+}
+
+.titletext {
+  font-weight: 200;
+  font-size: 32px;
+  padding-bottom: 5px;
+}
+
+.subtitletext {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
+/*
+
+    =================================
+              "HOME" SECTION
+    =================================
+
+*/
+
+#hometextcontainer {
+  position: absolute;
+  bottom: 15vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.home-titletext {
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 72px;
+}
+
+.home-subtitletext {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+
+/*
+
+    =================================
+              "ABOUT" SECTION
+    =================================
+
+*/
 
 #madewithlove {
   margin-bottom: 15vh;
@@ -202,6 +284,15 @@ li#wavheadtitle.active a{
     text-align: right;
   }
 }
+
+
+/*
+
+    =================================
+          FULLPAGE.JS STYLING
+    =================================
+
+*/
 
 .fp-slidesNav ul li a span {
   border-color: #5856D6;
