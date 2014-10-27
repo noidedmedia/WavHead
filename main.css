@@ -163,7 +163,7 @@ li#wavheadtitle.active a {
 
 .slidetextcontainer {
   position: absolute;
-  top: 12vh;
+  top: 8vh;
   text-align: center;
   width: 100vw;
   padding: 0px 10px 5px 10px;
@@ -210,29 +210,29 @@ li#wavheadtitle.active a {
 	z-index: 5;
 }
 
-#designdesktopimagecontainer {
+#featuresdesktopimagecontainer {
   display: none;
 }
 
-#designmobileimagecontainer {
+#featuresmobileimagecontainer {
   display: block;
 }
 
-#designmobileimagecontainer img {
+#featuresmobileimagecontainer img {
   position: relative;
-  padding-top: 20vh;
+  padding-top: 15vh;
   text-align: center;
   width: auto;
-  height: 66vh;
+  height: 75vh;
   z-index: 5;
 }
 
 @media all and (min-width: 700px) {
-  #designdesktopimagecontainer {
+  #featuresdesktopimagecontainer {
     display: block;
   }
 
-  #designmobileimagecontainer {
+  #featuresmobileimagecontainer {
     display: none;
   }
 }
@@ -382,6 +382,7 @@ li#wavheadtitle.active a {
   box-shadow: inset 0 0 0 0px #5856D6;
   -webkit-transition: box-shadow 400ms ease-in-out;
   transition: box-shadow 400ms ease-in-out;
+  margin-top: 60px;
 }
 
 .fp-slidesNav ul li a span:focus {
@@ -394,22 +395,8 @@ li#wavheadtitle.active a {
   box-shadow: inset 0 0 0 8px #5856D6;
 }
 
-.fp-prev {
-  border-color: transparent rgba(88, 86, 214, 0.6) transparent transparent !important;
-  transition: all 250ms ease-in-out !important;
-}
-
-.fp-prev:hover {
-  border-color: transparent rgba(88, 86, 214, 1.0) transparent transparent !important; 
-}
-
-.fp-next {
-  border-color: transparent transparent transparent rgba(88, 86, 214, 0.6) !important;
-  transition: all 250ms ease-in-out !important;
-}
-
-.fp-next:hover {
-  border-color: transparent transparent transparent rgba(88, 86, 214, 1.0) !important;
+.fp-controllArrow, .fp-prev, .fp-next {
+	display: none !important;
 }
 
 

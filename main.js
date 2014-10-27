@@ -7,7 +7,7 @@ $(document).ready(function() {
     loopTop: false,
     loopHorizontal: false,
     slidesNavigation: true,
-    slidesNavPosition: 'bottom',
+    slidesNavPosition: 'top',
     menu: '#header',
     anchors: ['home', 'design', 'features', 'install', 'about'],
     onLeave: function(index, nextIndex, direction) {
