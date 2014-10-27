@@ -150,7 +150,7 @@ li#wavheadtitle.active a{
 
 .textcontainer {
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   text-align: center;
   width: 100vw;
 }
@@ -163,16 +163,43 @@ li#wavheadtitle.active a{
 }
 
 .titletext {
+	z-index: 10;
+	position: relative;
   font-weight: 200;
   font-size: 32px;
   padding-bottom: 5px;
 }
 
 .subtitletext {
+	z-index: 10;
+	position: relative;
   font-weight: 400;
   font-size: 18px;
 }
 
+
+/*
+
+    =================================
+	        	IMAGE STYLING
+    =================================
+
+*/
+
+.imagecontainer {
+	height: auto;
+	width: auto;
+	display: block;
+}
+
+.imagecontainer img{
+	position: absolute;
+	bottom: 0px;
+	left: 15vw;
+	width: 70vw;
+	height: auto;
+	z-index: 5;
+}
 
 /*
 
