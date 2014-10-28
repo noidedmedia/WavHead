@@ -28,9 +28,10 @@ html, body {
   position: fixed;
   z-index: 100;
   background-color: transparent;
-  transition: background-color 700ms ease-in-out;
+  transition: all 700ms ease-in-out;
   width: 100vw;
   height: 60px;
+  top: -60px;
 }
 
 #header {
@@ -38,6 +39,8 @@ html, body {
 }
 
 #wavheadtitle {
+	position: absolute !important;
+	top: 15px;
   font-size: 24px !important;
   font-weight: 500 !important;
   cursor: pointer;
@@ -74,25 +77,25 @@ li#wavheadtitle.active a {
 }
 
 #header li:last-of-type {
-  position: absolute;
+  position: fixed;
   right: 10ex;
   top: 21px;
 }
 
 #header li:nth-last-of-type(2) {
-  position: absolute;
+  position: fixed;
   right: 22ex;
   top: 21px;
 }
 
 #header li:nth-last-of-type(3) {
-  position: absolute;
+  position: fixed;
   right: 35ex;
   top: 21px;
 }
 
 #header li:nth-last-of-type(4) {
-  position: absolute;
+  position: fixed;
   right: 50ex;
   top: 21px;
 }

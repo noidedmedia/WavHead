@@ -12,10 +12,12 @@ $(document).ready(function() {
     anchors: ['home', 'design', 'features', 'install', 'about'],
     onLeave: function(index, nextIndex, direction) {
       if(nextIndex == 1) {
-        $("#headercontainer").css("background-color", "transparent");
+        $("#headercontainer").css("background-color", "rgba(88,86,214,0.6)");
+        $("#headercontainer").css("top","-60px");
       }
       else {
         $("#headercontainer").css("background-color", "rgba(88,86,214,0.6)");
+        $("#headercontainer").css("top", "0px");
       }
     },
   });
