@@ -292,12 +292,11 @@ li#wavheadtitle.active a {
 */
 
 .buttoncontainer {
-	left: 42vw;
-	position: absolute;
+	display: inline-block;
+	position: relative;
 	text-align: center;
 	margin: 0px;
 	padding: 0px;
-	width: 200px;
 }
 
 #GitHub-button, #download-button {
