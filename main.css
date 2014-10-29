@@ -197,7 +197,7 @@ li#wavheadtitle.active a {
 	height: 100px;
 	width: 40px;
 	left: 60px;
-	top: 50vh;
+	top: 40vh;
 }
 
 .left-arrow:hover, .right-arrow:hover {
@@ -220,7 +220,7 @@ li#wavheadtitle.active a {
 	height: 100px;
 	width: 40px;
 	right: 60px;
-	top: 50vh;
+	top: 40vh;
 }
 
 #right-arrow-one {
