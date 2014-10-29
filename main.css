@@ -144,7 +144,7 @@ li#wavheadtitle.active a {
 
 @media all and (min-width: 700px) {
   #homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer {
-    margin: 0px 15px;
+    padding: 0px 15px;
   }
 }
 
