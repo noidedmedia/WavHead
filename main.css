@@ -169,24 +169,40 @@ li#wavheadtitle.active a {
   top: 8vh;
   text-align: center;
   width: 100vw;
-  padding: 0px 10px 5px 10px;
+  padding: 0px;
+}
+
+@media all and (min-width: 700px) {
+	.slidetextcontainer {
+	  padding: 0px 10px 5px 10px;
+	}
 }
 
 .titletext {
 	z-index: 10;
 	position: relative;
   font-weight: 200;
-  font-size: 32px;
-  padding-bottom: 5px;
+  font-size: 24px;
   padding: 0px 10px 5px 10px;
 }
 
 .subtitletext {
 	z-index: 10;
 	position: relative;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 200;
+  font-size: 16px;
   padding: 0px 10px 5px 10px;
+}
+
+@media all and (min-width: 700px) {
+	.titletext {
+		font-size: 32px;
+	}
+
+	.subtitletext {
+		font-weight: 400;
+		font-size: 18px;
+	}
 }
 
 .left-arrow {
@@ -286,9 +302,9 @@ li#wavheadtitle.active a {
   position: relative;
   text-align: center;
   width: auto;
-  height: 70vh;
+  height: 60vh;
   z-index: 5;
-	margin-top: 15vh;
+	margin-top: 20vh;
 }
 
 @media all and (min-width: 700px) {
@@ -312,27 +328,37 @@ li#wavheadtitle.active a {
 
 #hometextcontainer {
   position: absolute;
-  bottom: 5vh;
+  bottom: 10vh;
   width: 100vw;
   text-align: center;
+}
+
+.home-titletext {
+  font-weight: 500;
+	font-size: 48px;
+	line-height: 48px;
+}
+
+.home-subtitletext {
+  font-weight: 200;
+  font-size: 24px;
 }
 
 @media all and (min-width: 700px) {
   #hometextcontainer {
     bottom: 15vh;
   }
+
+  .home-titletext {
+  	font-size: 72px;
+  	line-height: 72px;
+  }
+
+  .home-subtitletext {
+  	font-size: 30px;
+  }
 }
 
-.home-titletext {
-  font-weight: 500;
-  font-size: 72px;
-  line-height: 72px;
-}
-
-.home-subtitletext {
-  font-weight: 200;
-  font-size: 30px;
-}
 
 /*
 
@@ -347,7 +373,17 @@ li#wavheadtitle.active a {
 	position: relative;
 	text-align: center;
 	margin: 0px;
-	padding: 0px;
+	padding-top: 50vh;
+}
+
+@media all and (min-width: 700px) {
+	.buttoncontainer {
+		padding-top: 0vh;
+	}
+
+	.button {
+		margin: 10px;
+	}
 }
 
 #GitHub-button, #download-button {
@@ -355,7 +391,7 @@ li#wavheadtitle.active a {
 	border-radius: 5px;
 	height: 24px;
 	width: 180px;
-	padding: 12px 12px;
+	padding: 12px;
 	background-color: transparent;
   transition: all 300ms ease-in-out;
 }
@@ -365,7 +401,7 @@ li#wavheadtitle.active a {
 }
 
 .button {
-	margin: 10px;
+	margin: 3px;
   line-height: 24px;
 	height: 100%;
 	font-size: 24px;
@@ -389,15 +425,28 @@ li#wavheadtitle.active a {
 */
 
 #madewithlove {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   width: 100%;
+  white-space: nowrap;
 }
 
 #madewithlove span {
   font-size: 48px;
   font-weight: 300;
   vertical-align: 55%;
-  padding: 0px 25px;
+  padding: 0px 15px;
+}
+
+@media all and (max-width: 350px) {
+	#madewithlove {
+		margin-bottom: 10px;
+	}
+
+	#madewithlove span {
+		font-size: 36px;
+		padding: 0px 10px;
+		vertical-align: 70%;
+	}
 }
 
 #creditscontainer {
@@ -432,6 +481,10 @@ li#wavheadtitle.active a {
     margin-bottom: 15vh;
   }
 
+  #madewithlove span {
+  	padding: 0px 25px;
+  }
+
   .credit {
     padding-top: 40px;
     width: auto;
@@ -447,10 +500,14 @@ li#wavheadtitle.active a {
   .creditdescription {
     font-weight: 500;
   }
+
+  .creditlinks {
+  	padding-top: 10px;
+  }
 }
 
 .creditlinks {
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 .creditlinks a {
