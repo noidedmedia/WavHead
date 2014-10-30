@@ -437,7 +437,7 @@ li#wavheadtitle.active a {
   padding: 0px 15px;
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 400px) {
 	#madewithlove {
 		margin-bottom: 10px;
 	}
@@ -446,6 +446,10 @@ li#wavheadtitle.active a {
 		font-size: 36px;
 		padding: 0px 10px;
 		vertical-align: 70%;
+	}
+
+	.creditname {
+		font-size: 30px;
 	}
 }
 
