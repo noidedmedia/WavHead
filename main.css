@@ -30,12 +30,33 @@ html, body {
   background-color: transparent;
   transition: all 700ms ease-in-out;
   width: 100vw;
-  height: 60px;
-  top: -60px;
+  height: 120px;
+  top: -120px;
 }
 
-#header {
-  height: 100%;
+#desktopheader {
+	display: none;
+}
+
+#mobileheader {
+	display: auto;
+	padding: 0px;
+}
+
+@media all and (min-width: 700px) {
+	#headercontainer {
+		top: -60px;
+		height: 60px;
+	}
+
+	#desktopheader {
+		display: inline-block;
+	  height: 100%;
+	}
+
+	#mobileheader {
+		display: none;
+	}
 }
 
 #wavheadtitle {
@@ -61,7 +82,7 @@ li#wavheadtitle.active a {
   cursor: default;
 }
 
-#header li {
+#desktopheader li {
   text-align: right;
   vertical-align: middle;
   display: inline;
@@ -69,52 +90,62 @@ li#wavheadtitle.active a {
   font-size: 14px;
   font-weight: 300;
   position: relative;
-  text-align: right;
   cursor: pointer;
   color: rgba(255,255,255,0.60);
   white-space: nowrap;
   transition: all 150ms ease-in-out;
 }
 
-#header li:last-of-type {
+#desktopheader li:last-of-type {
   position: fixed;
   right: 10ex;
   top: 21px;
 }
 
-#header li:nth-last-of-type(2) {
+#desktopheader li:nth-last-of-type(2) {
   position: fixed;
   right: 22ex;
   top: 21px;
 }
 
-#header li:nth-last-of-type(3) {
+#desktopheader li:nth-last-of-type(3) {
   position: fixed;
   right: 35ex;
   top: 21px;
 }
 
-#header li:nth-last-of-type(4) {
+#desktopheader li:nth-last-of-type(4) {
   position: fixed;
   right: 50ex;
   top: 21px;
 }
 
-#header a {
+#desktopheader a {
   transition: all 150ms ease-in-out;
   color: rgba(255,255,255,0.60);
   text-decoration: none;
 }
 
-#header a:hover {
+#desktopheader a:hover {
   color: rgba(255,255,255,1.0);
 }
 
-#header .active a {
+#desktopheader .active a {
   transition: all 150ms ease-in-out;
   color: rgba(255,255,255,1.0);
 }
 
+#mobileheader li {
+	list-style-type: none;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: center;
+}
+
+#mobileheader a {
+  color: rgba(255,255,255,1.0);
+  text-decoration: none;
+}
 
 /*
 
@@ -271,9 +302,9 @@ li#wavheadtitle.active a {
 .imagecontainer img {
 	position: relative;
 	text-align: center;
-  width: auto;
 	margin-top: 20vh;
   height: 74vh;
+  width: auto;
 	z-index: 5;
 }
 
@@ -285,9 +316,21 @@ li#wavheadtitle.active a {
 
 .imagecontainer2 img {
 	position: relative;
-	margin-top: 15vh;
 	z-index: 5;
-	height: 70vh;
+	margin-top: 20vh;
+	width: 150vw;
+	height: auto;
+	max-height: 60vh;
+	overflow-x: auto;
+}
+
+@media all and (min-width: 700px) {
+	.imagecontainer2 img {
+		margin-top: 15vh;
+		width: auto;
+		height: 70vh;
+		max-height: auto;
+	}
 }
 
 #featuresdesktopimagecontainer {
