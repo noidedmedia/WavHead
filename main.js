@@ -9,7 +9,7 @@ $(document).ready(function() {
     slidesNavigation: true,
     slidesNavPosition: 'top',
     menu: '#header',
-    anchors: ['home', 'design', 'features', 'install', 'about'],
+    anchors: ['home', 'about', 'features', 'install', 'contact'],
     onLeave: function(index, nextIndex, direction) {
       var windowwidth = $(window).width();
       var windowheight = $(window).height();

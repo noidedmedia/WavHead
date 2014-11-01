@@ -110,19 +110,19 @@ li#wavheadtitle.active a:hover {
 
 #desktopheader li:nth-last-of-type(2) {
   position: fixed;
-  right: 22ex;
+  right: 24ex;
   top: 21px;
 }
 
 #desktopheader li:nth-last-of-type(3) {
   position: fixed;
-  right: 35ex;
+  right: 37ex;
   top: 21px;
 }
 
 #desktopheader li:nth-last-of-type(4) {
   position: fixed;
-  right: 50ex;
+  right: 52ex;
   top: 21px;
 }
 
@@ -174,13 +174,13 @@ li#wavheadtitle.active a:hover {
   height: 100%;
 }
 
-#homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer {
+#homecontainer, #aboutcontainer, #featurescontainer, #installcontainer, #contactcontainer {
   margin: 0px;
   text-align: center;
 }
 
 @media all and (min-width: 700px) {
-  #homecontainer, #designcontainer, #featurescontainer, #installcontainer, #aboutcontainer {
+  #homecontainer, #aboutcontainer, #featurescontainer, #installcontainer, #contactcontainer {
     padding: 0px 15px;
   }
 }
