@@ -8,7 +8,7 @@ $(document).ready(function() {
     loopHorizontal: false,
     slidesNavigation: true,
     slidesNavPosition: 'top',
-    menu: '#headercontainer',
+    menu: '#desktopheader',
     anchors: ['home', 'about', 'features', 'install', 'contact'],
     onLeave: function(index, nextIndex, direction) {
       var windowwidth = $(window).width();
@@ -18,7 +18,7 @@ $(document).ready(function() {
         $("#headercontainer").css("top","-60vh");
       }
       else if(windowwidth < 700) {
-        $("#headercontainer").css("top", -(windowheight * .6) + 60 + "px");
+        $("#headercontainer").css("top", -(windowheight * 0.6) + 60 + "px");
       }
       else if(nextIndex == 1 && windowwidth > 700) {
         $("#headercontainer").css("top","-60px");
@@ -28,4 +28,18 @@ $(document).ready(function() {
       }
     },
   });
+
+  function mobileHeader() {
+    var windowwidth = $(window).width();
+
+    if(windowwidth < 700) {
+      $("#menubutton").on("tap", function mobileMenu() {
+        var windowwidth = $(window).width();
+        var windowheight = $(window).height();
+
+        $("#headercontainer").css("top","0px");
+        console.log("JEWS");
+      });
+    }
+  }
 });

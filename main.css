@@ -158,6 +158,23 @@ li#wavheadtitle.active a:hover {
   text-decoration: none;
 }
 
+#mobilewavheadtitle {
+  font-size: 24px !important;
+  font-weight: 300 !important; 
+  position: absolute;
+  right: 55px;
+  bottom: 15px;
+}
+
+#menubutton {
+  cursor: pointer;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 15px;
+  bottom: 15px;
+}
+
 /*
 
     =================================
@@ -235,7 +252,7 @@ li#wavheadtitle.active a:hover {
   font-size: 16px;
   padding: 0px 10px 5px 10px;
   margin: auto;
-  line-height: 1.2em;
+  line-height: 1.3em;
 }
 
 @media all and (min-width: 700px) {
