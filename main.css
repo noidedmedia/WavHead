@@ -367,6 +367,15 @@ li#wavheadtitle.active a:hover {
   margin: auto;
 }
 
+#homesvgcontainer {
+  position: relative;
+  height: auto;
+  width: 80vw;
+  bottom: 100px;
+  text-align: center;
+  margin: auto;
+}
+
 @media all and (min-width: 700px) {
   .svgcontainer {
     position: relative;
@@ -385,6 +394,12 @@ li#wavheadtitle.active a:hover {
     text-align: center;
     margin: auto;
   }
+
+  #homesvgcontainer {
+    width: 400px;
+    height: 400px;
+    bottom: 100px;
+  }
 }
 
 
@@ -398,7 +413,7 @@ li#wavheadtitle.active a:hover {
 
 #hometextcontainer {
   position: absolute;
-  bottom: 10vh;
+  bottom: 20vh;
   width: 100vw;
   text-align: center;
 }
