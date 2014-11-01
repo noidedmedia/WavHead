@@ -27,11 +27,11 @@ html, body {
 #headercontainer {
   position: fixed;
   z-index: 100;
-  background-color: transparent;
+  background-color: rgba(88,86,214,0.6);
   transition: all 700ms ease-in-out;
   width: 100vw;
-  height: 120px;
-  top: -120px;
+  height: 60vh;
+  top: -60vh;
 }
 
 #desktopheader {
@@ -50,7 +50,7 @@ html, body {
 	}
 
 	#desktopheader {
-		display: inline-block;
+		display: block;
 	  height: 100%;
 	}
 
@@ -60,6 +60,7 @@ html, body {
 }
 
 #wavheadtitle {
+  z-index: 101;
 	position: absolute !important;
 	top: 15px;
   font-size: 24px !important;
@@ -78,8 +79,13 @@ li#wavheadtitle a:hover {
 }
 
 li#wavheadtitle.active a {
-  color: transparent;
-  cursor: default;
+  color: rgba(255,255,255,0.60);
+  transition: all 150ms ease-in-out;
+}
+
+li#wavheadtitle.active a:hover {
+  color: rgba(255,255,255,1.0);
+  cursor: pointer;
 }
 
 #desktopheader li {
@@ -591,22 +597,23 @@ li#wavheadtitle.active a {
 */
 
 .fp-slidesNav ul li a span {
-  border-color: #5856D6;
-  background-color: transparent;
-  box-shadow: inset 0 0 0 0px #5856D6;
-  -webkit-transition: box-shadow 400ms ease-in-out;
-  transition: box-shadow 400ms ease-in-out;
-  margin-top: 60px;
+  vertical-align: middle;
+  background-color: rgba(88, 86, 214, 0.5);
+  border: 1px #262E4F solid;
+  -webkit-transition: background-color 400ms ease-in-out, border 400ms ease-in-out;
+  transition: background-color 400ms ease-in-out, border 400ms ease-in-out;
+  margin-top: 55px;
 }
 
-.fp-slidesNav ul li a span:focus {
-  box-shadow: inset 0 0 0 2px rgba(88, 86, 214, 0.6);
+@media all and (min-width: 700px) {
+  .fp-slidesNav ul li a span {
+    margin-top: 65px;
+  }
 }
 
 .fp-slidesNav .active span {
-  background-color: transparent !important;
-  border-color: #5856D6 !important;
-  box-shadow: inset 0 0 0 8px #5856D6;
+  background-color: rgba(88, 86, 214, 1.0) !important;
+  border: 1px rgba(88, 86, 214, 1.0) solid !important;
 }
 
 .fp-controlArrow, .fp-prev, .fp-next {

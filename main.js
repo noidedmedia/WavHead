@@ -11,13 +11,20 @@ $(document).ready(function() {
     menu: '#header',
     anchors: ['home', 'design', 'features', 'install', 'about'],
     onLeave: function(index, nextIndex, direction) {
-      if(nextIndex == 1) {
-        $("#headercontainer").css("background-color", "rgba(88,86,214,0.6)");
+      var windowwidth = $(window).width();
+      var windowheight = $(window).height();
+
+      if(nextIndex == 1 && windowwidth < 700) {
+        $("#headercontainer").css("top","-60vh");
+      }
+      else if(windowwidth < 700) {
+        $("#headercontainer").css("top", -(windowheight * .6) + 60 + "px");
+      }
+      else if(nextIndex == 1 && windowwidth > 700) {
         $("#headercontainer").css("top","-60px");
       }
-      else {
-        $("#headercontainer").css("background-color", "rgba(88,86,214,0.6)");
-        $("#headercontainer").css("top", "0px");
+      else if(windowwidth > 700) {
+        $("#headercontainer").css("top","0px");
       }
     },
   });
