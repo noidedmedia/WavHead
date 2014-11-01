@@ -235,6 +235,7 @@ li#wavheadtitle.active a:hover {
   font-size: 16px;
   padding: 0px 10px 5px 10px;
   margin: auto;
+  line-height: 1.2em;
 }
 
 @media all and (min-width: 700px) {
@@ -364,7 +365,6 @@ li#wavheadtitle.active a:hover {
 }
 
 @media all and (min-width: 700px) {
-
   #featuresdesktopimagecontainer {
     display: block;
   }
@@ -373,6 +373,27 @@ li#wavheadtitle.active a:hover {
     display: none;
   }
 }
+
+.slidesvgcontainer {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  top: 40px;
+  text-align: center;
+  margin: auto;
+}
+
+@media all and (min-width: 700px) {
+  .slidesvgcontainer {
+    position: static;
+    height: 300px;
+    width: 300px;
+    top: 40vh;
+    text-align: center;
+    margin: auto;
+  }
+}
+
 
 /*
 
