@@ -8,7 +8,7 @@ $(document).ready(function() {
     loopHorizontal: false,
     slidesNavigation: true,
     slidesNavPosition: 'top',
-    menu: '#header',
+    menu: '#headercontainer',
     anchors: ['home', 'about', 'features', 'install', 'contact'],
     onLeave: function(index, nextIndex, direction) {
       var windowwidth = $(window).width();
