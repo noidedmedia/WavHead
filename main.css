@@ -322,31 +322,6 @@ li#wavheadtitle.active a:hover {
 	z-index: 5;
 }
 
-.imagecontainer2 {
-	height: auto;
-	width: 100vw;
-	display: block;
-}
-
-.imagecontainer2 img {
-	position: relative;
-	z-index: 5;
-	margin-top: 20vh;
-	width: 150vw;
-	height: auto;
-	max-height: 60vh;
-	overflow-x: auto;
-}
-
-@media all and (min-width: 700px) {
-	.imagecontainer2 img {
-		margin-top: 15vh;
-		width: auto;
-		height: 70vh;
-		max-height: auto;
-	}
-}
-
 #featuresdesktopimagecontainer {
   display: none;
 }
@@ -374,6 +349,15 @@ li#wavheadtitle.active a:hover {
   }
 }
 
+.svgcontainer {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  top: 40px;
+  text-align: center;
+  margin: auto;
+}
+
 .slidesvgcontainer {
   position: relative;
   height: 200px;
@@ -384,6 +368,15 @@ li#wavheadtitle.active a:hover {
 }
 
 @media all and (min-width: 700px) {
+  .svgcontainer {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    top: 8vh;
+    text-align: center;
+    margin: auto;
+  }
+
   .slidesvgcontainer {
     position: static;
     height: 300px;
