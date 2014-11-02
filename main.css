@@ -565,6 +565,7 @@ li#wavheadtitle.active a:hover {
   }
 
   .about-h3 {
+    line-height: 1.3em;
     font-size: 18px;
     font-weight: 200;
   }
