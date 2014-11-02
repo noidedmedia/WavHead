@@ -20,6 +20,11 @@ a {
   text-decoration: underline;
 }
 
+code {
+  color: rgba(88,86,214,1.0);
+  background-color: rgba(88,86,214,0.30);
+}
+
 
 /*
 
@@ -586,17 +591,75 @@ li#wavheadtitle.active a:hover {
 
 */
 
+#installcontents {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  padding: 0px 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.installationinstructstep {
+  display: inline-flex;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.installationinstructnumber {
+  flex-basis: 40px;
+  display: block;
+  color: #262E4F;
+  border: 2px rgba(88,86,214,1.0) solid;
+  background-color: rgba(88,86,214,1.0);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 10px;
+  line-height: 38px;
+  justify-content: center;
+}
+
+.installinstructcontent {
+  display: inline-flex;
+  color: #FFFFFF;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.installinstructsubtext {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 200;
+}
+
 .buttoncontainer {
-	display: inline-block;
-	position: relative;
+  display: flex;
+  flex-flow: row wrap;
+	position: absolute;
+  width: 100%;
+  justify-content: center;
 	text-align: center;
-	margin: 0px;
-	padding-top: 50vh;
+  bottom: 25px;
 }
 
 @media all and (min-width: 700px) {
+
+  #installcontents {
+    margin-top: 40px;
+  }
+
+  .installationinstructnumber {
+    height: 40px;
+    width: 40px;
+  }
+
 	.buttoncontainer {
-		padding-top: 0vh;
+    margin: auto;
+    text-align: center;
+    bottom: 100px;
 	}
 
 	.button {
@@ -610,6 +673,7 @@ li#wavheadtitle.active a:hover {
 	height: 24px;
 	width: 180px;
 	padding: 12px;
+  margin: 0px 15px;
 	background-color: transparent;
   transition: all 300ms ease-in-out;
 }
@@ -630,7 +694,7 @@ li#wavheadtitle.active a:hover {
 }
 
 .button:hover {
-	color: #FFFFFF;
+	color: #262E4F;
 }
 
 
