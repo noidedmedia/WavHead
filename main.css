@@ -162,8 +162,8 @@ li#wavheadtitle.active a:hover {
   font-size: 24px !important;
   font-weight: 300 !important; 
   position: absolute;
-  right: 55px;
-  bottom: 15px;
+  right: 45px;
+  bottom: 0px;
 }
 
 #menubutton {
@@ -253,6 +253,18 @@ li#wavheadtitle.active a:hover {
   padding: 0px 10px 5px 10px;
   margin: auto;
   line-height: 1.3em;
+}
+
+
+@media all and (max-width: 400px) {
+  .titletext { 
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .subtitletext {
+    font-size: 14px;
+  }
 }
 
 @media all and (min-width: 700px) {
@@ -423,7 +435,7 @@ li#wavheadtitle.active a:hover {
 /*
 
     =================================
-              "HOME" SECTION
+            "HOME" SECTION
     =================================
 
 */
@@ -465,7 +477,109 @@ li#wavheadtitle.active a:hover {
 /*
 
     =================================
-              "INSTALL" SECTION
+            "ABOUT" SECTION
+    =================================
+
+*/
+
+#aboutcontents {
+  display: flex;
+  position: absolute;
+  flex-flow: row wrap;
+  padding: 0px 10px;
+  width: auto;
+  align-content: space-between;
+  margin-top: 100px;
+  bottom: -10px;
+}
+
+#connect, #vote, #listen {
+  display: inline-flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 10px 0px;
+}
+
+#connect-svgcontainer svg, #vote-svgcontainer svg, #listen-svgcontainer svg {
+  display: inline-flex;
+  height: 70px;
+  width: 70px;
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+
+#connect-textcontainer, #vote-textcontainer, #listen-textcontainer {
+  width: 66%;
+  text-align: left;
+}
+
+.about-h2 {
+  line-height: 1.6em;
+  font-size: 21px;
+  font-weight: 400;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.about-h3 {
+  font-size: 18px;
+  font-weight: 200;
+  width: 100%;
+}
+
+@media all and (min-width: 700px) {
+  #aboutcontents {
+    flex-flow: row nowrap;
+    position: relative;
+    padding: 0px 250px;
+    bottom: auto;
+    margin-top: 50px;
+  }
+
+  #connect, #vote, #listen {
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 33%;
+    text-align: center;
+  }
+
+  #connect-svgcontainer svg, #vote-svgcontainer svg, #listen-svgcontainer svg {
+    height: 100px;
+    width: 100px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+  }
+
+  #connect-textcontainer, #vote-textcontainer, #listen-textcontainer {
+    text-align: center;
+  }
+
+  .about-h2 {
+    font-size: 21px;
+    font-weight: 200;
+  }
+
+  .about-h3 {
+    font-size: 18px;
+    font-weight: 200;
+  }
+}
+
+@media all and (min-height: 500px) {
+  #aboutcontents {
+    bottom: 30px;
+  }
+}
+
+
+/*
+
+    =================================
+            "INSTALL" SECTION
     =================================
 
 */
@@ -521,7 +635,7 @@ li#wavheadtitle.active a:hover {
 /*
 
     =================================
-              "ABOUT" SECTION
+            "CONTACT" SECTION
     =================================
 
 */
