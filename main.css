@@ -590,6 +590,53 @@ li#wavheadtitle.active a:hover {
 /*
 
     =================================
+          "FEATURES" SECTION
+    =================================
+
+*/
+
+#bars {
+  height: 60px;
+  position: relative;
+  top: 80px;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+}
+
+.bar {
+  background: #5856D6;
+  bottom: 1px;
+  height: 30px;
+  position: absolute;
+  width: 19px;      
+  -webkit-animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@-webkit-keyframes sound {
+  0% {
+    height: 30px;
+  }
+
+  100% {    
+    height: 120px;        
+  }
+}
+
+.bar:nth-child(1) { left: 0px;  -webkit-animation-duration: 574ms; }
+.bar:nth-child(2) { left: 21px; -webkit-animation-duration: 633ms; }
+.bar:nth-child(3) { left: 42px; -webkit-animation-duration: 457ms; }
+.bar:nth-child(4) { left: 63px; -webkit-animation-duration: 538ms; }
+.bar:nth-child(5) { left: 84px; -webkit-animation-duration: 470ms; }
+.bar:nth-child(6) { left: 105px; -webkit-animation-duration: 497ms; }
+.bar:nth-child(7) { left: 126px; -webkit-animation-duration: 541ms; }
+.bar:nth-child(8) { left: 147px; -webkit-animation-duration: 580ms; }
+.bar:nth-child(9) { left: 168px; -webkit-animation-duration: 487ms; }
+
+
+/*
+
+    =================================
             "INSTALL" SECTION
     =================================
 
