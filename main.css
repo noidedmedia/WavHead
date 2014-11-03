@@ -585,13 +585,13 @@ li#wavheadtitle.active a:hover {
 
 @media all and (min-height: 600px) and (max-height: 700px) and (max-width: 700px) {
   #aboutcontents {
-    bottom: 120px;
+    bottom: 100px;
   }
 }
 
 @media all and (min-height: 700px) and (max-height: 800px) and (max-width: 700px) {
   #aboutcontents {
-    bottom: 180px;
+    bottom: 160px;
   }
 }
 
@@ -632,6 +632,7 @@ li#wavheadtitle.active a:hover {
   font-weight: 600;
   margin-right: 10px;
   line-height: 28px;
+  margin-top: 10px;
 }
 
 @media all and (min-width: 300px) and (max-width: 350px) {
@@ -694,6 +695,8 @@ li#wavheadtitle.active a:hover {
     width: 40px;
     text-align: center;
     font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: auto;
   }
 
   .installinstructcontent {
