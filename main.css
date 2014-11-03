@@ -21,6 +21,7 @@ a {
 }
 
 code {
+  font-family: monaco, Consolas, monospace;
   padding: 2px 4px;
   color: rgba(88,86,214,1.0);
   background-color: rgba(88,86,214,0.2);
@@ -46,34 +47,34 @@ code {
 }
 
 #desktopheader {
-	display: none;
+  display: none;
 }
 
 #mobileheader {
-	display: auto;
-	padding: 0px;
+  display: auto;
+  padding: 0px;
 }
 
 @media all and (min-width: 700px) {
-	#headercontainer {
-		top: -60px;
-		height: 60px;
-	}
+  #headercontainer {
+    top: -60px;
+    height: 60px;
+  }
 
-	#desktopheader {
-		display: block;
-	  height: 100%;
-	}
+  #desktopheader {
+    display: block;
+    height: 100%;
+  }
 
-	#mobileheader {
-		display: none;
-	}
+  #mobileheader {
+    display: none;
+  }
 }
 
 #wavheadtitle {
   z-index: 101;
-	position: absolute !important;
-	top: 15px;
+  position: absolute !important;
+  top: 15px;
   font-size: 24px !important;
   font-weight: 500 !important;
   cursor: pointer;
@@ -153,10 +154,10 @@ li#wavheadtitle.active a:hover {
 }
 
 #mobileheader li {
-	list-style-type: none;
-	font-size: 14px;
-	font-weight: 300;
-	text-align: center;
+  list-style-type: none;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
 }
 
 #mobileheader a {
@@ -228,27 +229,23 @@ li#wavheadtitle.active a:hover {
   padding: 0px;
 }
 
-#stopcollablisten {
-  top: 12vh;
-}
-
 @media all and (min-width: 700px) {
-	.slidetextcontainer {
-	  padding: 0px 10px 5px 10px;
-	}
+  .slidetextcontainer {
+    padding: 0px 10px 5px 10px;
+  }
 }
 
 .titletext {
-	z-index: 10;
-	position: relative;
+  z-index: 10;
+  position: relative;
   font-weight: 200;
   font-size: 24px;
   padding: 0px 10px 5px 10px;
 }
 
 .subtitletext {
-	z-index: 10;
-	position: relative;
+  z-index: 10;
+  position: relative;
   font-weight: 200;
   font-size: 16px;
   padding: 0px 10px 5px 10px;
@@ -269,87 +266,87 @@ li#wavheadtitle.active a:hover {
 }
 
 @media all and (min-width: 700px) {
-	.titletext {
-		font-size: 32px;
-	}
+  .titletext {
+    font-size: 32px;
+  }
 
-	.subtitletext {
+  .subtitletext {
     max-width: 1200px;
-		font-weight: 400;
-		font-size: 18px;
-	}
+    font-weight: 400;
+    font-size: 18px;
+  }
 }
 
 .left-arrow {
-	fill: rgba(88, 86, 214, 0.6);
+  fill: rgba(88, 86, 214, 0.6);
   transition: all 150ms ease-in-out;
-	display: none;
-	position: absolute;
-	height: 100px;
-	width: 40px;
-	left: 60px;
-	top: 40vh;
+  display: none;
+  position: absolute;
+  height: 100px;
+  width: 40px;
+  left: 60px;
+  top: 40vh;
 }
 
 .left-arrow:hover, .right-arrow:hover {
-	fill: rgba(88, 86, 214, 1.0);
+  fill: rgba(88, 86, 214, 1.0);
 }
 
 #left-arrow-one {
-	margin-left: 33%;
+  margin-left: 33%;
 }
 
 #left-arrow-two {
-	margin-left: 66%;
+  margin-left: 66%;
 }
 
 .right-arrow {
-	fill: rgba(88, 86, 214, 0.6);
+  fill: rgba(88, 86, 214, 0.6);
   transition: all 150ms ease-in-out;
-	display: none;
-	position: absolute;
-	height: 100px;
-	width: 40px;
-	right: 60px;
-	top: 40vh;
+  display: none;
+  position: absolute;
+  height: 100px;
+  width: 40px;
+  right: 60px;
+  top: 40vh;
 }
 
 #right-arrow-one {
-	margin-right: 66%;
+  margin-right: 66%;
 }
 
 #right-arrow-two {
-	margin-right: 33%;
+  margin-right: 33%;
 }
 
 @media all and (min-width: 700px) {
-	.right-arrow, .left-arrow {
-		display: inline-block;
-	}
+  .right-arrow, .left-arrow {
+    display: inline-block;
+  }
 }
 
 
 /*
 
     =================================
-	        	IMAGE STYLING
+            IMAGE STYLING
     =================================
 
 */
 
 .imagecontainer {
-	height: auto;
-	width: auto;
-	display: block;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .imagecontainer img {
-	position: relative;
-	text-align: center;
-	margin-top: 20vh;
+  position: relative;
+  text-align: center;
+  margin-top: 20vh;
   height: 74vh;
   width: auto;
-	z-index: 5;
+  z-index: 5;
 }
 
 #featuresdesktopimagecontainer {
@@ -366,7 +363,7 @@ li#wavheadtitle.active a:hover {
   width: auto;
   height: 60vh;
   z-index: 5;
-	margin-top: 20vh;
+  margin-top: 20vh;
 }
 
 @media all and (min-width: 700px) {
@@ -450,8 +447,8 @@ li#wavheadtitle.active a:hover {
 
 .home-titletext {
   font-weight: 500;
-	font-size: 48px;
-	line-height: 48px;
+  font-size: 48px;
+  line-height: 48px;
 }
 
 .home-subtitletext {
@@ -465,12 +462,12 @@ li#wavheadtitle.active a:hover {
   }
 
   .home-titletext {
-  	font-size: 72px;
-  	line-height: 72px;
+    font-size: 72px;
+    line-height: 72px;
   }
 
   .home-subtitletext {
-  	font-size: 30px;
+    font-size: 30px;
   }
 }
 
@@ -484,27 +481,37 @@ li#wavheadtitle.active a:hover {
 */
 
 #aboutcontents {
+  display: -webkit-flex;
   display: flex;
   position: absolute;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
   padding: 0px 10px;
   width: auto;
-  align-content: space-between;
+  -webkit-align-content: space-between;
+          align-content: space-between;
   margin-top: 120px;
   bottom: -10px;
 }
 
 #connect, #vote, #listen {
+  display: -webkit-inline-flex;
   display: inline-flex;
-  flex-flow: row wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
-  align-items: flex-start;
-  justify-content: center;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  -webkit-flex-shrink: 1;
+          flex-shrink: 1;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+  -webkit-justify-content: center;
+          justify-content: center;
   margin: 10px 0px;
 }
 
 #connect-svgcontainer svg, #vote-svgcontainer svg, #listen-svgcontainer svg {
+  display: -webkit-inline-flex;
   display: inline-flex;
   height: 70px;
   width: 70px;
@@ -533,7 +540,8 @@ li#wavheadtitle.active a:hover {
 
 @media all and (min-width: 700px) {
   #aboutcontents {
-    flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
+            flex-flow: row nowrap;
     position: relative;
     padding: 0px 250px;
     bottom: auto;
@@ -541,11 +549,14 @@ li#wavheadtitle.active a:hover {
   }
 
   #connect, #vote, #listen {
-    flex-flow: column nowrap;
-    align-items: center;
+    -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-align-items: center;
+            align-items: center;
     width: 33%;
     text-align: center;
-    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start;
   }
 
   #connect-svgcontainer svg, #vote-svgcontainer svg, #listen-svgcontainer svg {
@@ -600,7 +611,6 @@ li#wavheadtitle.active a:hover {
 */
 
 #bars {
-  z-index: 100;
   height: 60px;
   position: absolute;
   bottom: 0px;
@@ -612,36 +622,76 @@ li#wavheadtitle.active a:hover {
 
 .bar {
   background: #5856D6;
-  -webkit-filter: blur(3px);
+  filter: blur(2.5px);
+    -webkit-filter: blur(2.5px);
   bottom: 1px;
-  height: 15vh;
+  height: 25vh;
   position: absolute;
-  width: 5.25vw;      
-  -webkit-animation: sound 0ms -800ms linear infinite alternate;
+  width: 5.25vw;
+  animation: sound 0ms -800ms linear infinite alternate;
+    -webkit-animation: sound 0ms -800ms linear infinite alternate;
 }
 
 @-webkit-keyframes sound {
   0% {
     opacity: 1.0;
-    height: 15vh;
+    height: 25vh;
   }
 
   100% {
     opacity: 0.4;
-    height: 75vh;        
+    height: 70vh;        
   }
 }
 
-.bar:nth-child(1)  { left: 0vw;  -webkit-animation-duration: 574ms; }
-.bar:nth-child(2)  { left: 6vw;  -webkit-animation-duration: 633ms; }
-.bar:nth-child(3)  { left: 12vw;  -webkit-animation-duration: 457ms; }
-.bar:nth-child(4)  { left: 18vw; -webkit-animation-duration: 538ms; }
-.bar:nth-child(5)  { left: 24vw; -webkit-animation-duration: 470ms; }
-.bar:nth-child(6)  { left: 30vw; -webkit-animation-duration: 497ms; }
-.bar:nth-child(7)  { left: 36vw; -webkit-animation-duration: 541ms; }
-.bar:nth-child(8)  { left: 42vw; -webkit-animation-duration: 580ms; }
-.bar:nth-child(9)  { left: 48vw; -webkit-animation-duration: 487ms; }
-.bar:nth-child(10) { left: 54vw; -webkit-animation-duration: 647ms; }
+@keyframes sound {
+  0% {
+    opacity: 1.0;
+    height: 25vh;
+  }
+
+  100% {
+    opacity: 0.4;
+    height: 70vh;        
+  }
+}
+
+@media all and (min-width: 700px) {
+  @-webkit-keyframes sound {
+    0% {
+      opacity: 1.0;
+      height: 25vh;
+    }
+
+    100% {
+      opacity: 0.4;
+      height: 90vh;        
+    }
+  }
+
+  @keyframes sound {
+    0% {
+      opacity: 1.0;
+      height: 25vh;
+    }
+
+    100% {
+      opacity: 0.4;
+      height: 90vh;        
+    }
+  }
+}
+
+.bar:nth-child(1)  { left: 0vw;  -webkit-animation-duration: 574ms; animation-duration: 574ms; }
+.bar:nth-child(2)  { left: 6vw;  -webkit-animation-duration: 633ms; animation-duration: 633ms; }
+.bar:nth-child(3)  { left: 12vw; -webkit-animation-duration: 457ms; animation-duration: 457ms; }
+.bar:nth-child(4)  { left: 18vw; -webkit-animation-duration: 538ms; animation-duration: 538ms; }
+.bar:nth-child(5)  { left: 24vw; -webkit-animation-duration: 470ms; animation-duration: 470ms; }
+.bar:nth-child(6)  { left: 30vw; -webkit-animation-duration: 497ms; animation-duration: 497ms; }
+.bar:nth-child(7)  { left: 36vw; -webkit-animation-duration: 541ms; animation-duration: 541ms; }
+.bar:nth-child(8)  { left: 42vw; -webkit-animation-duration: 580ms; animation-duration: 580ms; }
+.bar:nth-child(9)  { left: 48vw; -webkit-animation-duration: 487ms; animation-duration: 487ms; }
+.bar:nth-child(10) { left: 54vw; -webkit-animation-duration: 647ms; animation-duration: 647ms; }
 
 
 /*
@@ -653,23 +703,31 @@ li#wavheadtitle.active a:hover {
 */
 
 #installcontents {
+  display: -webkit-inline-flex;
   display: inline-flex;
-  align-content: center;
-  flex-flow: column wrap;
+  -webkit-align-content: center;
+          align-content: center;
+  -webkit-flex-flow: column wrap;
+          flex-flow: column wrap;
   padding: 0px 10px;
 }
 
 .installationinstructstep {
+  display: -webkit-inline-flex;
   display: inline-flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
   padding: 5px 0px;
   text-align: left;
 }
 
 .installationinstructnumber {
+  display: -webkit-inline-flex;
   display: inline-flex;
-  justify-content: center;
+  -webkit-justify-content: center;
+          justify-content: center;
   color: #262E4F;
   border: 2px rgba(88,86,214,1.0) solid;
   background-color: rgba(88,86,214,1.0);
@@ -715,11 +773,14 @@ li#wavheadtitle.active a:hover {
 }
 
 .buttoncontainer {
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
   position: absolute;
   width: 100%;
-  justify-content: center;
+  -webkit-justify-content: center;
+          justify-content: center;
   text-align: center;
   bottom: 15px;
 }
@@ -733,13 +794,16 @@ li#wavheadtitle.active a:hover {
 @media all and (min-width: 700px) {
   #installcontents {
     margin-top: 30px;
-    justify-content: center;
-    align-self: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-align-self: center;
+            align-self: center;
   }
 
   .installationinstructnumber {
     height: 40px;
-    flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap;
     width: 40px;
     text-align: center;
     font-size: 24px;
@@ -749,7 +813,8 @@ li#wavheadtitle.active a:hover {
 
   .installinstructcontent {
     font-size: 21px;
-    align-self: flex-start;
+    -webkit-align-self: flex-start;
+            align-self: flex-start;
   
     margin-top: 5px;
   }
@@ -770,33 +835,33 @@ li#wavheadtitle.active a:hover {
 }
 
 #GitHub-button, #download-button {
-	border: #5856D6 1px solid;
-	border-radius: 5px;
-	height: 24px;
-	width: 180px;
-	padding: 12px;
+  border: #5856D6 1px solid;
+  border-radius: 5px;
+  height: 24px;
+  width: 180px;
+  padding: 12px;
   margin: 0px 15px;
-	background-color: transparent;
+  background-color: transparent;
   transition: all 300ms ease-in-out;
 }
 
 #GitHub-button:hover, #download-button:hover {
-	background-color: #5856D6;
+  background-color: #5856D6;
 }
 
 .button {
-	margin: 3px;
+  margin: 3px;
   line-height: 24px;
-	height: 100%;
-	font-size: 24px;
-	font-weight: 200;
-	color: #5856D6;
-	text-align: center;
-	text-decoration: none;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 200;
+  color: #5856D6;
+  text-align: center;
+  text-decoration: none;
 }
 
 .button:hover {
-	color: #262E4F;
+  color: #262E4F;
 }
 
 
@@ -822,27 +887,31 @@ li#wavheadtitle.active a:hover {
 }
 
 @media all and (max-width: 400px) {
-	#madewithlove {
-		margin-bottom: 10px;
-	}
+  #madewithlove {
+    margin-bottom: 10px;
+  }
 
-	#madewithlove span {
-		font-size: 36px;
-		padding: 0px 10px;
-		vertical-align: 70%;
-	}
+  #madewithlove span {
+    font-size: 36px;
+    padding: 0px 10px;
+    vertical-align: 70%;
+  }
 
-	.creditname {
-		font-size: 30px;
-	}
+  .creditname {
+    font-size: 30px;
+  }
 }
 
 #creditscontainer {
   width: 100%;
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 
 .credit {
@@ -870,7 +939,7 @@ li#wavheadtitle.active a:hover {
   }
 
   #madewithlove span {
-  	padding: 0px 25px;
+    padding: 0px 25px;
   }
 
   .credit {
@@ -890,7 +959,7 @@ li#wavheadtitle.active a:hover {
   }
 
   .creditlinks {
-  	padding-top: 10px;
+    padding-top: 10px;
   }
 }
 
@@ -935,7 +1004,6 @@ li#wavheadtitle.active a:hover {
   vertical-align: middle;
   background-color: rgba(88, 86, 214, 0.5);
   border: 1px #262E4F solid;
-  -webkit-transition: background-color 400ms ease-in-out, border 400ms ease-in-out;
   transition: background-color 400ms ease-in-out, border 400ms ease-in-out;
   margin-top: 55px;
 }
@@ -952,9 +1020,9 @@ li#wavheadtitle.active a:hover {
 }
 
 .fp-controlArrow, .fp-prev, .fp-next {
-	display: none !important;
+  display: none !important;
 }
 
 .fp-tableCell {
-	width: auto !important;
+  width: auto !important;
 }
