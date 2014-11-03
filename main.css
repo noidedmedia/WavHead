@@ -622,14 +622,19 @@ li#wavheadtitle.active a:hover {
 
 .bar {
   background: #5856D6;
-  filter: blur(2.5px);
-    -webkit-filter: blur(2.5px);
   bottom: 1px;
   height: 25vh;
   position: absolute;
   width: 5.25vw;
   animation: sound 0ms -800ms linear infinite alternate;
     -webkit-animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@media all and (min-width: 700px) {
+  .bar {
+    filter: blur(2.5px);
+      -webkit-filter: blur(2.5px);
+  }
 }
 
 @-webkit-keyframes sound {
