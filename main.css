@@ -229,7 +229,7 @@ li#wavheadtitle.active a:hover {
 }
 
 #stopcollablisten {
-  top: 60vh;
+  top: 12vh;
 }
 
 @media all and (min-width: 700px) {
@@ -612,6 +612,7 @@ li#wavheadtitle.active a:hover {
 
 .bar {
   background: #5856D6;
+  -webkit-filter: blur(3px);
   bottom: 1px;
   height: 15vh;
   position: absolute;
@@ -621,13 +622,13 @@ li#wavheadtitle.active a:hover {
 
 @-webkit-keyframes sound {
   0% {
-    opacity: 0.3;
+    opacity: 1.0;
     height: 15vh;
   }
 
   100% {
-    opacity: 0.8;
-    height: 70vh;        
+    opacity: 0.4;
+    height: 75vh;        
   }
 }
 
