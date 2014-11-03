@@ -683,7 +683,7 @@ li#wavheadtitle.active a:hover {
 
 @media all and (min-width: 700px) {
   #installcontents {
-    margin-top: 40px;
+    margin-top: 30px;
     justify-content: center;
     align-self: center;
   }
