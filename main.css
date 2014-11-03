@@ -21,8 +21,9 @@ a {
 }
 
 code {
+  padding: 2px 4px;
   color: rgba(88,86,214,1.0);
-  background-color: rgba(88,86,214,0.30);
+  background-color: rgba(88,86,214,0.2);
 }
 
 
@@ -576,9 +577,21 @@ li#wavheadtitle.active a:hover {
   }
 }
 
-@media all and (min-height: 500px) {
+@media all and (min-height: 500px) and (max-height: 600px) and (max-width: 700px) {
   #aboutcontents {
-    bottom: 30px;
+    bottom: 80px;
+  }
+}
+
+@media all and (min-height: 600px) and (max-height: 700px) and (max-width: 700px) {
+  #aboutcontents {
+    bottom: 120px;
+  }
+}
+
+@media all and (min-height: 700px) and (max-height: 800px) and (max-width: 700px) {
+  #aboutcontents {
+    bottom: 180px;
   }
 }
 
@@ -592,79 +605,118 @@ li#wavheadtitle.active a:hover {
 */
 
 #installcontents {
-  display: flex;
+  display: inline-flex;
+  align-content: center;
   flex-flow: column wrap;
-  width: 100%;
-  padding: 0px 20px;
-  justify-content: center;
-  margin-top: 10px;
+  padding: 0px 10px;
 }
 
 .installationinstructstep {
   display: inline-flex;
-  width: 100%;
-  margin: 10px 0px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 5px 0px;
+  text-align: left;
 }
 
 .installationinstructnumber {
-  flex-basis: 40px;
-  display: block;
+  display: inline-flex;
+  justify-content: center;
   color: #262E4F;
   border: 2px rgba(88,86,214,1.0) solid;
   background-color: rgba(88,86,214,1.0);
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   margin-right: 10px;
-  line-height: 38px;
-  justify-content: center;
+  line-height: 28px;
+}
+
+@media all and (min-width: 300px) and (max-width: 350px) {
+  .installinstructcontainer {
+    width: 240px;
+  }
+}
+
+@media all and (min-width: 350px) and (max-width: 400px) {
+  .installinstructcontainer {
+    width: 290px;
+  }
+}
+
+.installinstructcontainer {
+  margin-top: 5px;
 }
 
 .installinstructcontent {
-  display: inline-flex;
+  display: inline;
   color: #FFFFFF;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 400;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .installinstructsubtext {
   color: #FFFFFF;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
 }
 
 .buttoncontainer {
   display: flex;
   flex-flow: row wrap;
-	position: absolute;
+  position: absolute;
   width: 100%;
   justify-content: center;
-	text-align: center;
-  bottom: 25px;
+  text-align: center;
+  bottom: 15px;
+}
+
+@media all and (min-height: 500px) and (max-width: 700px) {
+  #installcontents {
+    margin-top: 20px;
+  }
 }
 
 @media all and (min-width: 700px) {
-
   #installcontents {
     margin-top: 40px;
+    justify-content: center;
+    align-self: center;
   }
 
   .installationinstructnumber {
     height: 40px;
+    flex-flow: column nowrap;
     width: 40px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
-	.buttoncontainer {
+  .installinstructcontent {
+    font-size: 21px;
+    align-self: flex-start;
+  
+    margin-top: 5px;
+  }
+
+  .installinstructsubtext {
+    width: 100%;
+  }
+
+  .buttoncontainer {
     margin: auto;
     text-align: center;
     bottom: 100px;
-	}
+  }
 
-	.button {
-		margin: 10px;
-	}
+  .button {
+    margin: 10px;
+  }
 }
 
 #GitHub-button, #download-button {
