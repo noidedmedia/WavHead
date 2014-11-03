@@ -11,35 +11,12 @@ $(document).ready(function() {
     menu: '#desktopheader',
     anchors: ['home', 'about', 'features', 'install', 'contact'],
     onLeave: function(index, nextIndex, direction) {
-      var windowwidth = $(window).width();
-      var windowheight = $(window).height();
-
-      if(nextIndex == 1 && windowwidth < 700) {
-        $("#headercontainer").css("top","-60vh");
-      }
-      else if(windowwidth < 700) {
-        $("#headercontainer").css("top", -(windowheight * 0.6) + 60 + "px");
-      }
-      else if(nextIndex == 1 && windowwidth > 700) {
+      if(nextIndex == 1) {
         $("#headercontainer").css("top","-60px");
       }
-      else if(windowwidth > 700) {
+      else {
         $("#headercontainer").css("top","0px");
       }
     },
   });
-
-  function mobileHeader() {
-    var windowwidth = $(window).width();
-
-    if(windowwidth < 700) {
-      $("#menubutton").on("tap", function mobileMenu() {
-        var windowwidth = $(window).width();
-        var windowheight = $(window).height();
-
-        $("#headercontainer").css("top","0px");
-        console.log("JEWS");
-      });
-    }
-  }
 });

@@ -39,10 +39,10 @@ code {
   position: fixed;
   z-index: 100;
   background-color: rgba(88,86,214,0.6);
-  transition: all 700ms ease-in-out;
+  transition: top 700ms ease-in-out;
   width: 100vw;
-  height: 60vh;
-  top: -60vh;
+  height: 60px;
+  top: -60px;
 }
 
 #desktopheader {
@@ -168,16 +168,7 @@ li#wavheadtitle.active a:hover {
   font-size: 24px !important;
   font-weight: 300 !important; 
   position: absolute;
-  right: 45px;
-  bottom: 0px;
-}
-
-#menubutton {
-  cursor: pointer;
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  right: 15px;
+  left: 15px;
   bottom: 15px;
 }
 
