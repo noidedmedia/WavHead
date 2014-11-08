@@ -79,7 +79,7 @@ module WavHead
       i = {}
       # Open the file
       TagLib::FileRef.open(f) do |f|
-        # We only do the next bit if hte fire actually opened.
+        # We only do the next bit if the file actually opened.
         unless f.null?
           tag = f.tag
           prop = f.audio_properties
