@@ -31,12 +31,12 @@ module WavHead
     end
     ##
     # This method takes a Song (or Song-like) and votes for it
-    def vote(song)
+    def upvote(song)
       if @song_votes[song]
         # If the song is in the hash, it has votes for it already.
         # We call "vote!" on the SongVote object in order to increase the
         # vote count.
-        @song_votes[song].vote!
+        @song_votes[song].upvote!
       else
         # The song has not yet been voted on. We create a new SongVote for the
         # song, and add it to the hash.
@@ -48,6 +48,24 @@ module WavHead
       @queue << @song_votes[song]  unless @queue.include? @song_votes[song]
       return true
     end
+    def downvote(song)
+      if @song_votes[song]
+        # If the song is in the hash, it has votes for it already.
+        # We call "vote!" on the SongVote object in order to increase the
+        # vote count.
+        @song_votes[song].downvote!
+      else
+        # The song has not yet been voted on. We create a new SongVote for the
+        # song, and add it to the hash.
+        @song_votes[song] = SongVote.new(song)
+      end
+      ##
+      # Add the song to the queue unless it's already there. 
+      # It should only be there if it has a SongVote in the hash already.
+      @queue << @song_votes[song]  unless @queue.include? @song_votes[song]
+      return true
+    end
+
     ##
     # How many songs are in the queue
     def count
@@ -128,7 +146,7 @@ module WavHead
     # Associate a song to a vote count, and start the count off at 1.
     def initialize(song)
       self.song = song
-      @votes = 1
+      @votes = 2
     end
     ## 
     # Allow the song and the votes to be read but not modified
@@ -141,8 +159,11 @@ module WavHead
     end
     ## 
     # incriment the vote count by 1.
-    def vote!
-      @votes = @votes + 1
+    def upvote!
+      @votes = @votes + 2
+    end
+    def downvote!
+      @votes = @votes - 1
     end
   end
 

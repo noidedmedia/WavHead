@@ -23,6 +23,7 @@ module WavHead
       @users[uuid] = WavHead::UserVote.new(@time) unless @users[uuid]
       @users[uuid].vote!(song)
     end
+
   end
 
   class UserVote
@@ -46,7 +47,7 @@ module WavHead
         puts "We can play it."
         return true
       else
-        puts "Nope, uplayable! We can play again at #{@songs[song]}"
+        puts "Nope, unplayable! We can play again at #{@songs[song]}"
         return false
       end
     end
