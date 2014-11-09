@@ -5,6 +5,11 @@
 <svg height="0" width="0" viewBox="0 0 16 16">
   <polygon id="plus" points="16,7 9,7 9,0 7,0 7,7 0,7 0,9 7,9 7,16 9,16 9,9 16,9 "/>
 </svg>
+<svg height="0" width="0" viewBox="0 0 16 16">
+<polygon id="minus" points="16,7 9,7 7,7 0,7 0,9 7,9 9,9 16,9"/>
+
+</svg>
+
 
 <!-- The "breadcrumbs" are displayed at the top of every artist's page, and allow the user to navigate back to the home page or the artist's page. -->
 <div id="breadcrumbscontainer">
@@ -62,16 +67,23 @@
       <% @songs.each do |s| %>
         <div class="songlistitemcontainer">
           <div class="songlistitem">
-          
-            <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/vote" method="post">
+          <div class="votebuttons">
+            <form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/upvote" method="post">
               <button type="submit" title='Vote for "<%= s.title %>"' value="Upvote" class="upvote">
                 <svg class="upvotebutton" height="16" width="16">
                   <use xlink:href="#plus"></use>
                 </svg>
-
+		</button>
+		</form>
+	<form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/downvote" method="post">
+              <button type="submit" title='Downvote for "<%= s.title %>"' value="Downvote" class="upvote downvote">
+                <svg class="upvotebutton" height="16" width="16">
+                  <use xlink:href="#minus"></use>
+                </svg>
+                </button>
+                </form>
+	</div>	
                 <div class="songtitle"><%= s.title %></div>
-              </button>
-            </form>
 
             <span class="songlength"><%= Time.at(s.length).strftime "%M:%S" %></span>
           </div>

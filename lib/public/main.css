@@ -579,7 +579,6 @@ html, body{
   text-align: right;
   font-size: 16px;
   font-weight: 200;
-  margin-top: -21px;
   white-space: nowrap;
   color: #3C4361;
   background-color: #FFFFFF;
@@ -733,6 +732,9 @@ html, body{
 }
 
 /* Styling for the upvote button used on album pages. */
+.votebuttons{
+display:-webkit-inline-box;
+}
 .upvotebutton{
   display: inline;
   margin: 0px 6px 0px 0px;
@@ -772,6 +774,10 @@ html, body{
   outline: none;
 }
 
+.downvote:hover{
+color: #B30024;
+fill: #B30024;
+}
 
 /* 
 
