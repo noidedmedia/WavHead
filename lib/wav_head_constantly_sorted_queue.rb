@@ -4,6 +4,7 @@ module WavHead
   # This class provides a queue that sorts itself on every operation.
   # It is thread-safe.
   class ConstantlySortedQueue
+    attr_accessor :array
     def initialize
       # Internally, queue is stored as an array
       @array = []

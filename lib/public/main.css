@@ -733,7 +733,7 @@ html, body{
 
 /* Styling for the upvote button used on album pages. */
 .votebuttons{
-display:-webkit-inline-box;
+display:inline-table;
 }
 .upvotebutton{
   display: inline;

@@ -61,7 +61,7 @@ module WavHead
       @artist = Artist.first(safe_title: params[:artist])
       @album = Album.first(safe_title: params[:album], artist: @artist)
       @song = Song.first(safe_title: params[:song], album: @album)
-      if settings.votemanager.can_vote?(session[:uuid], @song) then
+      if settings.votemanager.can_vote?(session[:uuid], @song) and settings.p.votes_for(@song)>0 then
         settings.votemanager.vote!(session[:uuid],@song)
         settings.p.downvote(@song)
       end
