@@ -62,9 +62,6 @@ module WavHead
       ##
       # Add the song to the queue unless it's already there. 
       # It should only be there if it has a SongVote in the hash already.
-      puts @queue.array
-      puts votes_for(song)
-      puts "BAM! DOWNVOTED!"
       if votes_for(song) <= 0
       	@queue.array.delete(@song_votes[song])
       else
