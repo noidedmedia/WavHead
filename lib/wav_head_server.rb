@@ -11,6 +11,8 @@ module WavHead
     before do
       @queue = settings.p.top(25)
       @current = settings.p.current
+      @votes = []
+@queue.each_with_index{|song,index|@votes[index]=settings.p.votes_for(song)}
       session[:uuid] = SecureRandom.uuid unless session[:uuid]
     end
     get '/queue' do
@@ -41,17 +43,32 @@ module WavHead
       @song = Song.first(safe_title: params[:song], album: @album)
       erb :song
     end
-    post "/browse/:artist/:album/:song/vote" do
+
+    post "/browse/:artist/:album/:song/upvote" do
       @artist = Artist.first(safe_title: params[:artist])
       @album = Album.first(safe_title: params[:album], artist: @artist)
       @song = Song.first(safe_title: params[:song], album: @album)
       if settings.votemanager.can_vote?(session[:uuid], @song) then
         settings.votemanager.vote!(session[:uuid],@song)
-        settings.p.vote(@song)
+        #votemanager doesn't need to know if it's downvote or upvote. Only keeps time between votes
+        settings.p.upvote(@song)
       end
 
       redirect back
     end
+
+    post "/browse/:artist/:album/:song/downvote" do
+      @artist = Artist.first(safe_title: params[:artist])
+      @album = Album.first(safe_title: params[:album], artist: @artist)
+      @song = Song.first(safe_title: params[:song], album: @album)
+      if settings.votemanager.can_vote?(session[:uuid], @song) and settings.p.votes_for(@song)>0 then
+        settings.votemanager.vote!(session[:uuid],@song)
+        settings.p.downvote(@song)
+      end
+
+      redirect back
+    end
+
     get "/cover/:artist/:album" do
       @artist = Artist.first(safe_title: params[:artist])
       @album = Album.first(safe_title: params[:album], artist: @artist)

@@ -7,23 +7,23 @@ RSpec.describe WavHead::Player do
   let(:song3){ "Song 3" }
   it "Adds items to the queue" do
     head = WavHead::Player.new
-    expect{head.vote(song1)}.to change{head.count}.by(1)
+    expect{head.upvote(song1)}.to change{head.count}.by(1)#changes vote points by 2, changes queue size by 1
   end
   it "votes properly on items" do
     head = WavHead::Player.new
     3.times do
-      head.vote(song2)
+      head.upvote(song2)
     end
-    expect(head.votes_for(song2)).to eq(3)
+    expect(head.votes_for(song2)).to eq(6)
   end
 
   it "sorts by votes" do
     head = WavHead::Player.new
     2.times do 
-      head.vote(song1)
+      head.upvote(song1)
     end
     1.times do
-      head.vote(song2)
+      head.upvote(song2)
     end
     expect(head.next).to eq(song1)
     expect(head.top(3)).to eq([song1,song2])

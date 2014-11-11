@@ -4,7 +4,7 @@ require_relative '../lib/db'
 RSpec.describe WavHead::SongVote do
   it "initializes with a value of 1" do
     song = WavHead::SongVote.new(Song[0])
-    expect(song.votes).to eq(1)
+    expect(song.votes).to eq(2)
   end
   describe "voting" do
     it "doesn't let the user directly modify votes" do
@@ -12,7 +12,7 @@ RSpec.describe WavHead::SongVote do
     end
     it "changes the vote count when voted on" do
       vote = WavHead::SongVote.new(Song[0])
-      expect{vote.vote!}.to change{vote.votes}.by(1)
+      expect{vote.upvote!}.to change{vote.votes}.by(2)
     end
   end
   describe "sorting" do
@@ -21,10 +21,10 @@ RSpec.describe WavHead::SongVote do
     let(:song3){WavHead::SongVote.new(Song[10])}
     it "sorts by votes" do
       3.times do
-        song3.vote!
+        song3.upvote!
       end
       10.times do
-        song2.vote!
+        song2.upvote!
       end
       ary = [song3, song1, song2]
       expect(ary.sort).to eq([song1, song3, song2])
