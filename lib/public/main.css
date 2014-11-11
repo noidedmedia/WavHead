@@ -491,6 +491,7 @@ html, body{
   -webkit-align-items: baseline;
           align-items: baseline;
   padding: 8px 5px;
+  white-space: nowrap;
 }
 
 /* This forces a bottom border for the final listed item. */
@@ -557,7 +558,6 @@ html, body{
 .songtitle{
   display: -webkit-inline-flex;
   display: inline-flex;
-  cursor: pointer;
   position: relative;
   font-size: 16px;
   font-weight: 200;
@@ -579,7 +579,6 @@ html, body{
   text-align: right;
   font-size: 16px;
   font-weight: 200;
-  margin-top: -21px;
   white-space: nowrap;
   color: #3C4361;
   background-color: #FFFFFF;
@@ -733,8 +732,12 @@ html, body{
 }
 
 /* Styling for the upvote button used on album pages. */
+.votebuttons{
+  display: inline-flex;
+  white-space: nowrap;
+}
 .upvotebutton{
-  display: inline;
+  display: inline-flex;
   margin: 0px 6px 0px 0px;
   padding: 0px;
   width: 16px;
@@ -772,6 +775,10 @@ html, body{
   outline: none;
 }
 
+.downvote:hover{
+color: #B30024;
+fill: #B30024;
+}
 
 /* 
 

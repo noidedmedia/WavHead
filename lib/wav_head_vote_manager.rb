@@ -6,8 +6,10 @@ module WavHead
     ##
     # Initialize with the amount of time a user should wait
     # Default of 3 hours.
+    attr_accessor :downvote
     def initialize(time = 60*60*3)
       # Length of time to wait before a user can vote again
+      @downvote=false
       @time = time
       # A hash of user => uservote
       @users = {}
@@ -23,6 +25,7 @@ module WavHead
       @users[uuid] = WavHead::UserVote.new(@time) unless @users[uuid]
       @users[uuid].vote!(song)
     end
+
   end
 
   class UserVote
@@ -46,7 +49,7 @@ module WavHead
         puts "We can play it."
         return true
       else
-        puts "Nope, uplayable! We can play again at #{@songs[song]}"
+        puts "Nope, unplayable! We can play again at #{@songs[song]}"
         return false
       end
     end

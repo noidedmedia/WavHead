@@ -12,11 +12,12 @@
 
   <!-- For each queued song, the following will be displayed. -->
   <% if @queue %>
-    <% @queue.each do |i| %>
+    <% @queue.each_with_index do |i,index| %>
       <div class="queuelistitem">
       
         <!-- This displays the respective queued song's title. -->
         <div class="queueitemtitle">
+  	  <strong><%= @votes[index] %></strong> | 
           <%= i.title %>
         </div>
 
