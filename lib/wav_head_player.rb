@@ -49,7 +49,8 @@ module WavHead
       return true
     end
     def downvote(song)
-      if @song_votes[song]
+      return unless WavHead::Server.settings.votemanager.downvote
+	if @song_votes[song]
         # If the song is in the hash, it has votes for it already.
         # We call "vote!" on the SongVote object in order to increase the
         # vote count.

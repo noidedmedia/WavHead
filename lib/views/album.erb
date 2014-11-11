@@ -75,6 +75,7 @@
                 </svg>
 		</button>
 		</form>
+<% if WavHead::Server.settings.votemanager.downvote %>
 	<form class="voteform" action="<%= @album.safe_title %>/<%= s.safe_title %>/downvote" method="post">
               <button type="submit" title='Downvote for "<%= s.title %>"' value="Downvote" class="upvote downvote">
                 <svg class="upvotebutton" height="16" width="16">
@@ -82,6 +83,7 @@
                 </svg>
                 </button>
                 </form>
+<%end%>
 	</div>	
                 <div class="songtitle"><%= s.title %></div>
 

@@ -12,6 +12,12 @@ OptionParser.new do |o|
   o.on("-s", "--server", "Run a server") do |v|
     opts[:server] = true
   end
+  o.on("--enable-downvotes",
+  "--enable-downvotes",
+   "Let users downvote songs. Use after -s arg") do |e|
+    opts[:downvote]=true
+  end
+
   o.on("-p", "--port PORT", Integer, "Run on a specific port") do |p|
     opts[:port] = p
   end
@@ -25,7 +31,6 @@ OptionParser.new do |o|
     opts[:delete] = true
   end
 
-
 end.parse!
 
 WavHead::Info.setup(opts[:index]) if opts[:index]
@@ -35,6 +40,7 @@ if opts[:server]
   puts "Starting a server..." 
   WavHead::Server.set :p, WavHead::Player.new
   WavHead::Server.set :votemanager, WavHead::VoteManager.new
+  WavHead::Server.settings.votemanager.downvote=true if opts[:downvote]
   puts WavHead::Server.settings.votemanager.inspect
   WavHead::Server.settings.p.start!
   WavHead::Server.set :port, opts[:port] if opts[:port]

@@ -6,8 +6,10 @@ module WavHead
     ##
     # Initialize with the amount of time a user should wait
     # Default of 3 hours.
+    attr_accessor :downvote
     def initialize(time = 60*60*3)
       # Length of time to wait before a user can vote again
+      @downvote=false
       @time = time
       # A hash of user => uservote
       @users = {}
