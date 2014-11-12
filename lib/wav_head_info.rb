@@ -77,7 +77,8 @@ module WavHead
     def self.get_info(f)
       # Hash to store the info in
       i = {}
-      get_tags=Proc.new{|f|
+    
+      TagLib::FileRef.open(f) do |f|
         # We only do the next bit if the file actually opened.
         unless f.null?
           tag = f.tag
@@ -90,14 +91,6 @@ module WavHead
           i[:title] = tag.title
           i[:length] = prop.length
         end
-      }
-      # Open the file
-      extension=File.extname(f)
-      case extension
-      when ".mp3", ".flac"
-      TagLib::FileRef.open(f,&get_tags)
-      else
-      TagLib::MP4::File.open(f,&get_tags)
       end
       return i
     end
