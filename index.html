@@ -13,15 +13,40 @@
   <link rel="icon" type="image/png" href="favicon-64x64.png"/>
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="main.min.css" />
   <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
 
   <!-- JavaScript -->
   <!-- REVERT THE JQUERY URL TO "//" INSTEAD OF "https://" BEFORE YOU RELEASE IT, MORON. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="jquery.fullPage.min.js"></script>
-  <script src="jquery.easings.min.js"></script>
-  <script src="main.js"></script>
+  <script async src="jquery.easings.min.js"></script>
+
+  <!-- Inline JavaScript for faster loading -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#content').fullpage({
+        css3: true,
+        paddingTop: '60px',
+        easing: 'easeInCubic',
+        loopBottom: false,
+        loopTop: false,
+        loopHorizontal: false,
+        slidesNavigation: true,
+        slidesNavPosition: 'top',
+        menu: '#desktopheader',
+        anchors: ['home', 'about', 'features', 'install', 'contact'],
+        onLeave: function(index, nextIndex, direction) {
+          if(nextIndex == 1) {
+            $("#headercontainer").css("top","-60px");
+          }
+          else {
+            $("#headercontainer").css("top","0px");
+          }
+        },
+      });
+    });
+  </script>
 
 </head>
 
