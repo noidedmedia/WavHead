@@ -63,7 +63,7 @@ module WavHead
       ##
       # Add the song to the queue unless it's already there. 
       # It should only be there if it has a SongVote in the hash already.
-      if votes_for(song) <= 0
+      if votes_for(song) < WavHead::Server.settings.votemanager.queue_threshold
       	@queue.array.delete(@song_votes[song])
       else
       	@queue << @song_votes[song]  unless @queue.include? @song_votes[song]

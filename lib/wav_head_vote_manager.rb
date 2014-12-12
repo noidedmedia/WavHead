@@ -7,10 +7,19 @@ module WavHead
     # Initialize with the amount of time a user should wait
     # Default of 3 hours.
     attr_accessor :downvote
-    def initialize(time = 60*60*3)
+    
+    def initialize(config_settings)
       # Length of time to wait before a user can vote again
-      @downvote=false
-      @time = time
+      #read from YAML config file
+      @downvote = config_settings["enable_downvotes"]=="true"
+
+      @time = config_settings["time_between_votes"]
+      @time = 60*60*3 unless @time.is_a? Integer
+
+      @queue_threshold = config_settings["voted_out_of_queue_limit"].to_i
+      @queue_threshold = 0 if @queue_threshold > 0
+      # Doesn't matter what threshold is if songs can't be downvoted
+
       # A hash of user => uservote
       @users = {}
     end
