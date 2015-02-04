@@ -1,0 +1,3 @@
+enable_downvotes: true
+voted_out_of_queue_limit: 0
+time_between_votes: 1800
